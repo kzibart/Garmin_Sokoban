@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<manifest filename="C:\Garmin\Projects\Sokoban\manifest.xml"/>
+<pcToLineNum>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="4" lineNum="9" parent="globals" pc="268435460" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="4" lineNum="10" parent="globals" pc="268435483" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="4" lineNum="11" parent="globals" pc="268435505" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\puzzles.mc" id="5" lineNum="1" parent="globals" pc="268435527" symbol="&lt;init&gt;"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="7" lineNum="7" parent="globals/Rez" pc="268438198" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="8" lineNum="358" parent="globals" pc="268438222" symbol="nextpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="8" lineNum="359" parent="globals" pc="268438232" symbol="nextpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="8" lineNum="360" parent="globals" pc="268438276" symbol="nextpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="8" lineNum="362" parent="globals" pc="268438282" symbol="nextpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="8" lineNum="364" parent="globals" pc="268438301" symbol="nextpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="8" lineNum="365" parent="globals" pc="268438313" symbol="nextpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="413" parent="globals" pc="268438316" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="414" parent="globals" pc="268438326" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="415" parent="globals" pc="268438343" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="416" parent="globals" pc="268438395" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="417" parent="globals" pc="268438412" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="418" parent="globals" pc="268438443" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="422" parent="globals" pc="268438487" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="424" parent="globals" pc="268438524" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="428" parent="globals" pc="268438543" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="9" lineNum="440" parent="globals" pc="268438714" symbol="savegame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="208" parent="globals" pc="268438744" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="209" parent="globals" pc="268438756" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="210" parent="globals" pc="268438764" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="211" parent="globals" pc="268438772" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="212" parent="globals" pc="268438779" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="213" parent="globals" pc="268438786" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="214" parent="globals" pc="268438810" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="215" parent="globals" pc="268438833" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="216" parent="globals" pc="268438852" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="217" parent="globals" pc="268438866" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="217" parent="globals" pc="268438883" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="218" parent="globals" pc="268438899" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="220" parent="globals" pc="268438910" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="221" parent="globals" pc="268438931" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="222" parent="globals" pc="268438944" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="223" parent="globals" pc="268438954" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="224" parent="globals" pc="268438994" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="225" parent="globals" pc="268439032" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="227" parent="globals" pc="268439045" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="228" parent="globals" pc="268439068" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="229" parent="globals" pc="268439083" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="232" parent="globals" pc="268439113" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="236" parent="globals" pc="268439140" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="237" parent="globals" pc="268439154" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="238" parent="globals" pc="268439173" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="239" parent="globals" pc="268439183" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="240" parent="globals" pc="268439207" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="241" parent="globals" pc="268439214" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="242" parent="globals" pc="268439235" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="244" parent="globals" pc="268439265" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="248" parent="globals" pc="268439285" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="249" parent="globals" pc="268439306" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="250" parent="globals" pc="268439327" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="250" parent="globals" pc="268439352" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="251" parent="globals" pc="268439358" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="251" parent="globals" pc="268439383" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="253" parent="globals" pc="268439412" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="254" parent="globals" pc="268439439" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="254" parent="globals" pc="268439464" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="255" parent="globals" pc="268439470" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="255" parent="globals" pc="268439495" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="259" parent="globals" pc="268439537" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="260" parent="globals" pc="268439558" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="261" parent="globals" pc="268439579" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="261" parent="globals" pc="268439604" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="262" parent="globals" pc="268439610" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="262" parent="globals" pc="268439635" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="264" parent="globals" pc="268439664" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="265" parent="globals" pc="268439691" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="265" parent="globals" pc="268439716" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="266" parent="globals" pc="268439722" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="266" parent="globals" pc="268439747" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="271" parent="globals" pc="268439789" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="272" parent="globals" pc="268439802" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="273" parent="globals" pc="268439823" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="274" parent="globals" pc="268439830" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="275" parent="globals" pc="268439851" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="279" parent="globals" pc="268439896" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="10" lineNum="280" parent="globals" pc="268439908" symbol="parsepuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanMenuDelegate.mc" id="11" lineNum="5" parent="globals/SokobanMenuDelegate" pc="268439921" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="12" lineNum="405" parent="globals" pc="268439940" symbol="newgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="12" lineNum="406" parent="globals" pc="268439950" symbol="newgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="12" lineNum="407" parent="globals" pc="268439964" symbol="newgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="12" lineNum="408" parent="globals" pc="268439977" symbol="newgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="12" lineNum="409" parent="globals" pc="268440005" symbol="newgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="12" lineNum="410" parent="globals" pc="268440015" symbol="newgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="482" parent="globals" pc="268440028" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="484" parent="globals" pc="268440040" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="486" parent="globals" pc="268440043" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="489" parent="globals" pc="268440052" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="490" parent="globals" pc="268440070" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="490" parent="globals" pc="268440090" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="492" parent="globals" pc="268440101" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="493" parent="globals" pc="268440115" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="494" parent="globals" pc="268440139" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="498" parent="globals" pc="268440176" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="499" parent="globals" pc="268440194" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="500" parent="globals" pc="268440207" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="502" parent="globals" pc="268440220" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="503" parent="globals" pc="268440228" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="504" parent="globals" pc="268440252" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="505" parent="globals" pc="268440270" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="506" parent="globals" pc="268440288" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="509" parent="globals" pc="268440320" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="510" parent="globals" pc="268440338" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="515" parent="globals" pc="268440369" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="516" parent="globals" pc="268440387" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="519" parent="globals" pc="268440399" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="520" parent="globals" pc="268440417" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="524" parent="globals" pc="268440429" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="13" lineNum="527" parent="globals" pc="268440433" symbol="deepcopy"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="14" lineNum="295" parent="globals" pc="268440436" symbol="getchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="14" lineNum="296" parent="globals" pc="268440448" symbol="getchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="14" lineNum="297" parent="globals" pc="268440464" symbol="getchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="283" parent="globals" pc="268440492" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="284" parent="globals" pc="268440504" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="285" parent="globals" pc="268440525" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="286" parent="globals" pc="268440546" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="287" parent="globals" pc="268440563" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="288" parent="globals" pc="268440601" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="15" lineNum="289" parent="globals" pc="268440635" symbol="getloc"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="16" lineNum="543" parent="globals" pc="268440666" symbol="onReceivePuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="16" lineNum="544" parent="globals" pc="268440676" symbol="onReceivePuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="16" lineNum="545" parent="globals" pc="268440706" symbol="onReceivePuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="16" lineNum="546" parent="globals" pc="268440719" symbol="onReceivePuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="16" lineNum="547" parent="globals" pc="268440732" symbol="onReceivePuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="16" lineNum="548" parent="globals" pc="268440744" symbol="onReceivePuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="17" lineNum="368" parent="globals" pc="268440761" symbol="prevpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="17" lineNum="369" parent="globals" pc="268440771" symbol="prevpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="17" lineNum="370" parent="globals" pc="268440788" symbol="prevpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="17" lineNum="372" parent="globals" pc="268440794" symbol="prevpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="17" lineNum="374" parent="globals" pc="268440813" symbol="prevpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="17" lineNum="375" parent="globals" pc="268440825" symbol="prevpuzz"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="336" parent="globals" pc="268440828" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="337" parent="globals" pc="268440840" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="338" parent="globals" pc="268440869" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="339" parent="globals" pc="268440898" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="339" parent="globals" pc="268440917" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="340" parent="globals" pc="268440927" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="341" parent="globals" pc="268440934" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="341" parent="globals" pc="268440953" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="342" parent="globals" pc="268440963" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="343" parent="globals" pc="268440970" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="344" parent="globals" pc="268441000" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="18" lineNum="345" parent="globals" pc="268441030" symbol="moveplayer"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="19" lineNum="5" parent="globals/SokobanApp" pc="268441041" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="20" lineNum="4" parent="globals/SokobanDelegate" pc="268441060" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="347" parent="globals" pc="268441079" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="348" parent="globals" pc="268441091" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="349" parent="globals" pc="268441120" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="350" parent="globals" pc="268441149" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="350" parent="globals" pc="268441168" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="351" parent="globals" pc="268441178" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="352" parent="globals" pc="268441185" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="352" parent="globals" pc="268441204" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="353" parent="globals" pc="268441214" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="354" parent="globals" pc="268441221" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="21" lineNum="355" parent="globals" pc="268441251" symbol="movebox"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="22" lineNum="378" parent="globals" pc="268441282" symbol="addhist"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="22" lineNum="379" parent="globals" pc="268441292" symbol="addhist"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="22" lineNum="380" parent="globals" pc="268441309" symbol="addhist"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="22" lineNum="381" parent="globals" pc="268441344" symbol="addhist"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="22" lineNum="383" parent="globals" pc="268441385" symbol="addhist"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="22" lineNum="384" parent="globals" pc="268441411" symbol="addhist"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="443" parent="globals" pc="268441443" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="444" parent="globals" pc="268441455" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="446" parent="globals" pc="268441483" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="447" parent="globals" pc="268441495" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="448" parent="globals" pc="268441508" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="449" parent="globals" pc="268441521" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="450" parent="globals" pc="268441534" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="452" parent="globals" pc="268441549" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="453" parent="globals" pc="268441579" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="454" parent="globals" pc="268441609" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="455" parent="globals" pc="268441621" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="456" parent="globals" pc="268441635" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="457" parent="globals" pc="268441665" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="458" parent="globals" pc="268441673" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="459" parent="globals" pc="268441706" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="461" parent="globals" pc="268441732" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="464" parent="globals" pc="268441768" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="465" parent="globals" pc="268441798" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="466" parent="globals" pc="268441828" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="467" parent="globals" pc="268441858" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="468" parent="globals" pc="268441888" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="469" parent="globals" pc="268441918" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="470" parent="globals" pc="268441948" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="471" parent="globals" pc="268441978" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="472" parent="globals" pc="268442004" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="473" parent="globals" pc="268442017" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="474" parent="globals" pc="268442030" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="475" parent="globals" pc="268442043" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="477" parent="globals" pc="268442086" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="23" lineNum="478" parent="globals" pc="268442122" symbol="loadgame"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="24" lineNum="26" parent="globals" pc="268442135" symbol="getApp"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="24" lineNum="27" parent="globals" pc="268442145" symbol="getApp"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="387" parent="globals" pc="268442161" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="388" parent="globals" pc="268442171" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="388" parent="globals" pc="268442188" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="389" parent="globals" pc="268442194" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="390" parent="globals" pc="268442213" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="391" parent="globals" pc="268442238" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="392" parent="globals" pc="268442250" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="25" lineNum="393" parent="globals" pc="268442262" symbol="undoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="26" lineNum="20" parent="globals/SokobanView" pc="268442265" symbol="&lt;init&gt;"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="194" parent="globals" pc="268442284" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="195" parent="globals" pc="268442296" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="197" parent="globals" pc="268442325" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="196" parent="globals" pc="268442325" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="198" parent="globals" pc="268442354" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="199" parent="globals" pc="268442367" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="201" parent="globals" pc="268442371" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="202" parent="globals" pc="268442382" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="204" parent="globals" pc="268442435" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="27" lineNum="206" parent="globals" pc="268442451" symbol="getpuzzle"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="300" parent="globals" pc="268442466" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="301" parent="globals" pc="268442478" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="302" parent="globals" pc="268442494" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="303" parent="globals" pc="268442501" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="304" parent="globals" pc="268442508" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="304" parent="globals" pc="268442519" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="305" parent="globals" pc="268442548" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="305" parent="globals" pc="268442577" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="28" lineNum="306" parent="globals" pc="268442624" symbol="setchar"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="311" parent="globals" pc="268442641" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="312" parent="globals" pc="268442653" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="313" parent="globals" pc="268442669" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="314" parent="globals" pc="268442685" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="315" parent="globals" pc="268442698" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="316" parent="globals" pc="268442711" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="317" parent="globals" pc="268442724" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="318" parent="globals" pc="268442737" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="318" parent="globals" pc="268442799" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="319" parent="globals" pc="268442805" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="320" parent="globals" pc="268442822" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="321" parent="globals" pc="268442860" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="322" parent="globals" pc="268442924" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="323" parent="globals" pc="268442936" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="324" parent="globals" pc="268442942" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="325" parent="globals" pc="268442980" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="325" parent="globals" pc="268443042" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="326" parent="globals" pc="268443048" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="327" parent="globals" pc="268443065" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="328" parent="globals" pc="268443103" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="329" parent="globals" pc="268443167" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="330" parent="globals" pc="268443231" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="331" parent="globals" pc="268443243" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="29" lineNum="334" parent="globals" pc="268443252" symbol="moveit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="396" parent="globals" pc="268443255" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="397" parent="globals" pc="268443265" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="397" parent="globals" pc="268443300" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="398" parent="globals" pc="268443306" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="399" parent="globals" pc="268443325" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="400" parent="globals" pc="268443350" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="401" parent="globals" pc="268443362" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="30" lineNum="402" parent="globals" pc="268443374" symbol="redoit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="31" lineNum="530" parent="globals" pc="268443377" symbol="p"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="31" lineNum="531" parent="globals" pc="268443387" symbol="p"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="32" lineNum="534" parent="globals" pc="268443406" symbol="fetchpuzzles"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="32" lineNum="535" parent="globals" pc="268443418" symbol="fetchpuzzles"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="32" lineNum="540" parent="globals" pc="268443479" symbol="fetchpuzzles"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanMenuDelegate.mc" id="33" lineNum="11" parent="globals/SokobanMenuDelegate" pc="268443548" symbol="onMenuItem"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanMenuDelegate.mc" id="34" lineNum="7" parent="globals/SokobanMenuDelegate" pc="268443551" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanMenuDelegate.mc" id="34" lineNum="8" parent="globals/SokobanMenuDelegate" pc="268443553" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="35" lineNum="12" parent="globals/SokobanApp" pc="268443572" symbol="onStart"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="36" lineNum="20" parent="globals/SokobanApp" pc="268443575" symbol="getInitialView"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="36" lineNum="21" parent="globals/SokobanApp" pc="268443577" symbol="getInitialView"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="37" lineNum="7" parent="globals/SokobanApp" pc="268443652" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="37" lineNum="8" parent="globals/SokobanApp" pc="268443654" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanApp.mc" id="38" lineNum="16" parent="globals/SokobanApp" pc="268443673" symbol="onStop"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="15" parent="globals/SokobanDelegate" pc="268443676" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="16" parent="globals/SokobanDelegate" pc="268443678" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="17" parent="globals/SokobanDelegate" pc="268443690" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="18" parent="globals/SokobanDelegate" pc="268443719" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="19" parent="globals/SokobanDelegate" pc="268443733" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="20" parent="globals/SokobanDelegate" pc="268443745" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="22" parent="globals/SokobanDelegate" pc="268443764" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="39" lineNum="24" parent="globals/SokobanDelegate" pc="268443770" symbol="onBack"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="107" parent="globals/SokobanDelegate" pc="268443773" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="108" parent="globals/SokobanDelegate" pc="268443775" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="109" parent="globals/SokobanDelegate" pc="268443792" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="110" parent="globals/SokobanDelegate" pc="268443807" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="111" parent="globals/SokobanDelegate" pc="268443824" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="112" parent="globals/SokobanDelegate" pc="268443835" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="114" parent="globals/SokobanDelegate" pc="268443850" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="116" parent="globals/SokobanDelegate" pc="268443897" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="117" parent="globals/SokobanDelegate" pc="268443914" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="118" parent="globals/SokobanDelegate" pc="268443927" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="119" parent="globals/SokobanDelegate" pc="268443939" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="40" lineNum="121" parent="globals/SokobanDelegate" pc="268443945" symbol="doleft"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="123" parent="globals/SokobanDelegate" pc="268443948" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="124" parent="globals/SokobanDelegate" pc="268443950" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="125" parent="globals/SokobanDelegate" pc="268443967" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="126" parent="globals/SokobanDelegate" pc="268443982" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="127" parent="globals/SokobanDelegate" pc="268443999" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="128" parent="globals/SokobanDelegate" pc="268444010" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="130" parent="globals/SokobanDelegate" pc="268444025" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="132" parent="globals/SokobanDelegate" pc="268444072" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="133" parent="globals/SokobanDelegate" pc="268444089" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="134" parent="globals/SokobanDelegate" pc="268444102" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="41" lineNum="136" parent="globals/SokobanDelegate" pc="268444117" symbol="doright"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="42" lineNum="10" parent="globals/SokobanDelegate" pc="268444120" symbol="onMenu"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="42" lineNum="11" parent="globals/SokobanDelegate" pc="268444122" symbol="onMenu"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="42" lineNum="12" parent="globals/SokobanDelegate" pc="268444207" symbol="onMenu"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="92" parent="globals/SokobanDelegate" pc="268444210" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="93" parent="globals/SokobanDelegate" pc="268444212" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="94" parent="globals/SokobanDelegate" pc="268444229" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="95" parent="globals/SokobanDelegate" pc="268444242" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="96" parent="globals/SokobanDelegate" pc="268444248" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="97" parent="globals/SokobanDelegate" pc="268444265" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="98" parent="globals/SokobanDelegate" pc="268444276" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="99" parent="globals/SokobanDelegate" pc="268444289" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="100" parent="globals/SokobanDelegate" pc="268444301" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="102" parent="globals/SokobanDelegate" pc="268444307" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="43" lineNum="105" parent="globals/SokobanDelegate" pc="268444354" symbol="dodown"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="44" lineNum="140" parent="globals/SokobanDelegate" pc="268444357" symbol="circContains"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="44" lineNum="141" parent="globals/SokobanDelegate" pc="268444361" symbol="circContains"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="44" lineNum="142" parent="globals/SokobanDelegate" pc="268444371" symbol="circContains"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="44" lineNum="143" parent="globals/SokobanDelegate" pc="268444381" symbol="circContains"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="44" lineNum="144" parent="globals/SokobanDelegate" pc="268444391" symbol="circContains"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="44" lineNum="145" parent="globals/SokobanDelegate" pc="268444401" symbol="circContains"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="27" parent="globals/SokobanDelegate" pc="268444431" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="28" parent="globals/SokobanDelegate" pc="268444435" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="29" parent="globals/SokobanDelegate" pc="268444448" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="30" parent="globals/SokobanDelegate" pc="268444460" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="31" parent="globals/SokobanDelegate" pc="268444464" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="32" parent="globals/SokobanDelegate" pc="268444493" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="33" parent="globals/SokobanDelegate" pc="268444504" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="34" parent="globals/SokobanDelegate" pc="268444520" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="35" parent="globals/SokobanDelegate" pc="268444531" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="36" parent="globals/SokobanDelegate" pc="268444547" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="37" parent="globals/SokobanDelegate" pc="268444558" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="38" parent="globals/SokobanDelegate" pc="268444574" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="39" parent="globals/SokobanDelegate" pc="268444585" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="42" parent="globals/SokobanDelegate" pc="268444604" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="43" parent="globals/SokobanDelegate" pc="268444609" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="44" parent="globals/SokobanDelegate" pc="268444621" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="45" parent="globals/SokobanDelegate" pc="268444637" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="45" lineNum="47" parent="globals/SokobanDelegate" pc="268444643" symbol="onSwipe"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="79" parent="globals/SokobanDelegate" pc="268444646" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="80" parent="globals/SokobanDelegate" pc="268444648" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="81" parent="globals/SokobanDelegate" pc="268444665" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="82" parent="globals/SokobanDelegate" pc="268444705" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="83" parent="globals/SokobanDelegate" pc="268444718" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="84" parent="globals/SokobanDelegate" pc="268444730" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="85" parent="globals/SokobanDelegate" pc="268444736" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="86" parent="globals/SokobanDelegate" pc="268444753" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="87" parent="globals/SokobanDelegate" pc="268444765" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="46" lineNum="90" parent="globals/SokobanDelegate" pc="268444815" symbol="doup"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="47" lineNum="6" parent="globals/SokobanDelegate" pc="268444818" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="47" lineNum="7" parent="globals/SokobanDelegate" pc="268444820" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="50" parent="globals/SokobanDelegate" pc="268444839" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="51" parent="globals/SokobanDelegate" pc="268444843" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="52" parent="globals/SokobanDelegate" pc="268444856" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="53" parent="globals/SokobanDelegate" pc="268444868" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="54" parent="globals/SokobanDelegate" pc="268444872" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="55" parent="globals/SokobanDelegate" pc="268444952" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="56" parent="globals/SokobanDelegate" pc="268444986" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="57" parent="globals/SokobanDelegate" pc="268444999" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="58" parent="globals/SokobanDelegate" pc="268445006" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="59" parent="globals/SokobanDelegate" pc="268445023" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="60" parent="globals/SokobanDelegate" pc="268445040" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="62" parent="globals/SokobanDelegate" pc="268445050" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="63" parent="globals/SokobanDelegate" pc="268445130" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="64" parent="globals/SokobanDelegate" pc="268445146" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="65" parent="globals/SokobanDelegate" pc="268445232" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="66" parent="globals/SokobanDelegate" pc="268445248" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="67" parent="globals/SokobanDelegate" pc="268445328" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="68" parent="globals/SokobanDelegate" pc="268445344" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="69" parent="globals/SokobanDelegate" pc="268445430" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="71" parent="globals/SokobanDelegate" pc="268445446" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="72" parent="globals/SokobanDelegate" pc="268445451" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="73" parent="globals/SokobanDelegate" pc="268445467" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="74" parent="globals/SokobanDelegate" pc="268445479" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanDelegate.mc" id="48" lineNum="76" parent="globals/SokobanDelegate" pc="268445485" symbol="onTap"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="50" lineNum="27" parent="globals/SokobanView" pc="268445488" symbol="onLayout"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="50" lineNum="28" parent="globals/SokobanView" pc="268445490" symbol="onLayout"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="50" lineNum="29" parent="globals/SokobanView" pc="268445560" symbol="onLayout"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="50" lineNum="30" parent="globals/SokobanView" pc="268445630" symbol="onLayout"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="156" parent="globals/SokobanView" pc="268445662" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="157" parent="globals/SokobanView" pc="268445666" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="158" parent="globals/SokobanView" pc="268445670" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="159" parent="globals/SokobanView" pc="268445674" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="159" parent="globals/SokobanView" pc="268445693" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="160" parent="globals/SokobanView" pc="268445697" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="162" parent="globals/SokobanView" pc="268445716" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="163" parent="globals/SokobanView" pc="268445738" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="165" parent="globals/SokobanView" pc="268445761" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="167" parent="globals/SokobanView" pc="268445818" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="168" parent="globals/SokobanView" pc="268445840" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="169" parent="globals/SokobanView" pc="268445866" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="171" parent="globals/SokobanView" pc="268445943" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="172" parent="globals/SokobanView" pc="268445965" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="173" parent="globals/SokobanView" pc="268445982" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="175" parent="globals/SokobanView" pc="268446002" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="177" parent="globals/SokobanView" pc="268446040" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="178" parent="globals/SokobanView" pc="268446062" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="179" parent="globals/SokobanView" pc="268446139" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="181" parent="globals/SokobanView" pc="268446177" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="51" lineNum="182" parent="globals/SokobanView" pc="268446199" symbol="drawit"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="52" lineNum="22" parent="globals/SokobanView" pc="268446277" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="52" lineNum="23" parent="globals/SokobanView" pc="268446279" symbol="initialize"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="40" parent="globals/SokobanView" pc="268446298" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="41" parent="globals/SokobanView" pc="268446302" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="42" parent="globals/SokobanView" pc="268446314" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="43" parent="globals/SokobanView" pc="268446331" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="44" parent="globals/SokobanView" pc="268446356" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="45" parent="globals/SokobanView" pc="268446373" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="46" parent="globals/SokobanView" pc="268446384" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="48" parent="globals/SokobanView" pc="268446409" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="51" parent="globals/SokobanView" pc="268446434" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="53" parent="globals/SokobanView" pc="268446456" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="55" parent="globals/SokobanView" pc="268446468" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="56" parent="globals/SokobanView" pc="268446499" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="57" parent="globals/SokobanView" pc="268446534" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="59" parent="globals/SokobanView" pc="268446568" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="60" parent="globals/SokobanView" pc="268446614" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="62" parent="globals/SokobanView" pc="268446660" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="63" parent="globals/SokobanView" pc="268446686" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="64" parent="globals/SokobanView" pc="268446708" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="66" parent="globals/SokobanView" pc="268446769" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="67" parent="globals/SokobanView" pc="268446790" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="68" parent="globals/SokobanView" pc="268446811" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="69" parent="globals/SokobanView" pc="268446839" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="70" parent="globals/SokobanView" pc="268446867" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="71" parent="globals/SokobanView" pc="268446884" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="76" parent="globals/SokobanView" pc="268446938" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="77" parent="globals/SokobanView" pc="268446978" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="78" parent="globals/SokobanView" pc="268446985" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="78" parent="globals/SokobanView" pc="268447002" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="79" parent="globals/SokobanView" pc="268447012" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="79" parent="globals/SokobanView" pc="268447029" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="80" parent="globals/SokobanView" pc="268447039" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="80" parent="globals/SokobanView" pc="268447056" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="81" parent="globals/SokobanView" pc="268447066" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="82" parent="globals/SokobanView" pc="268447073" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="83" parent="globals/SokobanView" pc="268447076" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="84" parent="globals/SokobanView" pc="268447093" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="85" parent="globals/SokobanView" pc="268447124" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="88" parent="globals/SokobanView" pc="268447158" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="90" parent="globals/SokobanView" pc="268447175" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="91" parent="globals/SokobanView" pc="268447181" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="93" parent="globals/SokobanView" pc="268447206" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="95" parent="globals/SokobanView" pc="268447228" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="96" parent="globals/SokobanView" pc="268447343" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="97" parent="globals/SokobanView" pc="268447365" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="98" parent="globals/SokobanView" pc="268447372" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="99" parent="globals/SokobanView" pc="268447378" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="101" parent="globals/SokobanView" pc="268447388" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="103" parent="globals/SokobanView" pc="268447404" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="104" parent="globals/SokobanView" pc="268447465" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="104" parent="globals/SokobanView" pc="268447482" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="105" parent="globals/SokobanView" pc="268447507" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="106" parent="globals/SokobanView" pc="268447529" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="107" parent="globals/SokobanView" pc="268447593" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="107" parent="globals/SokobanView" pc="268447613" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="108" parent="globals/SokobanView" pc="268447638" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="109" parent="globals/SokobanView" pc="268447660" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="110" parent="globals/SokobanView" pc="268447727" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="112" parent="globals/SokobanView" pc="268447744" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="113" parent="globals/SokobanView" pc="268447766" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="114" parent="globals/SokobanView" pc="268447881" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="115" parent="globals/SokobanView" pc="268447897" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="115" parent="globals/SokobanView" pc="268447914" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="116" parent="globals/SokobanView" pc="268447927" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="117" parent="globals/SokobanView" pc="268447949" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="118" parent="globals/SokobanView" pc="268448010" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="119" parent="globals/SokobanView" pc="268448032" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="120" parent="globals/SokobanView" pc="268448096" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="120" parent="globals/SokobanView" pc="268448136" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="121" parent="globals/SokobanView" pc="268448161" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="122" parent="globals/SokobanView" pc="268448183" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="123" parent="globals/SokobanView" pc="268448250" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="125" parent="globals/SokobanView" pc="268448261" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="126" parent="globals/SokobanView" pc="268448283" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="127" parent="globals/SokobanView" pc="268448386" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="128" parent="globals/SokobanView" pc="268448408" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="129" parent="globals/SokobanView" pc="268448472" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="129" parent="globals/SokobanView" pc="268448489" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="130" parent="globals/SokobanView" pc="268448514" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="131" parent="globals/SokobanView" pc="268448536" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="132" parent="globals/SokobanView" pc="268448600" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="132" parent="globals/SokobanView" pc="268448635" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="133" parent="globals/SokobanView" pc="268448660" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="134" parent="globals/SokobanView" pc="268448682" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="137" parent="globals/SokobanView" pc="268448749" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="138" parent="globals/SokobanView" pc="268448771" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="139" parent="globals/SokobanView" pc="268448886" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="140" parent="globals/SokobanView" pc="268448902" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="141" parent="globals/SokobanView" pc="268448908" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="142" parent="globals/SokobanView" pc="268448925" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="144" parent="globals/SokobanView" pc="268448938" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="147" parent="globals/SokobanView" pc="268448951" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="149" parent="globals/SokobanView" pc="268448970" symbol="onUpdate"/>
+<entry filename="C:\\Garmin\\Projects\\Sokoban\\source\\SokobanView.mc" id="54" lineNum="150" parent="globals/SokobanView" pc="268448992" symbol="onUpdate"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="55" lineNum="14" parent="globals/Rez/Layouts" pc="268449054" symbol="MainLayout"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="55" lineNum="15" parent="globals/Rez/Layouts" pc="268449066" symbol="MainLayout"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="55" lineNum="17" parent="globals/Rez/Layouts" pc="268449197" symbol="MainLayout"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="55" lineNum="18" parent="globals/Rez/Layouts" pc="268449302" symbol="MainLayout"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="55" lineNum="20" parent="globals/Rez/Layouts" pc="268449342" symbol="MainLayout"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="56" lineNum="25" parent="globals/Rez/Menus/MainMenu" pc="268449369" symbol="&lt;init&gt;"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="57" lineNum="26" parent="globals/Rez/Menus/MainMenu" pc="268449388" symbol="initialize"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="57" lineNum="27" parent="globals/Rez/Menus/MainMenu" pc="268449390" symbol="initialize"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="57" lineNum="28" parent="globals/Rez/Menus/MainMenu" pc="268449408" symbol="initialize"/>
+<entry filename="c:\\Garmin\\Projects\\Sokoban\\gen\\006-B4260-00\\source\\Rez.mcgen" id="57" lineNum="29" parent="globals/Rez/Menus/MainMenu" pc="268449464" symbol="initialize"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="7" object="true" symbol="SokobanApp"/>
+<entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="8389346" symbol="text"/>
+<entry id="19" method="true" symbol="fetchpuzzles"/>
+<entry field="true" id="26" symbol="gridXY"/>
+<entry field="true" id="25" symbol="gridWH"/>
+<entry id="33" method="true" symbol="moveit"/>
+<entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+<entry id="59" method="true" symbol="doup"/>
+<entry id="5" module="true" symbol="globals/Rez/Menus"/>
+<entry field="true" id="18" symbol="diff"/>
+<entry id="22" method="true" symbol="getchar"/>
+<entry id="63" method="true" symbol="MainLayout"/>
+<entry id="60" method="true" symbol="drawit"/>
+<entry id="8" object="true" symbol="SokobanDelegate"/>
+<entry field="true" id="31" symbol="maxpuzz"/>
+<entry field="true" id="27" symbol="lasthist"/>
+<entry id="8390424" module="true" symbol="Storage"/>
+<entry field="true" id="44" symbol="rows"/>
+<entry id="28" method="true" symbol="loadgame"/>
+<entry field="true" id="49" symbol="solved"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry field="true" id="65" symbol="AppName"/>
+<entry id="34" method="true" symbol="moveplayer"/>
+<entry id="6" module="true" symbol="globals/Rez/Strings"/>
+<entry id="8389594" symbol="headers"/>
+<entry id="8389080" method="true" symbol="onMenu"/>
+<entry id="8389345" symbol="rezId"/>
+<entry id="8388648" module="true" symbol="WatchUi"/>
+<entry id="8389081" method="true" symbol="onBack"/>
+<entry field="true" id="30" symbol="maxdiff"/>
+<entry id="37" method="true" symbol="onReceivePuzzle"/>
+<entry field="true" id="38" symbol="online"/>
+<entry id="2" module="true" symbol="globals/Rez"/>
+<entry field="true" id="68" symbol="prompt"/>
+<entry field="true" id="62" symbol="id_monkey"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry field="true" id="8389065" symbol="locY"/>
+<entry field="true" id="8389064" symbol="locX"/>
+<entry id="47" method="true" symbol="savegame"/>
+<entry field="true" id="14" symbol="center"/>
+<entry id="8388771" module="true" object="true" symbol="Drawables"/>
+<entry id="8389348" symbol="font"/>
+<entry field="true" id="46" symbol="sW"/>
+<entry field="true" id="45" symbol="sH"/>
+<entry id="70" symbol="item_2"/>
+<entry id="69" symbol="item_1"/>
+<entry id="54" module="true" symbol="Menus"/>
+<entry id="8389275" method="true" symbol="getApp"/>
+<entry id="4" module="true" symbol="globals/Rez/Layouts"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry id="48" method="true" symbol="setchar"/>
+<entry field="true" id="8389063" symbol="identifier"/>
+<entry id="8389349" symbol="justification"/>
+<entry id="8389098" method="true" symbol="onTap"/>
+<entry field="true" id="16" symbol="dS"/>
+<entry id="52" method="true" symbol="undoit"/>
+<entry id="55" method="true" symbol="circContains"/>
+<entry id="36" method="true" symbol="nextpuzz"/>
+<entry field="true" id="13" symbol="cell"/>
+<entry field="true" id="29" symbol="loc"/>
+<entry id="35" method="true" symbol="newgame"/>
+<entry id="8388637" module="true" symbol="Communications"/>
+<entry field="true" id="21" symbol="gamehist"/>
+<entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+<entry id="64" object="true" symbol="MainMenu"/>
+<entry id="9" object="true" symbol="SokobanMenuDelegate"/>
+<entry id="8389844" symbol="responseType"/>
+<entry id="40" method="true" symbol="parsepuzzle"/>
+<entry id="57" method="true" symbol="doleft"/>
+<entry id="8388786" method="true" symbol="method"/>
+<entry id="8388644" module="true" symbol="System"/>
+<entry id="8388769" module="true" object="true" symbol="Rez"/>
+<entry id="10" object="true" symbol="SokobanView"/>
+<entry id="8388640" module="true" symbol="Lang"/>
+<entry field="true" id="12" symbol="allpuzzles"/>
+<entry id="23" method="true" symbol="getloc"/>
+<entry field="true" id="61" symbol="LauncherIcon"/>
+<entry id="24" method="true" symbol="getpuzzle"/>
+<entry id="8388610" symbol="statics"/>
+<entry id="8389123" method="true" symbol="onShow"/>
+<entry id="17" method="true" symbol="deepcopy"/>
+<entry id="8389350" module="true" symbol="globals"/>
+<entry field="true" id="20" symbol="game"/>
+<entry id="8388770" module="true" object="true" symbol="Strings"/>
+<entry id="56" method="true" symbol="dodown"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry field="true" id="50" symbol="thispuzz"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry id="8388641" module="true" symbol="Math"/>
+<entry id="41" method="true" symbol="prevpuzz"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry id="8389109" method="true" symbol="onMenuItem"/>
+<entry id="8389347" symbol="color"/>
+<entry field="true" id="51" symbol="undo"/>
+<entry id="32" method="true" symbol="movebox"/>
+<entry id="11" method="true" symbol="addhist"/>
+<entry id="43" method="true" symbol="redoit"/>
+<entry id="53" module="true" symbol="Layouts"/>
+<entry field="true" id="8389487" symbol="state"/>
+<entry id="8389125" method="true" symbol="onHide"/>
+<entry field="true" id="15" symbol="cols"/>
+<entry field="true" id="42" symbol="puzzle"/>
+<entry id="8388635" module="true" symbol="Application"/>
+<entry id="39" method="true" symbol="p"/>
+<entry field="true" id="67" symbol="menu_label_2"/>
+<entry field="true" id="66" symbol="menu_label_1"/>
+<entry id="8389101" method="true" symbol="onSwipe"/>
+<entry id="58" method="true" symbol="doright"/>
+</symbolTable>
+<localVars>
+<entry arg="true" endPc="268439920" name="puz" stackId="1" startPc="268438744"/>
+<entry endPc="268439919" name="p" stackId="2" startPc="268438756"/>
+<entry endPc="268439919" name="row" stackId="3" startPc="268438756"/>
+<entry endPc="268439919" name="chr" stackId="4" startPc="268438756"/>
+<entry endPc="268439919" name="max" stackId="5" startPc="268438756"/>
+<entry endPc="268439139" name="i" stackId="6" startPc="268438810"/>
+<entry endPc="268439109" name="num" stackId="7" startPc="268438931"/>
+<entry endPc="268439109" name="k" stackId="8" startPc="268439083"/>
+<entry endPc="268439284" name="i" stackId="9" startPc="268439207"/>
+<entry endPc="268439264" name="j" stackId="10" startPc="268439235"/>
+<entry endPc="268439536" name="i" stackId="11" startPc="268439306"/>
+<entry endPc="268439411" name="j" stackId="12" startPc="268439327"/>
+<entry endPc="268439523" name="j" stackId="13" startPc="268439439"/>
+<entry endPc="268439788" name="j" stackId="14" startPc="268439558"/>
+<entry endPc="268439663" name="i" stackId="15" startPc="268439579"/>
+<entry endPc="268439775" name="i" stackId="16" startPc="268439691"/>
+<entry endPc="268439895" name="r" stackId="17" startPc="268439823"/>
+<entry endPc="268439882" name="c" stackId="18" startPc="268439851"/>
+<entry arg="true" endPc="268440435" name="input" stackId="1" startPc="268440028"/>
+<entry endPc="268440435" name="result" stackId="2" startPc="268440040"/>
+<entry endPc="268440172" name="i" stackId="3" startPc="268440139"/>
+<entry endPc="268440316" name="keys" stackId="4" startPc="268440194"/>
+<entry endPc="268440316" name="vals" stackId="5" startPc="268440194"/>
+<entry endPc="268440316" name="i" stackId="6" startPc="268440252"/>
+<entry endPc="268440303" name="key_copy" stackId="7" startPc="268440252"/>
+<entry endPc="268440303" name="val_copy" stackId="8" startPc="268440252"/>
+<entry arg="true" endPc="268440491" name="r" stackId="1" startPc="268440436"/>
+<entry arg="true" endPc="268440491" name="c" stackId="2" startPc="268440436"/>
+<entry endPc="268440491" name="i" stackId="3" startPc="268440448"/>
+<entry endPc="268440664" name="r" stackId="1" startPc="268440525"/>
+<entry endPc="268440651" name="c" stackId="2" startPc="268440546"/>
+<entry endPc="268440638" name="char" stackId="3" startPc="268440546"/>
+<entry arg="true" endPc="268440760" name="responseCode" stackId="1" startPc="268440666"/>
+<entry arg="true" endPc="268440760" name="data" stackId="2" startPc="268440666"/>
+<entry arg="true" endPc="268441040" name="s" stackId="1" startPc="268440828"/>
+<entry arg="true" endPc="268441040" name="e" stackId="2" startPc="268440828"/>
+<entry endPc="268441039" name="sc" stackId="3" startPc="268440840"/>
+<entry endPc="268441039" name="ec" stackId="4" startPc="268440840"/>
+<entry arg="true" endPc="268441281" name="s" stackId="1" startPc="268441079"/>
+<entry arg="true" endPc="268441281" name="e" stackId="2" startPc="268441079"/>
+<entry endPc="268441280" name="sc" stackId="3" startPc="268441091"/>
+<entry endPc="268441280" name="ec" stackId="4" startPc="268441091"/>
+<entry endPc="268441764" name="i" stackId="1" startPc="268441665"/>
+<entry endPc="268441751" name="x" stackId="2" startPc="268441665"/>
+<entry endPc="268441731" name="j" stackId="3" startPc="268441706"/>
+<entry arg="true" endPc="268442465" name="d" stackId="1" startPc="268442284"/>
+<entry arg="true" endPc="268442465" name="n" stackId="2" startPc="268442284"/>
+<entry endPc="268442464" name="puz" stackId="3" startPc="268442296"/>
+<entry arg="true" endPc="268442640" name="r" stackId="1" startPc="268442466"/>
+<entry arg="true" endPc="268442640" name="c" stackId="2" startPc="268442466"/>
+<entry arg="true" endPc="268442640" name="char" stackId="3" startPc="268442466"/>
+<entry endPc="268442639" name="i" stackId="4" startPc="268442478"/>
+<entry endPc="268442639" name="s" stackId="5" startPc="268442478"/>
+<entry endPc="268442639" name="e" stackId="6" startPc="268442478"/>
+<entry arg="true" endPc="268443254" name="d" stackId="1" startPc="268442641"/>
+<entry endPc="268443254" name="r" stackId="2" startPc="268442653"/>
+<entry endPc="268443254" name="c" stackId="3" startPc="268442653"/>
+<entry endPc="268443254" name="r1" stackId="4" startPc="268442653"/>
+<entry endPc="268443254" name="c1" stackId="5" startPc="268442653"/>
+<entry endPc="268443254" name="r2" stackId="6" startPc="268442653"/>
+<entry endPc="268443254" name="c2" stackId="7" startPc="268442653"/>
+<entry endPc="268443254" name="t" stackId="8" startPc="268442653"/>
+<entry endPc="268443248" name="u" stackId="9" startPc="268442980"/>
+<entry arg="true" endPc="268443405" name="s" stackId="1" startPc="268443377"/>
+<entry arg="true" endPc="268443547" name="callBack" stackId="1" startPc="268443406"/>
+<entry endPc="268443546" name="options" stackId="2" startPc="268443418"/>
+<entry arg="true" endPc="268444430" name="point" stackId="1" startPc="268444357"/>
+<entry arg="true" endPc="268444430" name="circle" stackId="2" startPc="268444357"/>
+<entry arg="true" endPc="268444430" name="rad" stackId="3" startPc="268444357"/>
+<entry endPc="268444430" name="x" stackId="4" startPc="268444361"/>
+<entry endPc="268444430" name="y" stackId="5" startPc="268444361"/>
+<entry endPc="268444430" name="cx" stackId="6" startPc="268444361"/>
+<entry endPc="268444430" name="cy" stackId="7" startPc="268444361"/>
+<entry arg="true" endPc="268444645" name="swipeEvent" stackId="1" startPc="268444431"/>
+<entry endPc="268444645" name="dir" stackId="2" startPc="268444435"/>
+<entry endPc="268444645" name="test" stackId="3" startPc="268444435"/>
+<entry arg="true" endPc="268445487" name="clickEvent" stackId="1" startPc="268444839"/>
+<entry endPc="268445487" name="pressxy" stackId="2" startPc="268444843"/>
+<entry endPc="268445487" name="test" stackId="3" startPc="268444843"/>
+<entry arg="true" endPc="268445661" name="dc" stackId="1" startPc="268445488"/>
+<entry arg="true" endPc="268446276" name="dc" stackId="1" startPc="268445662"/>
+<entry arg="true" endPc="268446276" name="char" stackId="2" startPc="268445662"/>
+<entry arg="true" endPc="268446276" name="x" stackId="3" startPc="268445662"/>
+<entry arg="true" endPc="268446276" name="y" stackId="4" startPc="268445662"/>
+<entry arg="true" endPc="268446276" name="c" stackId="5" startPc="268445662"/>
+<entry endPc="268446275" name="w" stackId="6" startPc="268445666"/>
+<entry endPc="268446275" name="h" stackId="7" startPc="268445666"/>
+<entry arg="true" endPc="268449053" name="dc" stackId="1" startPc="268446298"/>
+<entry endPc="268446937" name="r" stackId="2" startPc="268446790"/>
+<entry endPc="268446924" name="c" stackId="3" startPc="268446811"/>
+<entry endPc="268446911" name="x" stackId="4" startPc="268446811"/>
+<entry endPc="268446911" name="y" stackId="5" startPc="268446811"/>
+<entry endPc="268446911" name="char" stackId="6" startPc="268446811"/>
+<entry endPc="268449052" name="d" stackId="7" startPc="268446302"/>
+<entry endPc="268449052" name="l" stackId="8" startPc="268446302"/>
+<entry endPc="268447723" name="p" stackId="9" startPc="268447175"/>
+<entry endPc="268448246" name="m" stackId="10" startPc="268447744"/>
+<entry endPc="268449052" name="m" stackId="11" startPc="268448749"/>
+<entry arg="true" endPc="268449368" name="dc" stackId="1" startPc="268449054"/>
+<entry endPc="268449368" name="rez_cmp_local_text_1328635355" stackId="2" startPc="268449066"/>
+<entry endPc="268449368" name="rez_cmp_local_bitmap_id_monkey" stackId="3" startPc="268449066"/>
+</localVars>
+<annotations>
+<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="menu_label_2"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="menu_label_1"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="prompt"/>
+<annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+<annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+</annotations>
+<dataEntryOffsetMappings>
+<dataEntry label="globals" offset="71" parentId="" symbolId="globals" type="module"/>
+<dataEntry label="globals/Rez" offset="14378" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry label="globals/SokobanMenuDelegate" offset="14441" parentId="globals" symbolId="SokobanMenuDelegate" type="class"/>
+<dataEntry label="globals/SokobanApp" offset="14496" parentId="globals" symbolId="SokobanApp" type="class"/>
+<dataEntry label="globals/SokobanDelegate" offset="14567" parentId="globals" symbolId="SokobanDelegate" type="class"/>
+<dataEntry label="globals/SokobanView" offset="14686" parentId="globals" symbolId="SokobanView" type="class"/>
+<dataEntry label="globals/Rez/Drawables" offset="14773" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry label="globals/Rez/Layouts" offset="14820" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry label="globals/Rez/Menus" offset="14859" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry label="globals/Rez/Strings" offset="14898" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry label="globals/Rez/Menus/MainMenu" offset="14961" parentId="Menus" symbolId="MainMenu" type="class"/>
+</dataEntryOffsetMappings>
+<functions>
+<functionEntry accessMode="public" endPc="268438221" name="&lt;init&gt;" parent="Rez" startPc="268438198">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268438315" name="nextpuzz" startPc="268438222">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268438743" name="savegame" startPc="268438316">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268439920" name="parsepuzzle" startPc="268438744">
+<param id="puz"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268439939" name="&lt;init&gt;" parent="SokobanMenuDelegate" startPc="268439921">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440027" name="newgame" startPc="268439940">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440435" name="deepcopy" startPc="268440028">
+<param id="input"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440491" name="getchar" startPc="268440436">
+<param id="r"/>
+<param id="c"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440665" name="getloc" startPc="268440492">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440760" name="onReceivePuzzle" startPc="268440666">
+<param id="responseCode"/>
+<param id="data"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268440827" name="prevpuzz" startPc="268440761">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441040" name="moveplayer" startPc="268440828">
+<param id="s"/>
+<param id="e"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441059" name="&lt;init&gt;" parent="SokobanApp" startPc="268441041">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441078" name="&lt;init&gt;" parent="SokobanDelegate" startPc="268441060">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441281" name="movebox" startPc="268441079">
+<param id="s"/>
+<param id="e"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268441442" name="addhist" startPc="268441282">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268442134" name="loadgame" startPc="268441443">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268442160" name="getApp" startPc="268442135">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268442264" name="undoit" startPc="268442161">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268442283" name="&lt;init&gt;" parent="SokobanView" startPc="268442265">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268442465" name="getpuzzle" startPc="268442284">
+<param id="d"/>
+<param id="n"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268442640" name="setchar" startPc="268442466">
+<param id="r"/>
+<param id="c"/>
+<param id="char"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443254" name="moveit" startPc="268442641">
+<param id="d"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443376" name="redoit" startPc="268443255">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443405" name="p" startPc="268443377">
+<param id="s"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443547" name="fetchpuzzles" startPc="268443406">
+<param id="callBack"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443550" name="onMenuItem" parent="SokobanMenuDelegate" startPc="268443548">
+<param id="item"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443571" name="initialize" parent="SokobanMenuDelegate" startPc="268443551">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443574" name="onStart" parent="SokobanApp" startPc="268443572">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443651" name="getInitialView" parent="SokobanApp" startPc="268443575">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443672" name="initialize" parent="SokobanApp" startPc="268443652">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443675" name="onStop" parent="SokobanApp" startPc="268443673">
+<param id="state"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443772" name="onBack" parent="SokobanDelegate" startPc="268443676">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268443947" name="doleft" parent="SokobanDelegate" startPc="268443773">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444119" name="doright" parent="SokobanDelegate" startPc="268443948">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444209" name="onMenu" parent="SokobanDelegate" startPc="268444120">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444356" name="dodown" parent="SokobanDelegate" startPc="268444210">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444430" name="circContains" parent="SokobanDelegate" startPc="268444357">
+<param id="point"/>
+<param id="circle"/>
+<param id="rad"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444645" name="onSwipe" parent="SokobanDelegate" startPc="268444431">
+<param id="swipeEvent"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444817" name="doup" parent="SokobanDelegate" startPc="268444646">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268444838" name="initialize" parent="SokobanDelegate" startPc="268444818">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268445487" name="onTap" parent="SokobanDelegate" startPc="268444839">
+<param id="clickEvent"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onShow" parent="SokobanView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268445661" name="onLayout" parent="SokobanView" startPc="268445488">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268446276" name="drawit" parent="SokobanView" startPc="268445662">
+<param id="dc"/>
+<param id="char"/>
+<param id="x"/>
+<param id="y"/>
+<param id="c"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268446297" name="initialize" parent="SokobanView" startPc="268446277">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onHide" parent="SokobanView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268449053" name="onUpdate" parent="SokobanView" startPc="268446298">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268449368" name="MainLayout" parent="Layouts" startPc="268449054">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268449387" name="&lt;init&gt;" parent="MainMenu" startPc="268449369">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" endPc="268449520" name="initialize" parent="MainMenu" startPc="268449388">
+<documentation/>
+</functionEntry>
+</functions>
+</debugInfo>

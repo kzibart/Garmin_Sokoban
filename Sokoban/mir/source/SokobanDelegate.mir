@@ -1,0 +1,852 @@
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 4; ]
+class SokobanDelegate extends WatchUi.BehaviorDelegate{
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 6; ]
+    function initialize() as Void {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_6_26_8_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 7 8 ]
+        %tmp.2 = getv ? :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_6_26_8_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 10; ]
+    function onMenu() as Boolean {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_10_33_13_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 11 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :pushView;
+        %tmp.6 = getv ? :Rez;
+        %tmp.7 = getv %tmp.6 :Menus;
+        %tmp.8 = getv function ? %tmp.7 :MainMenu;
+        %tmp.3 = newc %tmp.8 ();
+        %tmp.12 = getv ? :SokobanMenuDelegate;
+        %tmp.9 = newc %tmp.12 ();
+        %tmp.13 = getm $.Toybox.WatchUi;
+        %tmp.14 = getv %tmp.13 :SLIDE_UP;
+        invoke %tmp.1 %tmp.2(%tmp.3, %tmp.9, %tmp.14);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 12 8 ]
+        %tmp.15 = true;
+        ret %tmp.15;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_10_33_13_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 15; ]
+    function onBack() {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_15_22_25_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 16 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :loadgame;
+        invoke %tmp.1 %tmp.2();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 17 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_8_23_8_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_12_17_28_begin:
+        %tmp.4 = getv ? :state;
+        %tmp.5 = 1;
+        %tmp.6 = eq %tmp.4 %tmp.5;
+        bf %tmp.6 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_8_23_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_27_17_28_true:
+        %tmp.8 = getv ? :undo;
+        %tmp.9 = not %tmp.8;
+        push %tmp.9;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_27_17_28_end:
+        %tmp.10 = phi [%tmp.6 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_12_17_28_begin] [%tmp.9 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_27_17_28_true] [%tmp.10 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_27_17_28_end];
+        bf %tmp.10 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_8_23_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_8_23_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_34_23_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 18 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_12_21_12_if_stmt:
+        %tmp.11 = self;
+        %tmp.12 = getv function %tmp.11 :doright;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        bf %tmp.13 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_12_21_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_12_21_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_27_21_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 19 16 ]
+        %tmp.14 = self;
+        %tmp.15 = getv function %tmp.14 :savegame;
+        invoke %tmp.14 %tmp.15();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 20 16 ]
+        %tmp.16 = getm $.Toybox.WatchUi;
+        %tmp.17 = getv function %tmp.16 :requestUpdate;
+        invoke %tmp.16 %tmp.17();
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_27_21_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_12_21_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_18_12_21_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 22 12 ]
+        %tmp.18 = true;
+        ret %tmp.18;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_34_23_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_8_23_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_17_8_23_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 24 8 ]
+        %tmp.19 = false;
+        ret %tmp.19;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_15_22_25_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 27; ]
+    function onSwipe(swipeEvent) {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_27_33_48_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 28 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_27_33_48_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_27_33_48_4_stop" ]
+        %dir.1 = local;
+        %tmp.1 = lgetv %swipeEvent;
+        %tmp.2 = getv function %tmp.1 :getDirection;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %dir.1 %tmp.3;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 29 8 ]
+        %tmp.4 = self;
+        %tmp.5 = getv function %tmp.4 :loadgame;
+        invoke %tmp.4 %tmp.5();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 30 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_27_33_48_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_27_33_48_4_stop" ]
+        %test.2 = local;
+        %tmp.6 = false;
+        lputv %test.2 %tmp.6;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 31 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_8_41_8_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_12_31_28_begin:
+        %tmp.8 = getv ? :state;
+        %tmp.9 = 1;
+        %tmp.10 = eq %tmp.8 %tmp.9;
+        bf %tmp.10 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_8_41_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_27_31_28_true:
+        %tmp.12 = getv ? :undo;
+        %tmp.13 = not %tmp.12;
+        push %tmp.13;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_27_31_28_end:
+        %tmp.14 = phi [%tmp.10 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_12_31_28_begin] [%tmp.13 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_27_31_28_true] [%tmp.14 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_27_31_28_end];
+        bf %tmp.14 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_8_41_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_8_41_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_34_41_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 32 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_12_40_12_if_stmt:
+        %tmp.16 = lgetv %dir.1;
+        %tmp.17 = getm $.Toybox.WatchUi;
+        %tmp.18 = getv %tmp.17 :SWIPE_UP;
+        %tmp.19 = eq %tmp.16 %tmp.18;
+        bf %tmp.19 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_12_40_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_12_40_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_41_34_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 33 16 ]
+        %tmp.20 = self;
+        %tmp.21 = getv function %tmp.20 :doup;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        lputv %test.2 %tmp.22;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_41_34_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_12_40_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_12_40_12_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 34 19 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_19_40_12_if_stmt:
+        %tmp.24 = lgetv %dir.1;
+        %tmp.25 = getm $.Toybox.WatchUi;
+        %tmp.26 = getv %tmp.25 :SWIPE_DOWN;
+        %tmp.27 = eq %tmp.24 %tmp.26;
+        bf %tmp.27 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_19_40_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_19_40_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_50_36_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 35 16 ]
+        %tmp.28 = self;
+        %tmp.29 = getv function %tmp.28 :dodown;
+        %tmp.30 = invoke %tmp.28 %tmp.29();
+        lputv %test.2 %tmp.30;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_50_36_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_19_40_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_19_40_12_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 36 19 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_19_40_12_if_stmt:
+        %tmp.32 = lgetv %dir.1;
+        %tmp.33 = getm $.Toybox.WatchUi;
+        %tmp.34 = getv %tmp.33 :SWIPE_LEFT;
+        %tmp.35 = eq %tmp.32 %tmp.34;
+        bf %tmp.35 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_19_40_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_19_40_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_50_38_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 37 16 ]
+        %tmp.36 = self;
+        %tmp.37 = getv function %tmp.36 :doleft;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        lputv %test.2 %tmp.38;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_50_38_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_19_40_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_19_40_12_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 38 19 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_19_40_12_if_stmt:
+        %tmp.40 = lgetv %dir.1;
+        %tmp.41 = getm $.Toybox.WatchUi;
+        %tmp.42 = getv %tmp.41 :SWIPE_RIGHT;
+        %tmp.43 = eq %tmp.40 %tmp.42;
+        bf %tmp.43 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_19_40_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_19_40_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_51_40_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 39 16 ]
+        %tmp.44 = self;
+        %tmp.45 = getv function %tmp.44 :doright;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        lputv %test.2 %tmp.46;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_51_40_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_19_40_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_38_19_40_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_36_19_40_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_34_19_40_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_32_12_40_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_34_41_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_8_41_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_31_8_41_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 42 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_8_46_8_if_stmt:
+        %tmp.48 = lgetv %test.2;
+        bf %tmp.48 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_8_46_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_8_46_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_18_46_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 43 12 ]
+        %tmp.49 = self;
+        %tmp.50 = getv function %tmp.49 :savegame;
+        invoke %tmp.49 %tmp.50();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 44 12 ]
+        %tmp.51 = getm $.Toybox.WatchUi;
+        %tmp.52 = getv function %tmp.51 :requestUpdate;
+        invoke %tmp.51 %tmp.52();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 45 12 ]
+        %tmp.53 = true;
+        ret %tmp.53;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_18_46_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_8_46_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_42_8_46_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 47 8 ]
+        %tmp.54 = false;
+        ret %tmp.54;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_27_33_48_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 50; ]
+    function onTap(clickEvent) {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_50_31_77_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 51 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_50_31_77_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_50_31_77_4_stop" ]
+        %pressxy.1 = local;
+        %tmp.1 = lgetv %clickEvent;
+        %tmp.2 = getv function %tmp.1 :getCoordinates;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %pressxy.1 %tmp.3;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 52 8 ]
+        %tmp.4 = self;
+        %tmp.5 = getv function %tmp.4 :loadgame;
+        invoke %tmp.4 %tmp.5();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 53 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_50_31_77_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_50_31_77_4_stop" ]
+        %test.2 = local;
+        %tmp.6 = false;
+        lputv %test.2 %tmp.6;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 54 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_8_70_8_if_stmt:
+        %tmp.7 = self;
+        %tmp.8 = getv function %tmp.7 :circContains;
+        %tmp.10 = lgetv %pressxy.1;
+        %tmp.11 = newa 2;
+        %tmp.13 = getv ? :sW;
+        %tmp.14 = 2;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        %tmp.16 = dup %tmp.11;
+        %tmp.17 = aputv %tmp.16 0 %tmp.15;
+        %tmp.19 = getv ? :sH;
+        %tmp.20 = 2;
+        %tmp.21 = div %tmp.19 %tmp.20;
+        %tmp.22 = dup %tmp.17;
+        %tmp.23 = aputv %tmp.22 1 %tmp.21;
+        %tmp.25 = getv ? :sW;
+        %tmp.26 = 4;
+        %tmp.27 = div %tmp.25 %tmp.26;
+        %tmp.28 = invoke %tmp.7 %tmp.8(%tmp.10, %tmp.23, %tmp.27);
+        bf %tmp.28 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_8_70_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_8_70_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_55_62_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 55 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_16_55_39_begin:
+        %tmp.30 = getv ? :state;
+        %tmp.31 = 0;
+        %tmp.32 = eq %tmp.30 %tmp.31;
+        bf %tmp.32 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_31_55_39_true:
+        %tmp.34 = getv ? :diff;
+        %tmp.35 = 4;
+        %tmp.36 = eq %tmp.34 %tmp.35;
+        push %tmp.36;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_31_55_39_end:
+        %tmp.37 = phi [%tmp.32 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_16_55_39_begin] [%tmp.36 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_31_55_39_true] [%tmp.37 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_31_55_39_end];
+        bf %tmp.37 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_42_58_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 56 16 ]
+        %tmp.38 = self;
+        %tmp.39 = getv function %tmp.38 :fetchpuzzles;
+        %tmp.40 = null;
+        invoke %tmp.38 %tmp.39(%tmp.40);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 57 16 ]
+        %tmp.41 = true;
+        lputv %test.2 %tmp.41;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_42_58_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 58 19 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_19_61_12_if_stmt:
+        %tmp.43 = getv ? :state;
+        %tmp.44 = 1;
+        %tmp.45 = eq %tmp.43 %tmp.44;
+        bf %tmp.45 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_19_61_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_19_61_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_35_61_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 59 16 ]
+        %tmp.47 = getv ? :undo;
+        %tmp.48 = not %tmp.47;
+        putv self :undo %tmp.48;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 60 16 ]
+        %tmp.49 = true;
+        lputv %test.2 %tmp.49;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_35_61_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_19_61_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_58_19_61_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_55_12_61_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_55_62_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_8_70_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_8_70_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 62 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_15_70_8_if_stmt:
+        %tmp.50 = self;
+        %tmp.51 = getv function %tmp.50 :circContains;
+        %tmp.53 = lgetv %pressxy.1;
+        %tmp.54 = newa 2;
+        %tmp.56 = getv ? :sW;
+        %tmp.57 = 2;
+        %tmp.58 = div %tmp.56 %tmp.57;
+        %tmp.59 = dup %tmp.54;
+        %tmp.60 = aputv %tmp.59 0 %tmp.58;
+        %tmp.62 = getv ? :sH;
+        %tmp.63 = 6;
+        %tmp.64 = div %tmp.62 %tmp.63;
+        %tmp.65 = dup %tmp.60;
+        %tmp.66 = aputv %tmp.65 1 %tmp.64;
+        %tmp.68 = getv ? :sW;
+        %tmp.69 = 4;
+        %tmp.70 = div %tmp.68 %tmp.69;
+        %tmp.71 = invoke %tmp.50 %tmp.51(%tmp.53, %tmp.66, %tmp.70);
+        bf %tmp.71 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_15_70_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_15_70_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_62_64_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 63 12 ]
+        %tmp.72 = self;
+        %tmp.73 = getv function %tmp.72 :doup;
+        %tmp.74 = invoke %tmp.72 %tmp.73();
+        lputv %test.2 %tmp.74;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_62_64_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_15_70_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_15_70_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 64 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_15_70_8_if_stmt:
+        %tmp.75 = self;
+        %tmp.76 = getv function %tmp.75 :circContains;
+        %tmp.78 = lgetv %pressxy.1;
+        %tmp.79 = newa 2;
+        %tmp.81 = getv ? :sW;
+        %tmp.82 = 2;
+        %tmp.83 = div %tmp.81 %tmp.82;
+        %tmp.84 = dup %tmp.79;
+        %tmp.85 = aputv %tmp.84 0 %tmp.83;
+        %tmp.87 = getv ? :sH;
+        %tmp.88 = 5;
+        %tmp.89 = mul %tmp.87 %tmp.88;
+        %tmp.90 = 6;
+        %tmp.91 = div %tmp.89 %tmp.90;
+        %tmp.92 = dup %tmp.85;
+        %tmp.93 = aputv %tmp.92 1 %tmp.91;
+        %tmp.95 = getv ? :sW;
+        %tmp.96 = 4;
+        %tmp.97 = div %tmp.95 %tmp.96;
+        %tmp.98 = invoke %tmp.75 %tmp.76(%tmp.78, %tmp.93, %tmp.97);
+        bf %tmp.98 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_15_70_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_15_70_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_64_66_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 65 12 ]
+        %tmp.99 = self;
+        %tmp.100 = getv function %tmp.99 :dodown;
+        %tmp.101 = invoke %tmp.99 %tmp.100();
+        lputv %test.2 %tmp.101;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_64_66_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_15_70_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_15_70_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 66 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_15_70_8_if_stmt:
+        %tmp.102 = self;
+        %tmp.103 = getv function %tmp.102 :circContains;
+        %tmp.105 = lgetv %pressxy.1;
+        %tmp.106 = newa 2;
+        %tmp.108 = getv ? :sW;
+        %tmp.109 = 6;
+        %tmp.110 = div %tmp.108 %tmp.109;
+        %tmp.111 = dup %tmp.106;
+        %tmp.112 = aputv %tmp.111 0 %tmp.110;
+        %tmp.114 = getv ? :sH;
+        %tmp.115 = 2;
+        %tmp.116 = div %tmp.114 %tmp.115;
+        %tmp.117 = dup %tmp.112;
+        %tmp.118 = aputv %tmp.117 1 %tmp.116;
+        %tmp.120 = getv ? :sW;
+        %tmp.121 = 4;
+        %tmp.122 = div %tmp.120 %tmp.121;
+        %tmp.123 = invoke %tmp.102 %tmp.103(%tmp.105, %tmp.118, %tmp.122);
+        bf %tmp.123 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_15_70_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_15_70_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_62_68_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 67 12 ]
+        %tmp.124 = self;
+        %tmp.125 = getv function %tmp.124 :doleft;
+        %tmp.126 = invoke %tmp.124 %tmp.125();
+        lputv %test.2 %tmp.126;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_62_68_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_15_70_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_15_70_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 68 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_15_70_8_if_stmt:
+        %tmp.127 = self;
+        %tmp.128 = getv function %tmp.127 :circContains;
+        %tmp.130 = lgetv %pressxy.1;
+        %tmp.131 = newa 2;
+        %tmp.133 = getv ? :sW;
+        %tmp.134 = 5;
+        %tmp.135 = mul %tmp.133 %tmp.134;
+        %tmp.136 = 6;
+        %tmp.137 = div %tmp.135 %tmp.136;
+        %tmp.138 = dup %tmp.131;
+        %tmp.139 = aputv %tmp.138 0 %tmp.137;
+        %tmp.141 = getv ? :sH;
+        %tmp.142 = 2;
+        %tmp.143 = div %tmp.141 %tmp.142;
+        %tmp.144 = dup %tmp.139;
+        %tmp.145 = aputv %tmp.144 1 %tmp.143;
+        %tmp.147 = getv ? :sW;
+        %tmp.148 = 4;
+        %tmp.149 = div %tmp.147 %tmp.148;
+        %tmp.150 = invoke %tmp.127 %tmp.128(%tmp.130, %tmp.145, %tmp.149);
+        bf %tmp.150 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_15_70_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_15_70_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_64_70_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 69 12 ]
+        %tmp.151 = self;
+        %tmp.152 = getv function %tmp.151 :doright;
+        %tmp.153 = invoke %tmp.151 %tmp.152();
+        lputv %test.2 %tmp.153;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_64_70_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_15_70_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_68_15_70_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_66_15_70_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_64_15_70_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_62_15_70_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_54_8_70_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 71 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_8_75_8_if_stmt:
+        %tmp.155 = lgetv %test.2;
+        bf %tmp.155 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_8_75_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_8_75_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_18_75_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 72 12 ]
+        %tmp.156 = getm $.Toybox.WatchUi;
+        %tmp.157 = getv function %tmp.156 :requestUpdate;
+        invoke %tmp.156 %tmp.157();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 73 12 ]
+        %tmp.158 = self;
+        %tmp.159 = getv function %tmp.158 :savegame;
+        invoke %tmp.158 %tmp.159();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 74 12 ]
+        %tmp.160 = true;
+        ret %tmp.160;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_18_75_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_8_75_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_71_8_75_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 76 8 ]
+        %tmp.161 = false;
+        ret %tmp.161;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_50_31_77_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 79; ]
+    function doup() {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_79_20_91_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 80 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_8_89_8_if_stmt:
+        %tmp.2 = getv ? :state;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_8_89_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_8_89_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_24_85_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 81 12 ]
+        %tmp.6 = getv ? :diff;
+        %tmp.7 = 1;
+        %tmp.8 = add %tmp.6 %tmp.7;
+        %tmp.10 = getv ? :allpuzzles;
+        %tmp.11 = getv function %tmp.10 :size;
+        %tmp.12 = invoke %tmp.10 %tmp.11();
+        %tmp.13 = mod %tmp.8 %tmp.12;
+        putv self :diff %tmp.13;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 82 12 ]
+        %tmp.14 = 0;
+        putv self :thispuzz %tmp.14;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 83 12 ]
+        %tmp.15 = self;
+        %tmp.16 = getv function %tmp.15 :newgame;
+        invoke %tmp.15 %tmp.16();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 84 12 ]
+        %tmp.17 = true;
+        ret %tmp.17;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_24_85_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_8_89_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_8_89_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 85 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_15_89_8_if_stmt:
+        %tmp.19 = getv ? :state;
+        %tmp.20 = 1;
+        %tmp.21 = eq %tmp.19 %tmp.20;
+        bf %tmp.21 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_15_89_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_15_89_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_31_89_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 86 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_12_88_12_if_stmt:
+        %tmp.23 = getv ? :undo;
+        %tmp.24 = not %tmp.23;
+        bf %tmp.24 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_12_88_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_12_88_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_23_88_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 87 16 ]
+        %tmp.25 = self;
+        %tmp.26 = getv function %tmp.25 :moveit;
+        %tmp.27 = newa 2;
+        %tmp.28 = -1;
+        %tmp.29 = dup %tmp.27;
+        %tmp.30 = aputv %tmp.29 0 %tmp.28;
+        %tmp.31 = 0;
+        %tmp.32 = dup %tmp.30;
+        %tmp.33 = aputv %tmp.32 1 %tmp.31;
+        %tmp.34 = invoke %tmp.25 %tmp.26(%tmp.33);
+        ret %tmp.34;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_23_88_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_12_88_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_86_12_88_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_31_89_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_15_89_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_85_15_89_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_80_8_89_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 90 8 ]
+        %tmp.35 = false;
+        ret %tmp.35;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_79_20_91_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 92; ]
+    function dodown() {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_92_22_106_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 93 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_8_104_8_if_stmt:
+        %tmp.2 = getv ? :state;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_8_104_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_8_104_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_24_96_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 94 12 ]
+        %tmp.5 = 1;
+        putv self :state %tmp.5;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 95 12 ]
+        %tmp.6 = true;
+        ret %tmp.6;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_24_96_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_8_104_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_8_104_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 96 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_15_104_8_if_stmt:
+        %tmp.8 = getv ? :state;
+        %tmp.9 = 1;
+        %tmp.10 = eq %tmp.8 %tmp.9;
+        bf %tmp.10 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_15_104_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_15_104_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_31_104_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 97 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_12_103_12_if_stmt:
+        %tmp.12 = getv ? :undo;
+        bf %tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_12_103_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_12_103_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_22_101_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 98 16 ]
+        %tmp.13 = 0;
+        putv self :state %tmp.13;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 99 16 ]
+        %tmp.14 = self;
+        %tmp.15 = getv function %tmp.14 :newgame;
+        invoke %tmp.14 %tmp.15();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 100 16 ]
+        %tmp.16 = true;
+        ret %tmp.16;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_22_101_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_12_103_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_12_103_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_101_19_103_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 102 16 ]
+        %tmp.17 = self;
+        %tmp.18 = getv function %tmp.17 :moveit;
+        %tmp.19 = newa 2;
+        %tmp.20 = 1;
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 0 %tmp.20;
+        %tmp.23 = 0;
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 1 %tmp.23;
+        %tmp.26 = invoke %tmp.17 %tmp.18(%tmp.25);
+        ret %tmp.26;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_101_19_103_12_stop:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_97_12_103_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_31_104_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_15_104_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_96_15_104_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_93_8_104_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 105 8 ]
+        %tmp.27 = false;
+        ret %tmp.27;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_92_22_106_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 107; ]
+    function doleft() {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_107_22_122_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 108 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_8_120_8_if_stmt:
+        %tmp.2 = getv ? :state;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_8_120_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_8_120_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_24_110_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 109 12 ]
+        %tmp.5 = self;
+        %tmp.6 = getv function %tmp.5 :prevpuzz;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        ret %tmp.7;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_24_110_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_8_120_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_8_120_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 110 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_15_120_8_if_stmt:
+        %tmp.9 = getv ? :state;
+        %tmp.10 = 1;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_15_120_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_15_120_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_31_116_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 111 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_12_115_12_if_stmt:
+        %tmp.13 = getv ? :undo;
+        bf %tmp.13 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_12_115_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_12_115_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_22_113_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 112 16 ]
+        %tmp.14 = self;
+        %tmp.15 = getv function %tmp.14 :undoit;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        ret %tmp.16;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_22_113_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_12_115_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_12_115_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_113_19_115_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 114 16 ]
+        %tmp.17 = self;
+        %tmp.18 = getv function %tmp.17 :moveit;
+        %tmp.19 = newa 2;
+        %tmp.20 = 0;
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 0 %tmp.20;
+        %tmp.23 = -1;
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 1 %tmp.23;
+        %tmp.26 = invoke %tmp.17 %tmp.18(%tmp.25);
+        ret %tmp.26;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_113_19_115_12_stop:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_111_12_115_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_31_116_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_15_120_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_15_120_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 116 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_15_120_8_if_stmt:
+        %tmp.28 = getv ? :state;
+        %tmp.29 = 2;
+        %tmp.30 = eq %tmp.28 %tmp.29;
+        bf %tmp.30 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_15_120_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_15_120_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_31_120_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 117 12 ]
+        %tmp.31 = 0;
+        putv self :state %tmp.31;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 118 12 ]
+        %tmp.32 = self;
+        %tmp.33 = getv function %tmp.32 :newgame;
+        invoke %tmp.32 %tmp.33();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 119 12 ]
+        %tmp.34 = true;
+        ret %tmp.34;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_31_120_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_15_120_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_116_15_120_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_110_15_120_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_108_8_120_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 121 8 ]
+        %tmp.35 = false;
+        ret %tmp.35;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_107_22_122_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 123; ]
+    function doright() {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_123_23_137_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 124 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_8_135_8_if_stmt:
+        %tmp.2 = getv ? :state;
+        %tmp.3 = 0;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_8_135_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_8_135_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_24_126_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 125 12 ]
+        %tmp.5 = self;
+        %tmp.6 = getv function %tmp.5 :nextpuzz;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        ret %tmp.7;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_24_126_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_8_135_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_8_135_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 126 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_15_135_8_if_stmt:
+        %tmp.9 = getv ? :state;
+        %tmp.10 = 1;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_15_135_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_15_135_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_31_132_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 127 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_12_131_12_if_stmt:
+        %tmp.13 = getv ? :undo;
+        bf %tmp.13 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_12_131_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_12_131_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_22_129_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 128 16 ]
+        %tmp.14 = self;
+        %tmp.15 = getv function %tmp.14 :redoit;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        ret %tmp.16;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_22_129_12_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_12_131_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_12_131_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_129_19_131_12_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 130 16 ]
+        %tmp.17 = self;
+        %tmp.18 = getv function %tmp.17 :moveit;
+        %tmp.19 = newa 2;
+        %tmp.20 = 0;
+        %tmp.21 = dup %tmp.19;
+        %tmp.22 = aputv %tmp.21 0 %tmp.20;
+        %tmp.23 = 1;
+        %tmp.24 = dup %tmp.22;
+        %tmp.25 = aputv %tmp.24 1 %tmp.23;
+        %tmp.26 = invoke %tmp.17 %tmp.18(%tmp.25);
+        ret %tmp.26;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_129_19_131_12_stop:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_127_12_131_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_31_132_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_15_135_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_15_135_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 132 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_15_135_8_if_stmt:
+        %tmp.28 = getv ? :state;
+        %tmp.29 = 2;
+        %tmp.30 = eq %tmp.28 %tmp.29;
+        bf %tmp.30 @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_15_135_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_15_135_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_31_135_8_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 133 12 ]
+        %tmp.31 = 1;
+        putv self :state %tmp.31;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 134 12 ]
+        %tmp.32 = self;
+        %tmp.33 = getv function %tmp.32 :nextpuzz;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        ret %tmp.34;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_31_135_8_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_15_135_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_132_15_135_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_126_15_135_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_124_8_135_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 136 8 ]
+        %tmp.35 = false;
+        ret %tmp.35;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_123_23_137_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 140; ]
+    public
+    function circContains(point, circle, rad) {
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 141 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_stop" ]
+        %x.1 = local;
+        %tmp.2 = lgetv %point;
+        %tmp.3 = 0;
+        %tmp.4 = agetv %tmp.2 %tmp.3;
+        lputv %x.1 %tmp.4;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 142 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_stop" ]
+        %y.2 = local;
+        %tmp.6 = lgetv %point;
+        %tmp.7 = 1;
+        %tmp.8 = agetv %tmp.6 %tmp.7;
+        lputv %y.2 %tmp.8;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 143 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_stop" ]
+        %cx.3 = local;
+        %tmp.10 = lgetv %circle;
+        %tmp.11 = 0;
+        %tmp.12 = agetv %tmp.10 %tmp.11;
+        lputv %cx.3 %tmp.12;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 144 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_start" "C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_stop" ]
+        %cy.4 = local;
+        %tmp.14 = lgetv %circle;
+        %tmp.15 = 1;
+        %tmp.16 = agetv %tmp.14 %tmp.15;
+        lputv %cy.4 %tmp.16;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc" 145 8 ]
+        %tmp.18 = lgetv %x.1;
+        %tmp.20 = lgetv %cx.3;
+        %tmp.21 = sub %tmp.18 %tmp.20;
+        %tmp.23 = lgetv %x.1;
+        %tmp.25 = lgetv %cx.3;
+        %tmp.26 = sub %tmp.23 %tmp.25;
+        %tmp.27 = mul %tmp.21 %tmp.26;
+        %tmp.29 = lgetv %y.2;
+        %tmp.31 = lgetv %cy.4;
+        %tmp.32 = sub %tmp.29 %tmp.31;
+        %tmp.34 = lgetv %y.2;
+        %tmp.36 = lgetv %cy.4;
+        %tmp.37 = sub %tmp.34 %tmp.36;
+        %tmp.38 = mul %tmp.32 %tmp.37;
+        %tmp.39 = add %tmp.27 %tmp.38;
+        %tmp.41 = lgetv %rad;
+        %tmp.43 = lgetv %rad;
+        %tmp.44 = mul %tmp.41 %tmp.43;
+        %tmp.45 = lte %tmp.39 %tmp.44;
+        ret %tmp.45;
+C_Garmin_Projects_Sokoban_source_SokobanDelegate_mc_140_53_146_4_stop:
+    }
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanDelegate.mc"; @line = 1; ]
+<init> {
+}

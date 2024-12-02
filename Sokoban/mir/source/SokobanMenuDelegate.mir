@@ -1,0 +1,31 @@
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 2; ]
+import Toybox.System;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 5; ]
+class SokobanMenuDelegate extends WatchUi.MenuInputDelegate{
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 7; ]
+    function initialize() as Void {
+C_Garmin_Projects_Sokoban_source_SokobanMenuDelegate_mc_7_26_9_4_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc" 8 8 ]
+        %tmp.2 = getv ? :MenuInputDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_Garmin_Projects_Sokoban_source_SokobanMenuDelegate_mc_7_26_9_4_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 11; ]
+    function onMenuItem(item as Symbol) as Void {
+    }
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanMenuDelegate.mc"; @line = 1; ]
+<init> {
+}

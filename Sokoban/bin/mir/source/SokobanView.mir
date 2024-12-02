@@ -1,0 +1,3778 @@
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 1; ]
+import Toybox.Graphics;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 3; ]
+import Toybox.System;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 4; ]
+import Toybox.Application.Storage;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 5; ]
+import Toybox.Math;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 6; ]
+import Toybox.Lang;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 7; ]
+import Toybox.Communications;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 9; @position = 4; ]
+var dS;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 10; @position = 4; ]
+var sW;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 11; @position = 4; ]
+var sH;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 4; ]
+var game;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 9; ]
+var state;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 15; ]
+var solved;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 22; ]
+var gamehist;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 31; ]
+var lasthist;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 40; ]
+var diff;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 45; ]
+var thispuzz;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 54; ]
+var undo;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 59; ]
+var rows;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 64; ]
+var cols;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 13; @position = 69; ]
+var online;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 14; @position = 4; ]
+var puzzle;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 14; @position = 11; ]
+var maxdiff;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 14; @position = 19; ]
+var maxpuzz;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 16; @position = 4; ]
+var gridXY;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 16; @position = 11; ]
+var gridWH;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 16; @position = 18; ]
+var cell;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 16; @position = 23; ]
+var loc;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 18; @position = 4; ]
+var center;
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 20; ]
+class SokobanView extends WatchUi.View{
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 20; ]
+    <init> {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 20; ]
+    static
+    <init> {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 22; ]
+    function initialize() as Void {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_22_26_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 23 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_22_26_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 27; ]
+    function onLayout(dc as Dc) as Void {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_27_40_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 28 8 ]
+        %tmp.1 = newa 2;
+        %tmp.3 = getv ? :sW;
+        %tmp.4 = 15;
+        %tmp.5 = mul %tmp.3 %tmp.4;
+        %tmp.6 = 100;
+        %tmp.7 = div %tmp.5 %tmp.6;
+        %tmp.8 = dup %tmp.1;
+        %tmp.9 = aputv %tmp.8 0 %tmp.7;
+        %tmp.11 = getv ? :sH;
+        %tmp.12 = 15;
+        %tmp.13 = mul %tmp.11 %tmp.12;
+        %tmp.14 = 100;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        %tmp.16 = dup %tmp.9;
+        %tmp.17 = aputv %tmp.16 1 %tmp.15;
+        putv self :gridXY %tmp.17;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 29 8 ]
+        %tmp.18 = newa 2;
+        %tmp.20 = getv ? :sW;
+        %tmp.21 = 70;
+        %tmp.22 = mul %tmp.20 %tmp.21;
+        %tmp.23 = 100;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        %tmp.25 = dup %tmp.18;
+        %tmp.26 = aputv %tmp.25 0 %tmp.24;
+        %tmp.28 = getv ? :sH;
+        %tmp.29 = 70;
+        %tmp.30 = mul %tmp.28 %tmp.29;
+        %tmp.31 = 100;
+        %tmp.32 = div %tmp.30 %tmp.31;
+        %tmp.33 = dup %tmp.26;
+        %tmp.34 = aputv %tmp.33 1 %tmp.32;
+        putv self :gridWH %tmp.34;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 30 8 ]
+        %tmp.36 = getv ? :allpuzzles;
+        %tmp.37 = getv function %tmp.36 :size;
+        %tmp.38 = invoke %tmp.36 %tmp.37();
+        %tmp.39 = 1;
+        %tmp.40 = sub %tmp.38 %tmp.39;
+        putv self :maxdiff %tmp.40;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_27_40_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 36; ]
+    function onShow() as Void {
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 40; ]
+    function onUpdate(dc as Dc) as Void {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_40_40_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 41 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :loadgame;
+        invoke %tmp.1 %tmp.2();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 42 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_8_if_stmt:
+        %tmp.4 = getv ? :state;
+        %tmp.5 = 0;
+        %tmp.6 = eq %tmp.4 %tmp.5;
+        bf %tmp.6 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 43 12 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :setColor;
+        %tmp.9 = 0;
+        %tmp.10 = 0x000044;
+        invoke %tmp.7 %tmp.8(%tmp.9, %tmp.10);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_24_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 44 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_15_if_stmt:
+        %tmp.12 = getv ? :state;
+        %tmp.13 = 1;
+        %tmp.14 = eq %tmp.12 %tmp.13;
+        bf %tmp.14 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_15_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_15_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_31_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 45 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_12_if_stmt:
+        %tmp.16 = getv ? :undo;
+        bf %tmp.16 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_22_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 46 16 ]
+        %tmp.17 = lgetv %dc;
+        %tmp.18 = getv function %tmp.17 :setColor;
+        %tmp.19 = 0;
+        %tmp.20 = 0x440000;
+        invoke %tmp.17 %tmp.18(%tmp.19, %tmp.20);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_22_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_47_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 48 16 ]
+        %tmp.21 = lgetv %dc;
+        %tmp.22 = getv function %tmp.21 :setColor;
+        %tmp.23 = 0;
+        %tmp.24 = 0;
+        invoke %tmp.21 %tmp.22(%tmp.23, %tmp.24);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_47_19_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_45_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_31_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_15_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_15_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_50_15_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 51 12 ]
+        %tmp.25 = lgetv %dc;
+        %tmp.26 = getv function %tmp.25 :setColor;
+        %tmp.27 = 0;
+        %tmp.28 = 0x004400;
+        invoke %tmp.25 %tmp.26(%tmp.27, %tmp.28);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_50_15_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_44_15_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_42_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 53 8 ]
+        %tmp.29 = lgetv %dc;
+        %tmp.30 = getv function %tmp.29 :clear;
+        invoke %tmp.29 %tmp.30();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 55 8 ]
+        %tmp.32 = getv ? :gridWH;
+        %tmp.33 = 0;
+        %tmp.34 = agetv %tmp.32 %tmp.33;
+        %tmp.36 = getv ? :cols;
+        %tmp.37 = div %tmp.34 %tmp.36;
+        putv self :cell %tmp.37;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 56 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_8_if_stmt:
+        %tmp.39 = getv ? :cell;
+        %tmp.41 = getv ? :gridWH;
+        %tmp.42 = 1;
+        %tmp.43 = agetv %tmp.41 %tmp.42;
+        %tmp.45 = getv ? :rows;
+        %tmp.46 = div %tmp.43 %tmp.45;
+        %tmp.47 = gt %tmp.39 %tmp.46;
+        bf %tmp.47 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_35_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 57 12 ]
+        %tmp.49 = getv ? :gridWH;
+        %tmp.50 = 1;
+        %tmp.51 = agetv %tmp.49 %tmp.50;
+        %tmp.53 = getv ? :rows;
+        %tmp.54 = div %tmp.51 %tmp.53;
+        putv self :cell %tmp.54;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_35_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_56_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 59 8 ]
+        %tmp.55 = getv self :gridXY;
+        %tmp.57 = getv ? :sW;
+        %tmp.59 = getv ? :cell;
+        %tmp.61 = getv ? :cols;
+        %tmp.62 = mul %tmp.59 %tmp.61;
+        %tmp.63 = sub %tmp.57 %tmp.62;
+        %tmp.64 = 2;
+        %tmp.65 = div %tmp.63 %tmp.64;
+        %tmp.66 = 0;
+        aputv %tmp.55 %tmp.66 %tmp.65;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 60 8 ]
+        %tmp.67 = getv self :gridXY;
+        %tmp.69 = getv ? :sH;
+        %tmp.71 = getv ? :cell;
+        %tmp.73 = getv ? :rows;
+        %tmp.74 = mul %tmp.71 %tmp.73;
+        %tmp.75 = sub %tmp.69 %tmp.74;
+        %tmp.76 = 2;
+        %tmp.77 = div %tmp.75 %tmp.76;
+        %tmp.78 = 1;
+        aputv %tmp.67 %tmp.78 %tmp.77;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 62 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_8_if_stmt:
+        %tmp.80 = getv ? :puzzle;
+        %tmp.81 = getv function %tmp.80 :length;
+        %tmp.82 = invoke %tmp.80 %tmp.81();
+        %tmp.83 = 0;
+        %tmp.84 = eq %tmp.82 %tmp.83;
+        bf %tmp.84 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_34_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 63 12 ]
+        %tmp.85 = lgetv %dc;
+        %tmp.86 = getv function %tmp.85 :setColor;
+        %tmp.87 = getm $.Toybox.Graphics;
+        %tmp.88 = getv %tmp.87 :COLOR_WHITE;
+        %tmp.89 = -1;
+        invoke %tmp.85 %tmp.86(%tmp.88, %tmp.89);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 64 12 ]
+        %tmp.90 = lgetv %dc;
+        %tmp.91 = getv function %tmp.90 :drawText;
+        %tmp.93 = getv ? :sW;
+        %tmp.94 = 2;
+        %tmp.95 = div %tmp.93 %tmp.94;
+        %tmp.97 = getv ? :sH;
+        %tmp.98 = 2;
+        %tmp.99 = div %tmp.97 %tmp.98;
+        %tmp.100 = getm $.Toybox.Graphics;
+        %tmp.101 = getv %tmp.100 :FONT_SMALL;
+        %tmp.102 = "TAP HERE\nTO LOAD\nPUZZLES";
+        %tmp.104 = getv ? :center;
+        invoke %tmp.90 %tmp.91(%tmp.95, %tmp.99, %tmp.101, %tmp.102, %tmp.104);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_34_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_8_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_65_15_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 66 12 ]
+        for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_init:
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_end" ]
+        %r.1 = local;
+        %tmp.105 = 0;
+        lputv %r.1 %tmp.105;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_test:
+        %tmp.107 = lgetv %r.1;
+        %tmp.109 = getv ? :rows;
+        %tmp.110 = lt %tmp.107 %tmp.109;
+        bf %tmp.110 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 67 16 ]
+        for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_init:
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_end" ]
+        %c.2 = local;
+        %tmp.111 = 0;
+        lputv %c.2 %tmp.111;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_test:
+        %tmp.113 = lgetv %c.2;
+        %tmp.115 = getv ? :cols;
+        %tmp.116 = lt %tmp.113 %tmp.115;
+        bf %tmp.116 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 68 20 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_stop" ]
+        %x.3 = local;
+        %tmp.118 = getv ? :gridXY;
+        %tmp.119 = 0;
+        %tmp.120 = agetv %tmp.118 %tmp.119;
+        %tmp.122 = getv ? :cell;
+        %tmp.124 = lgetv %c.2;
+        %tmp.125 = mul %tmp.122 %tmp.124;
+        %tmp.126 = add %tmp.120 %tmp.125;
+        lputv %x.3 %tmp.126;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 69 20 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_stop" ]
+        %y.4 = local;
+        %tmp.128 = getv ? :gridXY;
+        %tmp.129 = 1;
+        %tmp.130 = agetv %tmp.128 %tmp.129;
+        %tmp.132 = getv ? :cell;
+        %tmp.134 = lgetv %r.1;
+        %tmp.135 = mul %tmp.132 %tmp.134;
+        %tmp.136 = add %tmp.130 %tmp.135;
+        lputv %y.4 %tmp.136;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 70 20 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_stop" ]
+        %char.5 = local;
+        %tmp.137 = self;
+        %tmp.138 = getv function %tmp.137 :getchar;
+        %tmp.140 = lgetv %r.1;
+        %tmp.142 = lgetv %c.2;
+        %tmp.143 = invoke %tmp.137 %tmp.138(%tmp.140, %tmp.142);
+        lputv %char.5 %tmp.143;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 71 20 ]
+        %tmp.144 = self;
+        %tmp.145 = getv function %tmp.144 :drawit;
+        %tmp.147 = lgetv %dc;
+        %tmp.149 = lgetv %char.5;
+        %tmp.151 = lgetv %x.3;
+        %tmp.153 = lgetv %y.4;
+        %tmp.155 = getv ? :cell;
+        invoke %tmp.144 %tmp.145(%tmp.147, %tmp.149, %tmp.151, %tmp.153, %tmp.155);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_41_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 67 ]
+        %tmp.158 = lgetv %c.2;
+        %tmp.159 = add %tmp.158 1;
+        lputv %c.2 %tmp.159;
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_67_16_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_37_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 66 ]
+        %tmp.162 = lgetv %r.1;
+        %tmp.163 = add %tmp.162 1;
+        lputv %r.1 %tmp.163;
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_66_12_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_65_15_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_62_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 76 8 ]
+        %tmp.165 = getv ? :allpuzzles;
+        %tmp.167 = getv ? :diff;
+        %tmp.168 = agetv %tmp.165 %tmp.167;
+        %tmp.169 = getv function %tmp.168 :size;
+        %tmp.170 = invoke %tmp.168 %tmp.169();
+        %tmp.171 = 1;
+        %tmp.172 = sub %tmp.170 %tmp.171;
+        putv self :maxpuzz %tmp.172;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 77 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_40_40_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_40_40_stop" ]
+        %d.6 = local;
+        %tmp.173 = "";
+        lputv %d.6 %tmp.173;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 78 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_8_if_stmt:
+        %tmp.175 = getv ? :diff;
+        %tmp.176 = 0;
+        %tmp.177 = eq %tmp.175 %tmp.176;
+        bf %tmp.177 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_23_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 78 25 ]
+        %tmp.178 = "EASY";
+        lputv %d.6 %tmp.178;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_23_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 79 13 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_13_if_stmt:
+        %tmp.180 = getv ? :diff;
+        %tmp.181 = 1;
+        %tmp.182 = eq %tmp.180 %tmp.181;
+        bf %tmp.182 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_13_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_13_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_28_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 79 30 ]
+        %tmp.183 = "MEDIUM";
+        lputv %d.6 %tmp.183;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_28_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_13_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_13_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 80 13 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_13_if_stmt:
+        %tmp.185 = getv ? :diff;
+        %tmp.186 = 2;
+        %tmp.187 = eq %tmp.185 %tmp.186;
+        bf %tmp.187 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_13_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_13_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_28_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 80 30 ]
+        %tmp.188 = "HARD";
+        lputv %d.6 %tmp.188;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_28_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_13_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_13_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_81_13_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 81 15 ]
+        %tmp.189 = "ONLINE";
+        lputv %d.6 %tmp.189;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_81_13_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_80_13_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_79_13_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_78_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 82 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_40_40_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_40_40_stop" ]
+        %l.7 = local;
+        %tmp.190 = null;
+        lputv %l.7 %tmp.190;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 83 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_8_if_stmt:
+        %tmp.192 = getv ? :diff;
+        %tmp.193 = 3;
+        %tmp.194 = lt %tmp.192 %tmp.193;
+        bf %tmp.194 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_22_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 84 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_12_if_stmt:
+        %tmp.196 = getv ? :solved;
+        %tmp.198 = getv ? :diff;
+        %tmp.199 = agetv %tmp.196 %tmp.198;
+        %tmp.201 = getv ? :thispuzz;
+        %tmp.202 = agetv %tmp.199 %tmp.201;
+        %tmp.203 = null;
+        %tmp.204 = ne %tmp.202 %tmp.203;
+        bf %tmp.204 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_48_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 85 16 ]
+        %tmp.206 = getv ? :solved;
+        %tmp.208 = getv ? :diff;
+        %tmp.209 = agetv %tmp.206 %tmp.208;
+        %tmp.211 = getv ? :thispuzz;
+        %tmp.212 = agetv %tmp.209 %tmp.211;
+        lputv %l.7 %tmp.212;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_48_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_84_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_22_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_83_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 88 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_8_if_stmt:
+        %tmp.214 = getv ? :state;
+        %tmp.215 = 0;
+        %tmp.216 = eq %tmp.214 %tmp.215;
+        bf %tmp.216 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 90 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_12_if_stmt:
+        %tmp.218 = lgetv %l.7;
+        %tmp.219 = null;
+        %tmp.220 = eq %tmp.218 %tmp.219;
+        bf %tmp.220 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_27_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 91 16 ]
+        %tmp.221 = lgetv %dc;
+        %tmp.222 = getv function %tmp.221 :setColor;
+        %tmp.223 = getm $.Toybox.Graphics;
+        %tmp.224 = getv %tmp.223 :COLOR_WHITE;
+        %tmp.225 = -1;
+        invoke %tmp.221 %tmp.222(%tmp.224, %tmp.225);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_27_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_92_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 93 16 ]
+        %tmp.226 = lgetv %dc;
+        %tmp.227 = getv function %tmp.226 :setColor;
+        %tmp.228 = getm $.Toybox.Graphics;
+        %tmp.229 = getv %tmp.228 :COLOR_GREEN;
+        %tmp.230 = -1;
+        invoke %tmp.226 %tmp.227(%tmp.229, %tmp.230);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_92_19_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_90_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 95 12 ]
+        %tmp.231 = lgetv %dc;
+        %tmp.232 = getv function %tmp.231 :drawText;
+        %tmp.234 = getv ? :sW;
+        %tmp.235 = 2;
+        %tmp.236 = div %tmp.234 %tmp.235;
+        %tmp.238 = getv ? :sH;
+        %tmp.239 = 10;
+        %tmp.240 = mul %tmp.238 %tmp.239;
+        %tmp.241 = 100;
+        %tmp.242 = div %tmp.240 %tmp.241;
+        %tmp.243 = getm $.Toybox.Graphics;
+        %tmp.244 = getv %tmp.243 :FONT_XTINY;
+        %tmp.246 = lgetv %d.6;
+        %tmp.247 = " ";
+        %tmp.248 = add %tmp.246 %tmp.247;
+        %tmp.250 = getv ? :thispuzz;
+        %tmp.251 = 1;
+        %tmp.252 = add %tmp.250 %tmp.251;
+        %tmp.253 = add %tmp.248 %tmp.252;
+        %tmp.254 = "/";
+        %tmp.255 = add %tmp.253 %tmp.254;
+        %tmp.257 = getv ? :allpuzzles;
+        %tmp.259 = getv ? :diff;
+        %tmp.260 = agetv %tmp.257 %tmp.259;
+        %tmp.261 = getv function %tmp.260 :size;
+        %tmp.262 = invoke %tmp.260 %tmp.261();
+        %tmp.263 = add %tmp.255 %tmp.262;
+        %tmp.265 = getv ? :center;
+        invoke %tmp.231 %tmp.232(%tmp.236, %tmp.242, %tmp.244, %tmp.263, %tmp.265);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 96 12 ]
+        %tmp.266 = lgetv %dc;
+        %tmp.267 = getv function %tmp.266 :setColor;
+        %tmp.268 = getm $.Toybox.Graphics;
+        %tmp.269 = getv %tmp.268 :COLOR_WHITE;
+        %tmp.270 = -1;
+        invoke %tmp.266 %tmp.267(%tmp.269, %tmp.270);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 97 12 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_24_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_24_stop" ]
+        %p.8 = local;
+        %tmp.271 = "";
+        lputv %p.8 %tmp.271;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 98 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_12_if_stmt:
+        %tmp.273 = lgetv %l.7;
+        %tmp.274 = null;
+        %tmp.275 = eq %tmp.273 %tmp.274;
+        bf %tmp.275 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_27_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 99 16 ]
+        %tmp.276 = "PLAY";
+        lputv %p.8 %tmp.276;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_27_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_100_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 101 16 ]
+        %tmp.277 = "REPLAY (";
+        %tmp.279 = lgetv %l.7;
+        %tmp.280 = as %tmp.279 { (!Null) };
+        %tmp.281 = add %tmp.277 %tmp.280;
+        %tmp.282 = ")";
+        %tmp.283 = add %tmp.281 %tmp.282;
+        lputv %p.8 %tmp.283;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_100_19_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_98_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 103 12 ]
+        %tmp.284 = lgetv %dc;
+        %tmp.285 = getv function %tmp.284 :drawText;
+        %tmp.287 = getv ? :sW;
+        %tmp.288 = 2;
+        %tmp.289 = div %tmp.287 %tmp.288;
+        %tmp.291 = getv ? :sH;
+        %tmp.292 = 90;
+        %tmp.293 = mul %tmp.291 %tmp.292;
+        %tmp.294 = 100;
+        %tmp.295 = div %tmp.293 %tmp.294;
+        %tmp.296 = getm $.Toybox.Graphics;
+        %tmp.297 = getv %tmp.296 :FONT_XTINY;
+        %tmp.299 = lgetv %p.8;
+        %tmp.301 = getv ? :center;
+        invoke %tmp.284 %tmp.285(%tmp.289, %tmp.295, %tmp.297, %tmp.299, %tmp.301);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 104 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_12_if_stmt:
+        %tmp.303 = getv ? :thispuzz;
+        %tmp.304 = 0;
+        %tmp.305 = gt %tmp.303 %tmp.304;
+        bf %tmp.305 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_30_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 104 32 ]
+        %tmp.306 = lgetv %dc;
+        %tmp.307 = getv function %tmp.306 :setColor;
+        %tmp.308 = getm $.Toybox.Graphics;
+        %tmp.309 = getv %tmp.308 :COLOR_WHITE;
+        %tmp.310 = -1;
+        invoke %tmp.306 %tmp.307(%tmp.309, %tmp.310);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_30_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_105_17_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 105 19 ]
+        %tmp.311 = lgetv %dc;
+        %tmp.312 = getv function %tmp.311 :setColor;
+        %tmp.313 = getm $.Toybox.Graphics;
+        %tmp.314 = getv %tmp.313 :COLOR_DK_GRAY;
+        %tmp.315 = -1;
+        invoke %tmp.311 %tmp.312(%tmp.314, %tmp.315);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_105_17_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_104_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 106 12 ]
+        %tmp.316 = lgetv %dc;
+        %tmp.317 = getv function %tmp.316 :drawText;
+        %tmp.319 = getv ? :sW;
+        %tmp.320 = 10;
+        %tmp.321 = mul %tmp.319 %tmp.320;
+        %tmp.322 = 100;
+        %tmp.323 = div %tmp.321 %tmp.322;
+        %tmp.325 = getv ? :sH;
+        %tmp.326 = 2;
+        %tmp.327 = div %tmp.325 %tmp.326;
+        %tmp.328 = getm $.Toybox.Graphics;
+        %tmp.329 = getv %tmp.328 :FONT_XTINY;
+        %tmp.330 = "P\nR\nE\nV";
+        %tmp.332 = getv ? :center;
+        invoke %tmp.316 %tmp.317(%tmp.323, %tmp.327, %tmp.329, %tmp.330, %tmp.332);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 107 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_12_if_stmt:
+        %tmp.334 = getv ? :thispuzz;
+        %tmp.336 = getv ? :maxpuzz;
+        %tmp.337 = lt %tmp.334 %tmp.336;
+        bf %tmp.337 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_36_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 107 38 ]
+        %tmp.338 = lgetv %dc;
+        %tmp.339 = getv function %tmp.338 :setColor;
+        %tmp.340 = getm $.Toybox.Graphics;
+        %tmp.341 = getv %tmp.340 :COLOR_WHITE;
+        %tmp.342 = -1;
+        invoke %tmp.338 %tmp.339(%tmp.341, %tmp.342);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_36_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_108_17_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 108 19 ]
+        %tmp.343 = lgetv %dc;
+        %tmp.344 = getv function %tmp.343 :setColor;
+        %tmp.345 = getm $.Toybox.Graphics;
+        %tmp.346 = getv %tmp.345 :COLOR_DK_GRAY;
+        %tmp.347 = -1;
+        invoke %tmp.343 %tmp.344(%tmp.346, %tmp.347);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_108_17_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_107_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 109 12 ]
+        %tmp.348 = lgetv %dc;
+        %tmp.349 = getv function %tmp.348 :drawText;
+        %tmp.351 = getv ? :sW;
+        %tmp.352 = 90;
+        %tmp.353 = mul %tmp.351 %tmp.352;
+        %tmp.354 = 100;
+        %tmp.355 = div %tmp.353 %tmp.354;
+        %tmp.357 = getv ? :sH;
+        %tmp.358 = 2;
+        %tmp.359 = div %tmp.357 %tmp.358;
+        %tmp.360 = getm $.Toybox.Graphics;
+        %tmp.361 = getv %tmp.360 :FONT_XTINY;
+        %tmp.362 = "N\nE\nX\nT";
+        %tmp.364 = getv ? :center;
+        invoke %tmp.348 %tmp.349(%tmp.355, %tmp.359, %tmp.361, %tmp.362, %tmp.364);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_24_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 110 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_15_if_stmt:
+        %tmp.366 = getv ? :state;
+        %tmp.367 = 2;
+        %tmp.368 = eq %tmp.366 %tmp.367;
+        bf %tmp.368 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_15_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_15_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_31_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 112 12 ]
+        %tmp.369 = lgetv %dc;
+        %tmp.370 = getv function %tmp.369 :setColor;
+        %tmp.371 = getm $.Toybox.Graphics;
+        %tmp.372 = getv %tmp.371 :COLOR_LT_GRAY;
+        %tmp.373 = -1;
+        invoke %tmp.369 %tmp.370(%tmp.372, %tmp.373);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 113 12 ]
+        %tmp.374 = lgetv %dc;
+        %tmp.375 = getv function %tmp.374 :drawText;
+        %tmp.377 = getv ? :sW;
+        %tmp.378 = 2;
+        %tmp.379 = div %tmp.377 %tmp.378;
+        %tmp.381 = getv ? :sH;
+        %tmp.382 = 10;
+        %tmp.383 = mul %tmp.381 %tmp.382;
+        %tmp.384 = 100;
+        %tmp.385 = div %tmp.383 %tmp.384;
+        %tmp.386 = getm $.Toybox.Graphics;
+        %tmp.387 = getv %tmp.386 :FONT_XTINY;
+        %tmp.389 = lgetv %d.6;
+        %tmp.390 = " ";
+        %tmp.391 = add %tmp.389 %tmp.390;
+        %tmp.393 = getv ? :thispuzz;
+        %tmp.394 = 1;
+        %tmp.395 = add %tmp.393 %tmp.394;
+        %tmp.396 = add %tmp.391 %tmp.395;
+        %tmp.397 = "/";
+        %tmp.398 = add %tmp.396 %tmp.397;
+        %tmp.400 = getv ? :allpuzzles;
+        %tmp.402 = getv ? :diff;
+        %tmp.403 = agetv %tmp.400 %tmp.402;
+        %tmp.404 = getv function %tmp.403 :size;
+        %tmp.405 = invoke %tmp.403 %tmp.404();
+        %tmp.406 = add %tmp.398 %tmp.405;
+        %tmp.408 = getv ? :center;
+        invoke %tmp.374 %tmp.375(%tmp.379, %tmp.385, %tmp.387, %tmp.406, %tmp.408);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 114 12 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_31_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_31_stop" ]
+        %m.9 = local;
+        %tmp.410 = getv ? :lasthist;
+        %tmp.411 = " MOVE";
+        %tmp.412 = add %tmp.410 %tmp.411;
+        lputv %m.9 %tmp.412;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 115 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_12_if_stmt:
+        %tmp.414 = getv ? :lasthist;
+        %tmp.415 = 1;
+        %tmp.416 = ne %tmp.414 %tmp.415;
+        bf %tmp.416 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_31_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 115 33 ]
+        %tmp.417 = lgetv %m.9;
+        %tmp.418 = "S";
+        %tmp.419 = add %tmp.417 %tmp.418;
+        lputv %m.9 %tmp.419;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_31_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_115_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 116 12 ]
+        %tmp.420 = lgetv %dc;
+        %tmp.421 = getv function %tmp.420 :setColor;
+        %tmp.422 = getm $.Toybox.Graphics;
+        %tmp.423 = getv %tmp.422 :COLOR_LT_GRAY;
+        %tmp.424 = -1;
+        invoke %tmp.420 %tmp.421(%tmp.423, %tmp.424);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 117 12 ]
+        %tmp.425 = lgetv %dc;
+        %tmp.426 = getv function %tmp.425 :drawText;
+        %tmp.428 = getv ? :sW;
+        %tmp.429 = 2;
+        %tmp.430 = div %tmp.428 %tmp.429;
+        %tmp.432 = getv ? :sH;
+        %tmp.433 = 90;
+        %tmp.434 = mul %tmp.432 %tmp.433;
+        %tmp.435 = 100;
+        %tmp.436 = div %tmp.434 %tmp.435;
+        %tmp.437 = getm $.Toybox.Graphics;
+        %tmp.438 = getv %tmp.437 :FONT_XTINY;
+        %tmp.440 = lgetv %m.9;
+        %tmp.442 = getv ? :center;
+        invoke %tmp.425 %tmp.426(%tmp.430, %tmp.436, %tmp.438, %tmp.440, %tmp.442);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 118 12 ]
+        %tmp.443 = lgetv %dc;
+        %tmp.444 = getv function %tmp.443 :setColor;
+        %tmp.445 = getm $.Toybox.Graphics;
+        %tmp.446 = getv %tmp.445 :COLOR_WHITE;
+        %tmp.447 = -1;
+        invoke %tmp.443 %tmp.444(%tmp.446, %tmp.447);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 119 12 ]
+        %tmp.448 = lgetv %dc;
+        %tmp.449 = getv function %tmp.448 :drawText;
+        %tmp.451 = getv ? :sW;
+        %tmp.452 = 10;
+        %tmp.453 = mul %tmp.451 %tmp.452;
+        %tmp.454 = 100;
+        %tmp.455 = div %tmp.453 %tmp.454;
+        %tmp.457 = getv ? :sH;
+        %tmp.458 = 2;
+        %tmp.459 = div %tmp.457 %tmp.458;
+        %tmp.460 = getm $.Toybox.Graphics;
+        %tmp.461 = getv %tmp.460 :FONT_XTINY;
+        %tmp.462 = "M\nE\nN\nU";
+        %tmp.464 = getv ? :center;
+        invoke %tmp.448 %tmp.449(%tmp.455, %tmp.459, %tmp.461, %tmp.462, %tmp.464);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 120 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_12_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_16_begin:
+        %tmp.466 = getv ? :diff;
+        %tmp.468 = getv ? :maxdiff;
+        %tmp.469 = lt %tmp.466 %tmp.468;
+        %tmp.470 = dup %tmp.469;
+        bt %tmp.470 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_34_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_34_false:
+        %tmp.472 = getv ? :thispuzz;
+        %tmp.474 = getv ? :maxpuzz;
+        %tmp.475 = lt %tmp.472 %tmp.474;
+        %tmp.476 = or %tmp.469 %tmp.475;
+        push %tmp.476;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_34_end:
+        %tmp.477 = phi [%tmp.470 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_16_begin] [%tmp.476 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_34_false] [%tmp.477 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_34_end];
+        bf %tmp.477 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_54_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 120 56 ]
+        %tmp.478 = lgetv %dc;
+        %tmp.479 = getv function %tmp.478 :setColor;
+        %tmp.480 = getm $.Toybox.Graphics;
+        %tmp.481 = getv %tmp.480 :COLOR_WHITE;
+        %tmp.482 = -1;
+        invoke %tmp.478 %tmp.479(%tmp.481, %tmp.482);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_54_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_121_17_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 121 19 ]
+        %tmp.483 = lgetv %dc;
+        %tmp.484 = getv function %tmp.483 :setColor;
+        %tmp.485 = getm $.Toybox.Graphics;
+        %tmp.486 = getv %tmp.485 :COLOR_DK_GRAY;
+        %tmp.487 = -1;
+        invoke %tmp.483 %tmp.484(%tmp.486, %tmp.487);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_121_17_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_120_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 122 12 ]
+        %tmp.488 = lgetv %dc;
+        %tmp.489 = getv function %tmp.488 :drawText;
+        %tmp.491 = getv ? :sW;
+        %tmp.492 = 90;
+        %tmp.493 = mul %tmp.491 %tmp.492;
+        %tmp.494 = 100;
+        %tmp.495 = div %tmp.493 %tmp.494;
+        %tmp.497 = getv ? :sH;
+        %tmp.498 = 2;
+        %tmp.499 = div %tmp.497 %tmp.498;
+        %tmp.500 = getm $.Toybox.Graphics;
+        %tmp.501 = getv %tmp.500 :FONT_XTINY;
+        %tmp.502 = "N\nE\nX\nT";
+        %tmp.504 = getv ? :center;
+        invoke %tmp.488 %tmp.489(%tmp.495, %tmp.499, %tmp.501, %tmp.502, %tmp.504);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_31_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_15_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_15_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 123 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_15_if_stmt:
+        %tmp.506 = getv ? :undo;
+        bf %tmp.506 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_15_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_15_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_25_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 125 12 ]
+        %tmp.507 = lgetv %dc;
+        %tmp.508 = getv function %tmp.507 :setColor;
+        %tmp.509 = getm $.Toybox.Graphics;
+        %tmp.510 = getv %tmp.509 :COLOR_LT_GRAY;
+        %tmp.511 = -1;
+        invoke %tmp.507 %tmp.508(%tmp.510, %tmp.511);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 126 12 ]
+        %tmp.512 = lgetv %dc;
+        %tmp.513 = getv function %tmp.512 :drawText;
+        %tmp.515 = getv ? :sW;
+        %tmp.516 = 2;
+        %tmp.517 = div %tmp.515 %tmp.516;
+        %tmp.519 = getv ? :sH;
+        %tmp.520 = 10;
+        %tmp.521 = mul %tmp.519 %tmp.520;
+        %tmp.522 = 100;
+        %tmp.523 = div %tmp.521 %tmp.522;
+        %tmp.524 = getm $.Toybox.Graphics;
+        %tmp.525 = getv %tmp.524 :FONT_XTINY;
+        %tmp.526 = "MOVE ";
+        %tmp.528 = getv ? :lasthist;
+        %tmp.529 = add %tmp.526 %tmp.528;
+        %tmp.530 = "/";
+        %tmp.531 = add %tmp.529 %tmp.530;
+        %tmp.533 = getv ? :gamehist;
+        %tmp.534 = getv function %tmp.533 :size;
+        %tmp.535 = invoke %tmp.533 %tmp.534();
+        %tmp.536 = 1;
+        %tmp.537 = sub %tmp.535 %tmp.536;
+        %tmp.538 = add %tmp.531 %tmp.537;
+        %tmp.540 = getv ? :center;
+        invoke %tmp.512 %tmp.513(%tmp.517, %tmp.523, %tmp.525, %tmp.538, %tmp.540);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 127 12 ]
+        %tmp.541 = lgetv %dc;
+        %tmp.542 = getv function %tmp.541 :setColor;
+        %tmp.543 = getm $.Toybox.Graphics;
+        %tmp.544 = getv %tmp.543 :COLOR_WHITE;
+        %tmp.545 = -1;
+        invoke %tmp.541 %tmp.542(%tmp.544, %tmp.545);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 128 12 ]
+        %tmp.546 = lgetv %dc;
+        %tmp.547 = getv function %tmp.546 :drawText;
+        %tmp.549 = getv ? :sW;
+        %tmp.550 = 2;
+        %tmp.551 = div %tmp.549 %tmp.550;
+        %tmp.553 = getv ? :sH;
+        %tmp.554 = 90;
+        %tmp.555 = mul %tmp.553 %tmp.554;
+        %tmp.556 = 100;
+        %tmp.557 = div %tmp.555 %tmp.556;
+        %tmp.558 = getm $.Toybox.Graphics;
+        %tmp.559 = getv %tmp.558 :FONT_XTINY;
+        %tmp.560 = "MENU";
+        %tmp.562 = getv ? :center;
+        invoke %tmp.546 %tmp.547(%tmp.551, %tmp.557, %tmp.559, %tmp.560, %tmp.562);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 129 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_12_if_stmt:
+        %tmp.564 = getv ? :lasthist;
+        %tmp.565 = 0;
+        %tmp.566 = gt %tmp.564 %tmp.565;
+        bf %tmp.566 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_30_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 129 32 ]
+        %tmp.567 = lgetv %dc;
+        %tmp.568 = getv function %tmp.567 :setColor;
+        %tmp.569 = getm $.Toybox.Graphics;
+        %tmp.570 = getv %tmp.569 :COLOR_WHITE;
+        %tmp.571 = -1;
+        invoke %tmp.567 %tmp.568(%tmp.570, %tmp.571);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_30_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_130_17_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 130 19 ]
+        %tmp.572 = lgetv %dc;
+        %tmp.573 = getv function %tmp.572 :setColor;
+        %tmp.574 = getm $.Toybox.Graphics;
+        %tmp.575 = getv %tmp.574 :COLOR_DK_GRAY;
+        %tmp.576 = -1;
+        invoke %tmp.572 %tmp.573(%tmp.575, %tmp.576);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_130_17_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_129_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 131 12 ]
+        %tmp.577 = lgetv %dc;
+        %tmp.578 = getv function %tmp.577 :drawText;
+        %tmp.580 = getv ? :sW;
+        %tmp.581 = 10;
+        %tmp.582 = mul %tmp.580 %tmp.581;
+        %tmp.583 = 100;
+        %tmp.584 = div %tmp.582 %tmp.583;
+        %tmp.586 = getv ? :sH;
+        %tmp.587 = 2;
+        %tmp.588 = div %tmp.586 %tmp.587;
+        %tmp.589 = getm $.Toybox.Graphics;
+        %tmp.590 = getv %tmp.589 :FONT_XTINY;
+        %tmp.591 = "U\nN\nD\nO";
+        %tmp.593 = getv ? :center;
+        invoke %tmp.577 %tmp.578(%tmp.584, %tmp.588, %tmp.590, %tmp.591, %tmp.593);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 132 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_12_if_stmt:
+        %tmp.595 = getv ? :lasthist;
+        %tmp.597 = getv ? :gamehist;
+        %tmp.598 = getv function %tmp.597 :size;
+        %tmp.599 = invoke %tmp.597 %tmp.598();
+        %tmp.600 = 1;
+        %tmp.601 = sub %tmp.599 %tmp.600;
+        %tmp.602 = lt %tmp.595 %tmp.601;
+        bf %tmp.602 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_46_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 132 48 ]
+        %tmp.603 = lgetv %dc;
+        %tmp.604 = getv function %tmp.603 :setColor;
+        %tmp.605 = getm $.Toybox.Graphics;
+        %tmp.606 = getv %tmp.605 :COLOR_WHITE;
+        %tmp.607 = -1;
+        invoke %tmp.603 %tmp.604(%tmp.606, %tmp.607);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_46_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_133_17_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 133 19 ]
+        %tmp.608 = lgetv %dc;
+        %tmp.609 = getv function %tmp.608 :setColor;
+        %tmp.610 = getm $.Toybox.Graphics;
+        %tmp.611 = getv %tmp.610 :COLOR_DK_GRAY;
+        %tmp.612 = -1;
+        invoke %tmp.608 %tmp.609(%tmp.611, %tmp.612);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_133_17_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_132_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 134 12 ]
+        %tmp.613 = lgetv %dc;
+        %tmp.614 = getv function %tmp.613 :drawText;
+        %tmp.616 = getv ? :sW;
+        %tmp.617 = 90;
+        %tmp.618 = mul %tmp.616 %tmp.617;
+        %tmp.619 = 100;
+        %tmp.620 = div %tmp.618 %tmp.619;
+        %tmp.622 = getv ? :sH;
+        %tmp.623 = 2;
+        %tmp.624 = div %tmp.622 %tmp.623;
+        %tmp.625 = getm $.Toybox.Graphics;
+        %tmp.626 = getv %tmp.625 :FONT_XTINY;
+        %tmp.627 = "R\nE\nD\nO";
+        %tmp.629 = getv ? :center;
+        invoke %tmp.613 %tmp.614(%tmp.620, %tmp.624, %tmp.626, %tmp.627, %tmp.629);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_25_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_15_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_15_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_135_15_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 137 12 ]
+        %tmp.630 = lgetv %dc;
+        %tmp.631 = getv function %tmp.630 :setColor;
+        %tmp.632 = getm $.Toybox.Graphics;
+        %tmp.633 = getv %tmp.632 :COLOR_LT_GRAY;
+        %tmp.634 = -1;
+        invoke %tmp.630 %tmp.631(%tmp.633, %tmp.634);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 138 12 ]
+        %tmp.635 = lgetv %dc;
+        %tmp.636 = getv function %tmp.635 :drawText;
+        %tmp.638 = getv ? :sW;
+        %tmp.639 = 2;
+        %tmp.640 = div %tmp.638 %tmp.639;
+        %tmp.642 = getv ? :sH;
+        %tmp.643 = 10;
+        %tmp.644 = mul %tmp.642 %tmp.643;
+        %tmp.645 = 100;
+        %tmp.646 = div %tmp.644 %tmp.645;
+        %tmp.647 = getm $.Toybox.Graphics;
+        %tmp.648 = getv %tmp.647 :FONT_XTINY;
+        %tmp.650 = lgetv %d.6;
+        %tmp.651 = " ";
+        %tmp.652 = add %tmp.650 %tmp.651;
+        %tmp.654 = getv ? :thispuzz;
+        %tmp.655 = 1;
+        %tmp.656 = add %tmp.654 %tmp.655;
+        %tmp.657 = add %tmp.652 %tmp.656;
+        %tmp.658 = "/";
+        %tmp.659 = add %tmp.657 %tmp.658;
+        %tmp.661 = getv ? :allpuzzles;
+        %tmp.663 = getv ? :diff;
+        %tmp.664 = agetv %tmp.661 %tmp.663;
+        %tmp.665 = getv function %tmp.664 :size;
+        %tmp.666 = invoke %tmp.664 %tmp.665();
+        %tmp.667 = add %tmp.659 %tmp.666;
+        %tmp.669 = getv ? :center;
+        invoke %tmp.635 %tmp.636(%tmp.640, %tmp.646, %tmp.648, %tmp.667, %tmp.669);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 139 12 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_135_15_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_135_15_stop" ]
+        %m.10 = local;
+        %tmp.671 = getv ? :lasthist;
+        %tmp.672 = " ";
+        %tmp.673 = add %tmp.671 %tmp.672;
+        lputv %m.10 %tmp.673;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 140 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_12_if_stmt:
+        %tmp.675 = lgetv %l.7;
+        %tmp.676 = null;
+        %tmp.677 = eq %tmp.675 %tmp.676;
+        bf %tmp.677 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_27_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 141 16 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_16_if_stmt:
+        %tmp.679 = getv ? :lasthist;
+        %tmp.680 = 1;
+        %tmp.681 = eq %tmp.679 %tmp.680;
+        bf %tmp.681 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_16_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_16_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_35_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 142 20 ]
+        %tmp.682 = lgetv %m.10;
+        %tmp.683 = "MOVE";
+        %tmp.684 = add %tmp.682 %tmp.683;
+        lputv %m.10 %tmp.684;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_35_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_16_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_16_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_143_23_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 144 20 ]
+        %tmp.685 = lgetv %m.10;
+        %tmp.686 = "MOVES";
+        %tmp.687 = add %tmp.685 %tmp.686;
+        lputv %m.10 %tmp.687;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_143_23_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_141_16_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_27_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_146_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 147 16 ]
+        %tmp.688 = lgetv %m.10;
+        %tmp.689 = "(";
+        %tmp.691 = lgetv %l.7;
+        %tmp.692 = as %tmp.691 { (!Null) };
+        %tmp.693 = add %tmp.689 %tmp.692;
+        %tmp.694 = ")";
+        %tmp.695 = add %tmp.693 %tmp.694;
+        %tmp.696 = add %tmp.688 %tmp.695;
+        lputv %m.10 %tmp.696;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_146_19_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_140_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 149 12 ]
+        %tmp.697 = lgetv %dc;
+        %tmp.698 = getv function %tmp.697 :setColor;
+        %tmp.699 = getm $.Toybox.Graphics;
+        %tmp.700 = getv %tmp.699 :COLOR_LT_GRAY;
+        %tmp.701 = -1;
+        invoke %tmp.697 %tmp.698(%tmp.700, %tmp.701);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 150 12 ]
+        %tmp.702 = lgetv %dc;
+        %tmp.703 = getv function %tmp.702 :drawText;
+        %tmp.705 = getv ? :sW;
+        %tmp.706 = 2;
+        %tmp.707 = div %tmp.705 %tmp.706;
+        %tmp.709 = getv ? :sH;
+        %tmp.710 = 90;
+        %tmp.711 = mul %tmp.709 %tmp.710;
+        %tmp.712 = 100;
+        %tmp.713 = div %tmp.711 %tmp.712;
+        %tmp.714 = getm $.Toybox.Graphics;
+        %tmp.715 = getv %tmp.714 :FONT_XTINY;
+        %tmp.717 = lgetv %m.10;
+        %tmp.719 = getv ? :center;
+        invoke %tmp.702 %tmp.703(%tmp.707, %tmp.713, %tmp.715, %tmp.717, %tmp.719);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_135_15_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_123_15_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_110_15_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_88_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_40_40_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 156; ]
+    function drawit(dc, char, x, y, c) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_156_35_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 157 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_156_35_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_156_35_stop" ]
+        %w.1 = local;
+        %tmp.2 = lgetv %c;
+        lputv %w.1 %tmp.2;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 158 8 ]
+        [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_156_35_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_156_35_stop" ]
+        %h.2 = local;
+        %tmp.4 = lgetv %c;
+        lputv %h.2 %tmp.4;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 159 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_8_if_stmt:
+        %tmp.5 = lgetv %char;
+        %tmp.6 = getv function %tmp.5 :equals;
+        %tmp.7 = "-";
+        %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
+        bf %tmp.8 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_30_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 159 32 ]
+        ret ?;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_30_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_159_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 160 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_8_if_stmt:
+        %tmp.9 = lgetv %char;
+        %tmp.10 = getv function %tmp.9 :equals;
+        %tmp.11 = "#";
+        %tmp.12 = invoke %tmp.9 %tmp.10(%tmp.11);
+        bf %tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_30_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 162 12 ]
+        %tmp.13 = lgetv %dc;
+        %tmp.14 = getv function %tmp.13 :setColor;
+        %tmp.15 = getm $.Toybox.Graphics;
+        %tmp.16 = getv %tmp.15 :COLOR_ORANGE;
+        %tmp.17 = -1;
+        invoke %tmp.13 %tmp.14(%tmp.16, %tmp.17);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 163 12 ]
+        %tmp.18 = lgetv %dc;
+        %tmp.19 = getv function %tmp.18 :fillRectangle;
+        %tmp.21 = lgetv %x;
+        %tmp.23 = lgetv %y;
+        %tmp.25 = lgetv %w.1;
+        %tmp.27 = lgetv %h.2;
+        invoke %tmp.18 %tmp.19(%tmp.21, %tmp.23, %tmp.25, %tmp.27);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_30_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_8_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_164_15_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 165 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_12_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_16_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_16_begin:
+        %tmp.28 = lgetv %char;
+        %tmp.29 = getv function %tmp.28 :equals;
+        %tmp.30 = ".";
+        %tmp.31 = invoke %tmp.28 %tmp.29(%tmp.30);
+        %tmp.32 = dup %tmp.31;
+        bt %tmp.32 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_36_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_36_false:
+        %tmp.33 = lgetv %char;
+        %tmp.34 = getv function %tmp.33 :equals;
+        %tmp.35 = "*";
+        %tmp.36 = invoke %tmp.33 %tmp.34(%tmp.35);
+        %tmp.37 = or %tmp.31 %tmp.36;
+        push %tmp.37;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_36_end:
+        %tmp.38 = phi [%tmp.32 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_16_begin] [%tmp.37 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_36_false] [%tmp.38 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_36_end];
+        %tmp.39 = dup %tmp.38;
+        bt %tmp.39 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_56_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_56_false:
+        %tmp.40 = lgetv %char;
+        %tmp.41 = getv function %tmp.40 :equals;
+        %tmp.42 = "+";
+        %tmp.43 = invoke %tmp.40 %tmp.41(%tmp.42);
+        %tmp.44 = or %tmp.38 %tmp.43;
+        push %tmp.44;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_56_end:
+        %tmp.45 = phi [%tmp.39 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_16_begin] [%tmp.44 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_56_false] [%tmp.45 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_56_end];
+        bf %tmp.45 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_74_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 167 16 ]
+        %tmp.46 = lgetv %dc;
+        %tmp.47 = getv function %tmp.46 :setColor;
+        %tmp.48 = getm $.Toybox.Graphics;
+        %tmp.49 = getv %tmp.48 :COLOR_WHITE;
+        %tmp.50 = -1;
+        invoke %tmp.46 %tmp.47(%tmp.49, %tmp.50);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 168 16 ]
+        %tmp.51 = lgetv %dc;
+        %tmp.52 = getv function %tmp.51 :setPenWidth;
+        %tmp.54 = lgetv %w.1;
+        %tmp.55 = 10;
+        %tmp.56 = mul %tmp.54 %tmp.55;
+        %tmp.57 = 100;
+        %tmp.58 = div %tmp.56 %tmp.57;
+        invoke %tmp.51 %tmp.52(%tmp.58);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 169 16 ]
+        %tmp.59 = lgetv %dc;
+        %tmp.60 = getv function %tmp.59 :drawRectangle;
+        %tmp.62 = lgetv %x;
+        %tmp.64 = lgetv %w.1;
+        %tmp.65 = 5;
+        %tmp.66 = mul %tmp.64 %tmp.65;
+        %tmp.67 = 100;
+        %tmp.68 = div %tmp.66 %tmp.67;
+        %tmp.69 = add %tmp.62 %tmp.68;
+        %tmp.71 = lgetv %y;
+        %tmp.73 = lgetv %h.2;
+        %tmp.74 = 5;
+        %tmp.75 = mul %tmp.73 %tmp.74;
+        %tmp.76 = 100;
+        %tmp.77 = div %tmp.75 %tmp.76;
+        %tmp.78 = add %tmp.71 %tmp.77;
+        %tmp.80 = lgetv %w.1;
+        %tmp.81 = 90;
+        %tmp.82 = mul %tmp.80 %tmp.81;
+        %tmp.83 = 100;
+        %tmp.84 = div %tmp.82 %tmp.83;
+        %tmp.86 = lgetv %h.2;
+        %tmp.87 = 90;
+        %tmp.88 = mul %tmp.86 %tmp.87;
+        %tmp.89 = 100;
+        %tmp.90 = div %tmp.88 %tmp.89;
+        invoke %tmp.59 %tmp.60(%tmp.69, %tmp.78, %tmp.84, %tmp.90);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_74_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_165_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 171 12 ]
+        %tmp.91 = lgetv %dc;
+        %tmp.92 = getv function %tmp.91 :setColor;
+        %tmp.93 = getm $.Toybox.Graphics;
+        %tmp.94 = getv %tmp.93 :COLOR_DK_GRAY;
+        %tmp.95 = -1;
+        invoke %tmp.91 %tmp.92(%tmp.94, %tmp.95);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 172 12 ]
+        %tmp.96 = lgetv %dc;
+        %tmp.97 = getv function %tmp.96 :setPenWidth;
+        %tmp.98 = 1;
+        invoke %tmp.96 %tmp.97(%tmp.98);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 173 12 ]
+        %tmp.99 = lgetv %dc;
+        %tmp.100 = getv function %tmp.99 :drawRectangle;
+        %tmp.102 = lgetv %x;
+        %tmp.104 = lgetv %y;
+        %tmp.106 = lgetv %w.1;
+        %tmp.108 = lgetv %h.2;
+        invoke %tmp.99 %tmp.100(%tmp.102, %tmp.104, %tmp.106, %tmp.108);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_164_15_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_160_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 175 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_8_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_12_begin:
+        %tmp.109 = lgetv %char;
+        %tmp.110 = getv function %tmp.109 :equals;
+        %tmp.111 = "$";
+        %tmp.112 = invoke %tmp.109 %tmp.110(%tmp.111);
+        %tmp.113 = dup %tmp.112;
+        bt %tmp.113 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_32_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_32_false:
+        %tmp.114 = lgetv %char;
+        %tmp.115 = getv function %tmp.114 :equals;
+        %tmp.116 = "*";
+        %tmp.117 = invoke %tmp.114 %tmp.115(%tmp.116);
+        %tmp.118 = or %tmp.112 %tmp.117;
+        push %tmp.118;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_32_end:
+        %tmp.119 = phi [%tmp.113 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_12_begin] [%tmp.118 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_32_false] [%tmp.119 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_32_end];
+        bf %tmp.119 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_50_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 177 12 ]
+        %tmp.120 = lgetv %dc;
+        %tmp.121 = getv function %tmp.120 :setColor;
+        %tmp.122 = getm $.Toybox.Graphics;
+        %tmp.123 = getv %tmp.122 :COLOR_DK_RED;
+        %tmp.124 = -1;
+        invoke %tmp.120 %tmp.121(%tmp.123, %tmp.124);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 178 12 ]
+        %tmp.125 = lgetv %dc;
+        %tmp.126 = getv function %tmp.125 :fillRectangle;
+        %tmp.128 = lgetv %x;
+        %tmp.130 = lgetv %w.1;
+        %tmp.131 = 10;
+        %tmp.132 = mul %tmp.130 %tmp.131;
+        %tmp.133 = 100;
+        %tmp.134 = div %tmp.132 %tmp.133;
+        %tmp.135 = add %tmp.128 %tmp.134;
+        %tmp.137 = lgetv %y;
+        %tmp.139 = lgetv %h.2;
+        %tmp.140 = 10;
+        %tmp.141 = mul %tmp.139 %tmp.140;
+        %tmp.142 = 100;
+        %tmp.143 = div %tmp.141 %tmp.142;
+        %tmp.144 = add %tmp.137 %tmp.143;
+        %tmp.146 = lgetv %w.1;
+        %tmp.147 = 80;
+        %tmp.148 = mul %tmp.146 %tmp.147;
+        %tmp.149 = 100;
+        %tmp.150 = div %tmp.148 %tmp.149;
+        %tmp.152 = lgetv %h.2;
+        %tmp.153 = 80;
+        %tmp.154 = mul %tmp.152 %tmp.153;
+        %tmp.155 = 100;
+        %tmp.156 = div %tmp.154 %tmp.155;
+        invoke %tmp.125 %tmp.126(%tmp.135, %tmp.144, %tmp.150, %tmp.156);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_50_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_8_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 179 15 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_15_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_19_begin:
+        %tmp.157 = lgetv %char;
+        %tmp.158 = getv function %tmp.157 :equals;
+        %tmp.159 = "@";
+        %tmp.160 = invoke %tmp.157 %tmp.158(%tmp.159);
+        %tmp.161 = dup %tmp.160;
+        bt %tmp.161 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_39_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_39_false:
+        %tmp.162 = lgetv %char;
+        %tmp.163 = getv function %tmp.162 :equals;
+        %tmp.164 = "+";
+        %tmp.165 = invoke %tmp.162 %tmp.163(%tmp.164);
+        %tmp.166 = or %tmp.160 %tmp.165;
+        push %tmp.166;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_39_end:
+        %tmp.167 = phi [%tmp.161 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_19_begin] [%tmp.166 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_39_false] [%tmp.167 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_39_end];
+        bf %tmp.167 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_15_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_15_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_57_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 181 12 ]
+        %tmp.168 = lgetv %dc;
+        %tmp.169 = getv function %tmp.168 :setColor;
+        %tmp.170 = getm $.Toybox.Graphics;
+        %tmp.171 = getv %tmp.170 :COLOR_DK_GREEN;
+        %tmp.172 = -1;
+        invoke %tmp.168 %tmp.169(%tmp.171, %tmp.172);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 182 12 ]
+        %tmp.173 = lgetv %dc;
+        %tmp.174 = getv function %tmp.173 :fillRectangle;
+        %tmp.176 = lgetv %x;
+        %tmp.178 = lgetv %w.1;
+        %tmp.179 = 10;
+        %tmp.180 = mul %tmp.178 %tmp.179;
+        %tmp.181 = 100;
+        %tmp.182 = div %tmp.180 %tmp.181;
+        %tmp.183 = add %tmp.176 %tmp.182;
+        %tmp.185 = lgetv %y;
+        %tmp.187 = lgetv %h.2;
+        %tmp.188 = 10;
+        %tmp.189 = mul %tmp.187 %tmp.188;
+        %tmp.190 = 100;
+        %tmp.191 = div %tmp.189 %tmp.190;
+        %tmp.192 = add %tmp.185 %tmp.191;
+        %tmp.194 = lgetv %w.1;
+        %tmp.195 = 80;
+        %tmp.196 = mul %tmp.194 %tmp.195;
+        %tmp.197 = 100;
+        %tmp.198 = div %tmp.196 %tmp.197;
+        %tmp.200 = lgetv %h.2;
+        %tmp.201 = 80;
+        %tmp.202 = mul %tmp.200 %tmp.201;
+        %tmp.203 = 100;
+        %tmp.204 = div %tmp.202 %tmp.203;
+        invoke %tmp.173 %tmp.174(%tmp.183, %tmp.192, %tmp.198, %tmp.204);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_57_stop:
+        goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_15_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_179_15_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_175_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_156_35_stop:
+    }
+    [ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 189; ]
+    function onHide() as Void {
+    }
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 194; ]
+function getpuzzle(d, n) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_194_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 195 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_194_24_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_194_24_stop" ]
+    %puz.1 = local;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 196 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_4_if_stmt:
+    %tmp.2 = getv ? :allpuzzles;
+    %tmp.4 = lgetv %d;
+    %tmp.5 = agetv %tmp.2 %tmp.4;
+    %tmp.6 = getv function %tmp.5 :size;
+    %tmp.7 = invoke %tmp.5 %tmp.6();
+    %tmp.8 = 0;
+    %tmp.9 = eq %tmp.7 %tmp.8;
+    bf %tmp.9 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_35_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 197 8 ]
+    %tmp.10 = "";
+    putv self :puzzle %tmp.10;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 198 8 ]
+    ret ?;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_35_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_196_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 200 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_4_if_stmt:
+    %tmp.12 = lgetv %n;
+    %tmp.13 = -1;
+    %tmp.14 = eq %tmp.12 %tmp.13;
+    bf %tmp.14 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_17_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 201 8 ]
+    %tmp.16 = getv ? :allpuzzles;
+    %tmp.18 = lgetv %d;
+    %tmp.19 = agetv %tmp.16 %tmp.18;
+    %tmp.20 = getm $.Toybox.Math;
+    %tmp.21 = getv function %tmp.20 :rand;
+    %tmp.22 = invoke %tmp.20 %tmp.21();
+    %tmp.24 = getv ? :allpuzzles;
+    %tmp.26 = lgetv %d;
+    %tmp.27 = agetv %tmp.24 %tmp.26;
+    %tmp.28 = getv function %tmp.27 :size;
+    %tmp.29 = invoke %tmp.27 %tmp.28();
+    %tmp.30 = mod %tmp.22 %tmp.29;
+    %tmp.31 = agetv %tmp.19 %tmp.30;
+    lputv %puz.1 %tmp.31;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_17_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_202_11_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 203 8 ]
+    %tmp.33 = getv ? :allpuzzles;
+    %tmp.35 = lgetv %d;
+    %tmp.36 = agetv %tmp.33 %tmp.35;
+    %tmp.38 = lgetv %n;
+    %tmp.39 = agetv %tmp.36 %tmp.38;
+    lputv %puz.1 %tmp.39;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_202_11_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_200_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 205 4 ]
+    %tmp.40 = self;
+    %tmp.41 = getv function %tmp.40 :parsepuzzle;
+    %tmp.43 = lgetv %puz.1;
+    invoke %tmp.40 %tmp.41(%tmp.43);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_194_24_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 207; ]
+function parsepuzzle(puz) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 208 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_stop" ]
+    %p.1 = local;
+    %tmp.1 = newa 0;
+    lputv %p.1 %tmp.1;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 209 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_stop" ]
+    %row.2 = local;
+    %tmp.3 = 0;
+    %tmp.2 = newa %tmp.3;
+    lputv %row.2 %tmp.2;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 210 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_stop" ]
+    %chr.3 = local;
+    %tmp.4 = "";
+    lputv %chr.3 %tmp.4;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 211 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_stop" ]
+    %max.4 = local;
+    %tmp.5 = 0;
+    lputv %max.4 %tmp.5;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 212 4 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_end" ]
+    %i.5 = local;
+    %tmp.6 = 0;
+    lputv %i.5 %tmp.6;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_test:
+    %tmp.8 = lgetv %i.5;
+    %tmp.9 = lgetv %puz;
+    %tmp.10 = getv function %tmp.9 :length;
+    %tmp.11 = invoke %tmp.9 %tmp.10();
+    %tmp.12 = lt %tmp.8 %tmp.11;
+    bf %tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 213 8 ]
+    %tmp.13 = lgetv %puz;
+    %tmp.14 = getv function %tmp.13 :substring;
+    %tmp.16 = lgetv %i.5;
+    %tmp.18 = lgetv %i.5;
+    %tmp.19 = 1;
+    %tmp.20 = add %tmp.18 %tmp.19;
+    %tmp.21 = invoke %tmp.13 %tmp.14(%tmp.16, %tmp.20);
+    lputv %chr.3 %tmp.21;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 214 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_8_if_stmt:
+    %tmp.22 = lgetv %chr.3;
+    %tmp.23 = getv function %tmp.22 :equals;
+    %tmp.24 = "|";
+    %tmp.25 = invoke %tmp.22 %tmp.23(%tmp.24);
+    bf %tmp.25 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_29_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 215 12 ]
+    %tmp.26 = lgetv %p.1;
+    %tmp.27 = getv function %tmp.26 :add;
+    %tmp.29 = lgetv %row.2;
+    invoke %tmp.26 %tmp.27(%tmp.29);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 216 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_12_if_stmt:
+    %tmp.30 = lgetv %row.2;
+    %tmp.31 = getv function %tmp.30 :size;
+    %tmp.32 = invoke %tmp.30 %tmp.31();
+    %tmp.34 = lgetv %max.4;
+    %tmp.35 = gt %tmp.32 %tmp.34;
+    bf %tmp.35 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_34_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 216 36 ]
+    %tmp.36 = lgetv %row.2;
+    %tmp.37 = getv function %tmp.36 :size;
+    %tmp.38 = invoke %tmp.36 %tmp.37();
+    lputv %max.4 %tmp.38;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_34_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_216_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 217 12 ]
+    %tmp.40 = 0;
+    %tmp.39 = newa %tmp.40;
+    lputv %row.2 %tmp.39;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_29_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_8_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_218_15_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 219 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_12_if_stmt:
+    %tmp.41 = "0123456789";
+    %tmp.42 = getv function %tmp.41 :find;
+    %tmp.44 = lgetv %chr.3;
+    %tmp.45 = invoke %tmp.41 %tmp.42(%tmp.44);
+    %tmp.46 = null;
+    %tmp.47 = ne %tmp.45 %tmp.46;
+    bf %tmp.47 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_12_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_48_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 220 16 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_48_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_48_stop" ]
+    %num.6 = local;
+    %tmp.48 = lgetv %chr.3;
+    %tmp.49 = getv function %tmp.48 :toNumber;
+    %tmp.50 = invoke %tmp.48 %tmp.49();
+    lputv %num.6 %tmp.50;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 221 16 ]
+    %tmp.53 = lgetv %i.5;
+    %tmp.54 = add %tmp.53 1;
+    lputv %i.5 %tmp.54;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 222 16 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_16_if_stmt:
+    %tmp.55 = "0123456789";
+    %tmp.56 = getv function %tmp.55 :find;
+    %tmp.57 = lgetv %puz;
+    %tmp.58 = getv function %tmp.57 :substring;
+    %tmp.60 = lgetv %i.5;
+    %tmp.62 = lgetv %i.5;
+    %tmp.63 = 1;
+    %tmp.64 = add %tmp.62 %tmp.63;
+    %tmp.65 = invoke %tmp.57 %tmp.58(%tmp.60, %tmp.64);
+    %tmp.66 = invoke %tmp.55 %tmp.56(%tmp.65);
+    %tmp.67 = null;
+    %tmp.68 = ne %tmp.66 %tmp.67;
+    bf %tmp.68 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_16_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_16_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_69_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 223 20 ]
+    %tmp.69 = lgetv %puz;
+    %tmp.70 = getv function %tmp.69 :substring;
+    %tmp.72 = lgetv %i.5;
+    %tmp.73 = 1;
+    %tmp.74 = sub %tmp.72 %tmp.73;
+    %tmp.76 = lgetv %i.5;
+    %tmp.77 = 1;
+    %tmp.78 = add %tmp.76 %tmp.77;
+    %tmp.79 = invoke %tmp.69 %tmp.70(%tmp.74, %tmp.78);
+    %tmp.80 = getv function %tmp.79 :toNumber;
+    %tmp.81 = invoke %tmp.79 %tmp.80();
+    lputv %num.6 %tmp.81;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 224 20 ]
+    %tmp.84 = lgetv %i.5;
+    %tmp.85 = add %tmp.84 1;
+    lputv %i.5 %tmp.85;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_69_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_16_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_222_16_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 226 16 ]
+    %tmp.86 = lgetv %puz;
+    %tmp.87 = getv function %tmp.86 :substring;
+    %tmp.89 = lgetv %i.5;
+    %tmp.91 = lgetv %i.5;
+    %tmp.92 = 1;
+    %tmp.93 = add %tmp.91 %tmp.92;
+    %tmp.94 = invoke %tmp.86 %tmp.87(%tmp.89, %tmp.93);
+    lputv %chr.3 %tmp.94;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 227 16 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_end" ]
+    %k.7 = local;
+    %tmp.95 = 0;
+    lputv %k.7 %tmp.95;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_test:
+    %tmp.97 = lgetv %k.7;
+    %tmp.99 = lgetv %num.6;
+    %tmp.100 = lt %tmp.97 %tmp.99;
+    bf %tmp.100 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_40_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 228 20 ]
+    %tmp.101 = lgetv %row.2;
+    %tmp.102 = getv function %tmp.101 :add;
+    %tmp.104 = lgetv %chr.3;
+    invoke %tmp.101 %tmp.102(%tmp.104);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_40_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 227 ]
+    %tmp.107 = lgetv %k.7;
+    %tmp.108 = add %tmp.107 1;
+    lputv %k.7 %tmp.108;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_227_16_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_48_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_12_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_230_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 231 16 ]
+    %tmp.109 = lgetv %row.2;
+    %tmp.110 = getv function %tmp.109 :add;
+    %tmp.112 = lgetv %chr.3;
+    invoke %tmp.109 %tmp.110(%tmp.112);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_230_19_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_219_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_218_15_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_214_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_37_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 212 ]
+    %tmp.115 = lgetv %i.5;
+    %tmp.116 = add %tmp.115 1;
+    lputv %i.5 %tmp.116;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_212_4_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 235 4 ]
+    %tmp.117 = lgetv %p.1;
+    %tmp.118 = getv function %tmp.117 :add;
+    %tmp.120 = lgetv %row.2;
+    invoke %tmp.117 %tmp.118(%tmp.120);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 236 4 ]
+    %tmp.121 = lgetv %p.1;
+    %tmp.122 = getv function %tmp.121 :size;
+    %tmp.123 = invoke %tmp.121 %tmp.122();
+    putv self :rows %tmp.123;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 237 4 ]
+    %tmp.125 = lgetv %max.4;
+    putv self :cols %tmp.125;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 238 4 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_end" ]
+    %i.8 = local;
+    %tmp.126 = 0;
+    lputv %i.8 %tmp.126;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_test:
+    %tmp.128 = lgetv %i.8;
+    %tmp.129 = lgetv %p.1;
+    %tmp.130 = getv function %tmp.129 :size;
+    %tmp.131 = invoke %tmp.129 %tmp.130();
+    %tmp.132 = lt %tmp.128 %tmp.131;
+    bf %tmp.132 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_33_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 239 8 ]
+    %tmp.134 = lgetv %p.1;
+    %tmp.136 = lgetv %i.8;
+    %tmp.137 = agetv %tmp.134 %tmp.136;
+    lputv %row.2 %tmp.137;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 240 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_end" ]
+    %j.9 = local;
+    %tmp.138 = lgetv %row.2;
+    %tmp.139 = getv function %tmp.138 :size;
+    %tmp.140 = invoke %tmp.138 %tmp.139();
+    lputv %j.9 %tmp.140;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_test:
+    %tmp.142 = lgetv %j.9;
+    %tmp.144 = lgetv %max.4;
+    %tmp.145 = lt %tmp.142 %tmp.144;
+    bf %tmp.145 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_41_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 241 12 ]
+    %tmp.146 = lgetv %row.2;
+    %tmp.147 = getv function %tmp.146 :add;
+    %tmp.148 = " ";
+    invoke %tmp.146 %tmp.147(%tmp.148);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_41_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 240 ]
+    %tmp.151 = lgetv %j.9;
+    %tmp.152 = add %tmp.151 1;
+    lputv %j.9 %tmp.152;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_240_8_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 243 8 ]
+    %tmp.153 = lgetv %p.1;
+    %tmp.155 = lgetv %row.2;
+    %tmp.157 = lgetv %i.8;
+    aputv %tmp.153 %tmp.157 %tmp.155;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_33_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 238 ]
+    %tmp.160 = lgetv %i.8;
+    %tmp.161 = add %tmp.160 1;
+    lputv %i.8 %tmp.161;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_238_4_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 247 4 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_end" ]
+    %i.10 = local;
+    %tmp.162 = 0;
+    lputv %i.10 %tmp.162;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_test:
+    %tmp.164 = lgetv %i.10;
+    %tmp.166 = getv ? :rows;
+    %tmp.167 = lt %tmp.164 %tmp.166;
+    bf %tmp.167 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_29_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 248 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_end" ]
+    %j.11 = local;
+    %tmp.168 = 0;
+    lputv %j.11 %tmp.168;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_test:
+    %tmp.170 = lgetv %j.11;
+    %tmp.172 = getv ? :cols;
+    %tmp.173 = lt %tmp.170 %tmp.172;
+    bf %tmp.173 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_33_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 249 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_12_if_stmt:
+    %tmp.175 = lgetv %p.1;
+    %tmp.177 = lgetv %i.10;
+    %tmp.178 = agetv %tmp.175 %tmp.177;
+    %tmp.180 = lgetv %j.11;
+    %tmp.181 = agetv %tmp.178 %tmp.180;
+    %tmp.182 = getv function %tmp.181 :equals;
+    %tmp.183 = "#";
+    %tmp.184 = invoke %tmp.181 %tmp.182(%tmp.183);
+    bf %tmp.184 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 249 39 ]
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_249_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 250 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_12_if_stmt:
+    %tmp.186 = lgetv %p.1;
+    %tmp.188 = lgetv %i.10;
+    %tmp.189 = agetv %tmp.186 %tmp.188;
+    %tmp.191 = lgetv %j.11;
+    %tmp.192 = agetv %tmp.189 %tmp.191;
+    %tmp.193 = getv function %tmp.192 :equals;
+    %tmp.194 = " ";
+    %tmp.195 = invoke %tmp.192 %tmp.193(%tmp.194);
+    bf %tmp.195 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 250 39 ]
+    %tmp.196 = lgetv %p.1;
+    %tmp.198 = lgetv %i.10;
+    %tmp.199 = agetv %tmp.196 %tmp.198;
+    %tmp.200 = "-";
+    %tmp.202 = lgetv %j.11;
+    aputv %tmp.199 %tmp.202 %tmp.200;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_250_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_33_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 248 ]
+    %tmp.205 = lgetv %j.11;
+    %tmp.206 = add %tmp.205 1;
+    lputv %j.11 %tmp.206;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_248_8_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 252 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_end" ]
+    %j.12 = local;
+    %tmp.208 = getv ? :cols;
+    %tmp.209 = 1;
+    %tmp.210 = sub %tmp.208 %tmp.209;
+    lputv %j.12 %tmp.210;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_test:
+    %tmp.212 = lgetv %j.12;
+    %tmp.213 = 0;
+    %tmp.214 = gte %tmp.212 %tmp.213;
+    bf %tmp.214 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_36_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 253 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_12_if_stmt:
+    %tmp.216 = lgetv %p.1;
+    %tmp.218 = lgetv %i.10;
+    %tmp.219 = agetv %tmp.216 %tmp.218;
+    %tmp.221 = lgetv %j.12;
+    %tmp.222 = agetv %tmp.219 %tmp.221;
+    %tmp.223 = getv function %tmp.222 :equals;
+    %tmp.224 = "#";
+    %tmp.225 = invoke %tmp.222 %tmp.223(%tmp.224);
+    bf %tmp.225 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 253 39 ]
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_253_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 254 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_12_if_stmt:
+    %tmp.227 = lgetv %p.1;
+    %tmp.229 = lgetv %i.10;
+    %tmp.230 = agetv %tmp.227 %tmp.229;
+    %tmp.232 = lgetv %j.12;
+    %tmp.233 = agetv %tmp.230 %tmp.232;
+    %tmp.234 = getv function %tmp.233 :equals;
+    %tmp.235 = " ";
+    %tmp.236 = invoke %tmp.233 %tmp.234(%tmp.235);
+    bf %tmp.236 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 254 39 ]
+    %tmp.237 = lgetv %p.1;
+    %tmp.239 = lgetv %i.10;
+    %tmp.240 = agetv %tmp.237 %tmp.239;
+    %tmp.241 = "-";
+    %tmp.243 = lgetv %j.12;
+    aputv %tmp.240 %tmp.243 %tmp.241;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_254_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_36_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 252 ]
+    %tmp.246 = lgetv %j.12;
+    %tmp.247 = sub %tmp.246 1;
+    lputv %j.12 %tmp.247;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_252_8_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_29_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 247 ]
+    %tmp.250 = lgetv %i.10;
+    %tmp.251 = add %tmp.250 1;
+    lputv %i.10 %tmp.251;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_247_4_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 258 4 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_end" ]
+    %j.13 = local;
+    %tmp.252 = 0;
+    lputv %j.13 %tmp.252;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_test:
+    %tmp.254 = lgetv %j.13;
+    %tmp.256 = getv ? :cols;
+    %tmp.257 = lt %tmp.254 %tmp.256;
+    bf %tmp.257 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_29_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 259 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_end" ]
+    %i.14 = local;
+    %tmp.258 = 0;
+    lputv %i.14 %tmp.258;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_test:
+    %tmp.260 = lgetv %i.14;
+    %tmp.262 = getv ? :rows;
+    %tmp.263 = lt %tmp.260 %tmp.262;
+    bf %tmp.263 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_33_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 260 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_12_if_stmt:
+    %tmp.265 = lgetv %p.1;
+    %tmp.267 = lgetv %i.14;
+    %tmp.268 = agetv %tmp.265 %tmp.267;
+    %tmp.270 = lgetv %j.13;
+    %tmp.271 = agetv %tmp.268 %tmp.270;
+    %tmp.272 = getv function %tmp.271 :equals;
+    %tmp.273 = "#";
+    %tmp.274 = invoke %tmp.271 %tmp.272(%tmp.273);
+    bf %tmp.274 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 260 39 ]
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_260_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 261 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_12_if_stmt:
+    %tmp.276 = lgetv %p.1;
+    %tmp.278 = lgetv %i.14;
+    %tmp.279 = agetv %tmp.276 %tmp.278;
+    %tmp.281 = lgetv %j.13;
+    %tmp.282 = agetv %tmp.279 %tmp.281;
+    %tmp.283 = getv function %tmp.282 :equals;
+    %tmp.284 = " ";
+    %tmp.285 = invoke %tmp.282 %tmp.283(%tmp.284);
+    bf %tmp.285 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 261 39 ]
+    %tmp.286 = lgetv %p.1;
+    %tmp.288 = lgetv %i.14;
+    %tmp.289 = agetv %tmp.286 %tmp.288;
+    %tmp.290 = "-";
+    %tmp.292 = lgetv %j.13;
+    aputv %tmp.289 %tmp.292 %tmp.290;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_261_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_33_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 259 ]
+    %tmp.295 = lgetv %i.14;
+    %tmp.296 = add %tmp.295 1;
+    lputv %i.14 %tmp.296;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_259_8_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 263 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_end" ]
+    %i.15 = local;
+    %tmp.298 = getv ? :rows;
+    %tmp.299 = 1;
+    %tmp.300 = sub %tmp.298 %tmp.299;
+    lputv %i.15 %tmp.300;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_test:
+    %tmp.302 = lgetv %i.15;
+    %tmp.303 = 0;
+    %tmp.304 = gte %tmp.302 %tmp.303;
+    bf %tmp.304 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_36_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 264 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_12_if_stmt:
+    %tmp.306 = lgetv %p.1;
+    %tmp.308 = lgetv %i.15;
+    %tmp.309 = agetv %tmp.306 %tmp.308;
+    %tmp.311 = lgetv %j.13;
+    %tmp.312 = agetv %tmp.309 %tmp.311;
+    %tmp.313 = getv function %tmp.312 :equals;
+    %tmp.314 = "#";
+    %tmp.315 = invoke %tmp.312 %tmp.313(%tmp.314);
+    bf %tmp.315 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 264 39 ]
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_264_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 265 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_12_if_stmt:
+    %tmp.317 = lgetv %p.1;
+    %tmp.319 = lgetv %i.15;
+    %tmp.320 = agetv %tmp.317 %tmp.319;
+    %tmp.322 = lgetv %j.13;
+    %tmp.323 = agetv %tmp.320 %tmp.322;
+    %tmp.324 = getv function %tmp.323 :equals;
+    %tmp.325 = " ";
+    %tmp.326 = invoke %tmp.323 %tmp.324(%tmp.325);
+    bf %tmp.326 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 265 39 ]
+    %tmp.327 = lgetv %p.1;
+    %tmp.329 = lgetv %i.15;
+    %tmp.330 = agetv %tmp.327 %tmp.329;
+    %tmp.331 = "-";
+    %tmp.333 = lgetv %j.13;
+    aputv %tmp.330 %tmp.333 %tmp.331;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_265_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_36_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 263 ]
+    %tmp.336 = lgetv %i.15;
+    %tmp.337 = sub %tmp.336 1;
+    lputv %i.15 %tmp.337;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_263_8_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_29_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 258 ]
+    %tmp.340 = lgetv %j.13;
+    %tmp.341 = add %tmp.340 1;
+    lputv %j.13 %tmp.341;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_258_4_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 270 4 ]
+    %tmp.342 = "";
+    putv self :puzzle %tmp.342;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 271 4 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_end" ]
+    %r.16 = local;
+    %tmp.343 = 0;
+    lputv %r.16 %tmp.343;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_test:
+    %tmp.345 = lgetv %r.16;
+    %tmp.347 = getv ? :rows;
+    %tmp.348 = lt %tmp.345 %tmp.347;
+    bf %tmp.348 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_29_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 272 8 ]
+    %tmp.350 = lgetv %p.1;
+    %tmp.352 = lgetv %r.16;
+    %tmp.353 = agetv %tmp.350 %tmp.352;
+    lputv %row.2 %tmp.353;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 273 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_end" ]
+    %c.17 = local;
+    %tmp.354 = 0;
+    lputv %c.17 %tmp.354;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_test:
+    %tmp.356 = lgetv %c.17;
+    %tmp.358 = getv ? :cols;
+    %tmp.359 = lt %tmp.356 %tmp.358;
+    bf %tmp.359 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_33_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 274 12 ]
+    %tmp.360 = getv self :puzzle;
+    %tmp.362 = lgetv %row.2;
+    %tmp.364 = lgetv %c.17;
+    %tmp.365 = agetv %tmp.362 %tmp.364;
+    %tmp.366 = add %tmp.360 %tmp.365;
+    putv self :puzzle dup %tmp.366;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_33_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 273 ]
+    %tmp.369 = lgetv %c.17;
+    %tmp.370 = add %tmp.369 1;
+    lputv %c.17 %tmp.370;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_273_8_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_29_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 271 ]
+    %tmp.373 = lgetv %r.16;
+    %tmp.374 = add %tmp.373 1;
+    lputv %r.16 %tmp.374;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_271_4_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 278 4 ]
+    %tmp.375 = self;
+    %tmp.376 = getv function %tmp.375 :getloc;
+    invoke %tmp.375 %tmp.376();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 279 4 ]
+    %tmp.377 = self;
+    %tmp.378 = getv function %tmp.377 :addhist;
+    invoke %tmp.377 %tmp.378();
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_207_26_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 282; ]
+function getloc() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_282_18_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 283 4 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_end" ]
+    %r.1 = local;
+    %tmp.1 = 0;
+    lputv %r.1 %tmp.1;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_test:
+    %tmp.3 = lgetv %r.1;
+    %tmp.5 = getv ? :rows;
+    %tmp.6 = lt %tmp.3 %tmp.5;
+    bf %tmp.6 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_29_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 284 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_end" ]
+    %c.2 = local;
+    %tmp.7 = 0;
+    lputv %c.2 %tmp.7;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_test:
+    %tmp.9 = lgetv %c.2;
+    %tmp.11 = getv ? :cols;
+    %tmp.12 = lt %tmp.9 %tmp.11;
+    bf %tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_33_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 285 12 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_33_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_33_stop" ]
+    %char.3 = local;
+    %tmp.13 = self;
+    %tmp.14 = getv function %tmp.13 :getchar;
+    %tmp.16 = lgetv %r.1;
+    %tmp.18 = lgetv %c.2;
+    %tmp.19 = invoke %tmp.13 %tmp.14(%tmp.16, %tmp.18);
+    lputv %char.3 %tmp.19;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 286 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_12_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_16_begin:
+    %tmp.20 = lgetv %char.3;
+    %tmp.21 = getv function %tmp.20 :equals;
+    %tmp.22 = "@";
+    %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+    %tmp.24 = dup %tmp.23;
+    bt %tmp.24 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_36_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_36_false:
+    %tmp.25 = lgetv %char.3;
+    %tmp.26 = getv function %tmp.25 :equals;
+    %tmp.27 = "+";
+    %tmp.28 = invoke %tmp.25 %tmp.26(%tmp.27);
+    %tmp.29 = or %tmp.23 %tmp.28;
+    push %tmp.29;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_36_end:
+    %tmp.30 = phi [%tmp.24 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_16_begin] [%tmp.29 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_36_false] [%tmp.30 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_36_end];
+    bf %tmp.30 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_54_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 287 16 ]
+    %tmp.31 = newa 2;
+    %tmp.33 = lgetv %r.1;
+    %tmp.34 = dup %tmp.31;
+    %tmp.35 = aputv %tmp.34 0 %tmp.33;
+    %tmp.37 = lgetv %c.2;
+    %tmp.38 = dup %tmp.35;
+    %tmp.39 = aputv %tmp.38 1 %tmp.37;
+    putv self :loc %tmp.39;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 288 16 ]
+    ret ?;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_54_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_286_12_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_33_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 284 ]
+    %tmp.42 = lgetv %c.2;
+    %tmp.43 = add %tmp.42 1;
+    lputv %c.2 %tmp.43;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_284_8_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_29_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 283 ]
+    %tmp.46 = lgetv %r.1;
+    %tmp.47 = add %tmp.46 1;
+    lputv %r.1 %tmp.47;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_283_4_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_282_18_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 294; ]
+function getchar(r, c) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_294_22_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 295 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_294_22_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_294_22_stop" ]
+    %i.1 = local;
+    %tmp.2 = lgetv %r;
+    %tmp.4 = getv ? :cols;
+    %tmp.5 = mul %tmp.2 %tmp.4;
+    %tmp.7 = lgetv %c;
+    %tmp.8 = add %tmp.5 %tmp.7;
+    lputv %i.1 %tmp.8;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 296 4 ]
+    %tmp.10 = getv ? :puzzle;
+    %tmp.11 = getv function %tmp.10 :substring;
+    %tmp.13 = lgetv %i.1;
+    %tmp.15 = lgetv %i.1;
+    %tmp.16 = 1;
+    %tmp.17 = add %tmp.15 %tmp.16;
+    %tmp.18 = invoke %tmp.10 %tmp.11(%tmp.13, %tmp.17);
+    ret %tmp.18;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_294_22_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 299; ]
+function setchar(r, c, char) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 300 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_stop" ]
+    %i.1 = local;
+    %tmp.2 = lgetv %r;
+    %tmp.4 = getv ? :cols;
+    %tmp.5 = mul %tmp.2 %tmp.4;
+    %tmp.7 = lgetv %c;
+    %tmp.8 = add %tmp.5 %tmp.7;
+    lputv %i.1 %tmp.8;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 301 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_stop" ]
+    %s.2 = local;
+    %tmp.9 = "";
+    lputv %s.2 %tmp.9;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 302 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_stop" ]
+    %e.3 = local;
+    %tmp.10 = "";
+    lputv %e.3 %tmp.10;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 303 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_4_if_stmt:
+    %tmp.12 = lgetv %i.1;
+    %tmp.13 = 0;
+    %tmp.14 = gt %tmp.12 %tmp.13;
+    bf %tmp.14 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_15_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 303 17 ]
+    %tmp.16 = getv ? :puzzle;
+    %tmp.17 = getv function %tmp.16 :substring;
+    %tmp.18 = 0;
+    %tmp.20 = lgetv %i.1;
+    %tmp.21 = invoke %tmp.16 %tmp.17(%tmp.18, %tmp.20);
+    lputv %s.2 %tmp.21;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_15_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_303_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 304 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_4_if_stmt:
+    %tmp.23 = lgetv %i.1;
+    %tmp.25 = getv ? :puzzle;
+    %tmp.26 = getv function %tmp.25 :length;
+    %tmp.27 = invoke %tmp.25 %tmp.26();
+    %tmp.28 = 1;
+    %tmp.29 = sub %tmp.27 %tmp.28;
+    %tmp.30 = lt %tmp.23 %tmp.29;
+    bf %tmp.30 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_31_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 304 33 ]
+    %tmp.32 = getv ? :puzzle;
+    %tmp.33 = getv function %tmp.32 :substring;
+    %tmp.35 = lgetv %i.1;
+    %tmp.36 = 1;
+    %tmp.37 = add %tmp.35 %tmp.36;
+    %tmp.39 = getv ? :puzzle;
+    %tmp.40 = getv function %tmp.39 :length;
+    %tmp.41 = invoke %tmp.39 %tmp.40();
+    %tmp.42 = invoke %tmp.32 %tmp.33(%tmp.37, %tmp.41);
+    lputv %e.3 %tmp.42;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_31_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_304_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 305 4 ]
+    %tmp.44 = lgetv %s.2;
+    %tmp.46 = lgetv %char;
+    %tmp.47 = add %tmp.44 %tmp.46;
+    %tmp.49 = lgetv %e.3;
+    %tmp.50 = add %tmp.47 %tmp.49;
+    putv self :puzzle %tmp.50;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_299_27_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 310; ]
+function moveit(d) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 311 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %r.1 = local;
+    %tmp.2 = getv ? :loc;
+    %tmp.3 = 0;
+    %tmp.4 = agetv %tmp.2 %tmp.3;
+    lputv %r.1 %tmp.4;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 312 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %c.2 = local;
+    %tmp.6 = getv ? :loc;
+    %tmp.7 = 1;
+    %tmp.8 = agetv %tmp.6 %tmp.7;
+    lputv %c.2 %tmp.8;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 313 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %r1.3 = local;
+    %tmp.10 = lgetv %r.1;
+    %tmp.12 = lgetv %d;
+    %tmp.13 = 0;
+    %tmp.14 = agetv %tmp.12 %tmp.13;
+    %tmp.15 = add %tmp.10 %tmp.14;
+    lputv %r1.3 %tmp.15;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 314 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %c1.4 = local;
+    %tmp.17 = lgetv %c.2;
+    %tmp.19 = lgetv %d;
+    %tmp.20 = 1;
+    %tmp.21 = agetv %tmp.19 %tmp.20;
+    %tmp.22 = add %tmp.17 %tmp.21;
+    lputv %c1.4 %tmp.22;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 315 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %r2.5 = local;
+    %tmp.24 = lgetv %r1.3;
+    %tmp.26 = lgetv %d;
+    %tmp.27 = 0;
+    %tmp.28 = agetv %tmp.26 %tmp.27;
+    %tmp.29 = add %tmp.24 %tmp.28;
+    lputv %r2.5 %tmp.29;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 316 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %c2.6 = local;
+    %tmp.31 = lgetv %c1.4;
+    %tmp.33 = lgetv %d;
+    %tmp.34 = 1;
+    %tmp.35 = agetv %tmp.33 %tmp.34;
+    %tmp.36 = add %tmp.31 %tmp.35;
+    lputv %c2.6 %tmp.36;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 317 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_4_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_8_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_8_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_8_begin:
+    %tmp.38 = lgetv %r1.3;
+    %tmp.39 = 0;
+    %tmp.40 = lt %tmp.38 %tmp.39;
+    %tmp.41 = dup %tmp.40;
+    bt %tmp.41 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_18_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_18_false:
+    %tmp.43 = lgetv %c1.4;
+    %tmp.44 = 0;
+    %tmp.45 = lt %tmp.43 %tmp.44;
+    %tmp.46 = or %tmp.40 %tmp.45;
+    push %tmp.46;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_18_end:
+    %tmp.47 = phi [%tmp.41 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_8_begin] [%tmp.46 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_18_false] [%tmp.47 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_18_end];
+    %tmp.48 = dup %tmp.47;
+    bt %tmp.48 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_28_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_28_false:
+    %tmp.50 = lgetv %r1.3;
+    %tmp.52 = getv ? :rows;
+    %tmp.53 = 1;
+    %tmp.54 = sub %tmp.52 %tmp.53;
+    %tmp.55 = gt %tmp.50 %tmp.54;
+    %tmp.56 = or %tmp.47 %tmp.55;
+    push %tmp.56;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_28_end:
+    %tmp.57 = phi [%tmp.48 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_8_begin] [%tmp.56 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_28_false] [%tmp.57 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_28_end];
+    %tmp.58 = dup %tmp.57;
+    bt %tmp.58 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_43_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_43_false:
+    %tmp.60 = lgetv %c1.4;
+    %tmp.62 = getv ? :cols;
+    %tmp.63 = 1;
+    %tmp.64 = sub %tmp.62 %tmp.63;
+    %tmp.65 = gt %tmp.60 %tmp.64;
+    %tmp.66 = or %tmp.57 %tmp.65;
+    push %tmp.66;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_43_end:
+    %tmp.67 = phi [%tmp.58 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_8_begin] [%tmp.66 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_43_false] [%tmp.67 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_43_end];
+    bf %tmp.67 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_56_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 317 58 ]
+    %tmp.68 = false;
+    ret %tmp.68;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_56_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_317_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 318 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop" ]
+    %t.7 = local;
+    %tmp.69 = self;
+    %tmp.70 = getv function %tmp.69 :getchar;
+    %tmp.72 = lgetv %r1.3;
+    %tmp.74 = lgetv %c1.4;
+    %tmp.75 = invoke %tmp.69 %tmp.70(%tmp.72, %tmp.74);
+    lputv %t.7 %tmp.75;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 319 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_4_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_8_begin:
+    %tmp.76 = lgetv %t.7;
+    %tmp.77 = getv function %tmp.76 :equals;
+    %tmp.78 = " ";
+    %tmp.79 = invoke %tmp.76 %tmp.77(%tmp.78);
+    %tmp.80 = dup %tmp.79;
+    bt %tmp.80 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_25_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_25_false:
+    %tmp.81 = lgetv %t.7;
+    %tmp.82 = getv function %tmp.81 :equals;
+    %tmp.83 = ".";
+    %tmp.84 = invoke %tmp.81 %tmp.82(%tmp.83);
+    %tmp.85 = or %tmp.79 %tmp.84;
+    push %tmp.85;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_25_end:
+    %tmp.86 = phi [%tmp.80 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_8_begin] [%tmp.85 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_25_false] [%tmp.86 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_25_end];
+    bf %tmp.86 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_40_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 320 8 ]
+    %tmp.87 = self;
+    %tmp.88 = getv function %tmp.87 :moveplayer;
+    %tmp.89 = newa 2;
+    %tmp.91 = lgetv %r.1;
+    %tmp.92 = dup %tmp.89;
+    %tmp.93 = aputv %tmp.92 0 %tmp.91;
+    %tmp.95 = lgetv %c.2;
+    %tmp.96 = dup %tmp.93;
+    %tmp.97 = aputv %tmp.96 1 %tmp.95;
+    %tmp.98 = newa 2;
+    %tmp.100 = lgetv %r1.3;
+    %tmp.101 = dup %tmp.98;
+    %tmp.102 = aputv %tmp.101 0 %tmp.100;
+    %tmp.104 = lgetv %c1.4;
+    %tmp.105 = dup %tmp.102;
+    %tmp.106 = aputv %tmp.105 1 %tmp.104;
+    invoke %tmp.87 %tmp.88(%tmp.97, %tmp.106);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 321 8 ]
+    %tmp.107 = self;
+    %tmp.108 = getv function %tmp.107 :addhist;
+    invoke %tmp.107 %tmp.108();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 322 8 ]
+    %tmp.109 = true;
+    ret %tmp.109;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_40_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_4_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 323 11 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_11_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_15_begin:
+    %tmp.110 = lgetv %t.7;
+    %tmp.111 = getv function %tmp.110 :equals;
+    %tmp.112 = "$";
+    %tmp.113 = invoke %tmp.110 %tmp.111(%tmp.112);
+    %tmp.114 = dup %tmp.113;
+    bt %tmp.114 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_32_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_32_false:
+    %tmp.115 = lgetv %t.7;
+    %tmp.116 = getv function %tmp.115 :equals;
+    %tmp.117 = "*";
+    %tmp.118 = invoke %tmp.115 %tmp.116(%tmp.117);
+    %tmp.119 = or %tmp.113 %tmp.118;
+    push %tmp.119;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_32_end:
+    %tmp.120 = phi [%tmp.114 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_15_begin] [%tmp.119 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_32_false] [%tmp.120 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_32_end];
+    bf %tmp.120 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_11_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_11_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_47_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 324 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_8_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_12_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_12_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_12_begin:
+    %tmp.122 = lgetv %r2.5;
+    %tmp.123 = 0;
+    %tmp.124 = lt %tmp.122 %tmp.123;
+    %tmp.125 = dup %tmp.124;
+    bt %tmp.125 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_22_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_22_false:
+    %tmp.127 = lgetv %c2.6;
+    %tmp.128 = 0;
+    %tmp.129 = lt %tmp.127 %tmp.128;
+    %tmp.130 = or %tmp.124 %tmp.129;
+    push %tmp.130;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_22_end:
+    %tmp.131 = phi [%tmp.125 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_12_begin] [%tmp.130 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_22_false] [%tmp.131 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_22_end];
+    %tmp.132 = dup %tmp.131;
+    bt %tmp.132 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_32_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_32_false:
+    %tmp.134 = lgetv %r2.5;
+    %tmp.136 = getv ? :rows;
+    %tmp.137 = 1;
+    %tmp.138 = sub %tmp.136 %tmp.137;
+    %tmp.139 = gt %tmp.134 %tmp.138;
+    %tmp.140 = or %tmp.131 %tmp.139;
+    push %tmp.140;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_32_end:
+    %tmp.141 = phi [%tmp.132 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_12_begin] [%tmp.140 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_32_false] [%tmp.141 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_32_end];
+    %tmp.142 = dup %tmp.141;
+    bt %tmp.142 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_47_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_47_false:
+    %tmp.144 = lgetv %c2.6;
+    %tmp.146 = getv ? :cols;
+    %tmp.147 = 1;
+    %tmp.148 = sub %tmp.146 %tmp.147;
+    %tmp.149 = gt %tmp.144 %tmp.148;
+    %tmp.150 = or %tmp.141 %tmp.149;
+    push %tmp.150;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_47_end:
+    %tmp.151 = phi [%tmp.142 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_12_begin] [%tmp.150 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_47_false] [%tmp.151 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_47_end];
+    bf %tmp.151 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_60_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 324 62 ]
+    %tmp.152 = false;
+    ret %tmp.152;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_60_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_324_8_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 325 8 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_47_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_47_stop" ]
+    %u.8 = local;
+    %tmp.153 = self;
+    %tmp.154 = getv function %tmp.153 :getchar;
+    %tmp.156 = lgetv %r2.5;
+    %tmp.158 = lgetv %c2.6;
+    %tmp.159 = invoke %tmp.153 %tmp.154(%tmp.156, %tmp.158);
+    lputv %u.8 %tmp.159;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 326 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_8_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_12_begin:
+    %tmp.160 = lgetv %u.8;
+    %tmp.161 = getv function %tmp.160 :equals;
+    %tmp.162 = " ";
+    %tmp.163 = invoke %tmp.160 %tmp.161(%tmp.162);
+    %tmp.164 = dup %tmp.163;
+    bt %tmp.164 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_29_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_29_false:
+    %tmp.165 = lgetv %u.8;
+    %tmp.166 = getv function %tmp.165 :equals;
+    %tmp.167 = ".";
+    %tmp.168 = invoke %tmp.165 %tmp.166(%tmp.167);
+    %tmp.169 = or %tmp.163 %tmp.168;
+    push %tmp.169;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_29_end:
+    %tmp.170 = phi [%tmp.164 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_12_begin] [%tmp.169 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_29_false] [%tmp.170 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_29_end];
+    bf %tmp.170 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_44_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 327 12 ]
+    %tmp.171 = self;
+    %tmp.172 = getv function %tmp.171 :movebox;
+    %tmp.173 = newa 2;
+    %tmp.175 = lgetv %r1.3;
+    %tmp.176 = dup %tmp.173;
+    %tmp.177 = aputv %tmp.176 0 %tmp.175;
+    %tmp.179 = lgetv %c1.4;
+    %tmp.180 = dup %tmp.177;
+    %tmp.181 = aputv %tmp.180 1 %tmp.179;
+    %tmp.182 = newa 2;
+    %tmp.184 = lgetv %r2.5;
+    %tmp.185 = dup %tmp.182;
+    %tmp.186 = aputv %tmp.185 0 %tmp.184;
+    %tmp.188 = lgetv %c2.6;
+    %tmp.189 = dup %tmp.186;
+    %tmp.190 = aputv %tmp.189 1 %tmp.188;
+    invoke %tmp.171 %tmp.172(%tmp.181, %tmp.190);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 328 12 ]
+    %tmp.191 = self;
+    %tmp.192 = getv function %tmp.191 :moveplayer;
+    %tmp.193 = newa 2;
+    %tmp.195 = lgetv %r.1;
+    %tmp.196 = dup %tmp.193;
+    %tmp.197 = aputv %tmp.196 0 %tmp.195;
+    %tmp.199 = lgetv %c.2;
+    %tmp.200 = dup %tmp.197;
+    %tmp.201 = aputv %tmp.200 1 %tmp.199;
+    %tmp.202 = newa 2;
+    %tmp.204 = lgetv %r1.3;
+    %tmp.205 = dup %tmp.202;
+    %tmp.206 = aputv %tmp.205 0 %tmp.204;
+    %tmp.208 = lgetv %c1.4;
+    %tmp.209 = dup %tmp.206;
+    %tmp.210 = aputv %tmp.209 1 %tmp.208;
+    invoke %tmp.191 %tmp.192(%tmp.201, %tmp.210);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 329 12 ]
+    %tmp.211 = self;
+    %tmp.212 = getv function %tmp.211 :addhist;
+    invoke %tmp.211 %tmp.212();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 330 12 ]
+    %tmp.213 = true;
+    ret %tmp.213;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_44_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_326_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_47_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_11_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_323_11_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_319_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 333 4 ]
+    %tmp.214 = false;
+    ret %tmp.214;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_310_19_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 335; ]
+function moveplayer(s, e) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_335_25_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 336 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_335_25_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_335_25_stop" ]
+    %sc.1 = local;
+    %tmp.1 = self;
+    %tmp.2 = getv function %tmp.1 :getchar;
+    %tmp.4 = lgetv %s;
+    %tmp.5 = 0;
+    %tmp.6 = agetv %tmp.4 %tmp.5;
+    %tmp.8 = lgetv %s;
+    %tmp.9 = 1;
+    %tmp.10 = agetv %tmp.8 %tmp.9;
+    %tmp.11 = invoke %tmp.1 %tmp.2(%tmp.6, %tmp.10);
+    lputv %sc.1 %tmp.11;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 337 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_335_25_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_335_25_stop" ]
+    %ec.2 = local;
+    %tmp.12 = self;
+    %tmp.13 = getv function %tmp.12 :getchar;
+    %tmp.15 = lgetv %e;
+    %tmp.16 = 0;
+    %tmp.17 = agetv %tmp.15 %tmp.16;
+    %tmp.19 = lgetv %e;
+    %tmp.20 = 1;
+    %tmp.21 = agetv %tmp.19 %tmp.20;
+    %tmp.22 = invoke %tmp.12 %tmp.13(%tmp.17, %tmp.21);
+    lputv %ec.2 %tmp.22;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 338 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_4_if_stmt:
+    %tmp.23 = lgetv %sc.1;
+    %tmp.24 = getv function %tmp.23 :equals;
+    %tmp.25 = "+";
+    %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+    bf %tmp.26 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 338 26 ]
+    %tmp.27 = ".";
+    lputv %sc.1 %tmp.27;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_24_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_339_9_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 339 11 ]
+    %tmp.28 = " ";
+    lputv %sc.1 %tmp.28;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_339_9_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_338_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 340 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_4_if_stmt:
+    %tmp.29 = lgetv %ec.2;
+    %tmp.30 = getv function %tmp.29 :equals;
+    %tmp.31 = ".";
+    %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+    bf %tmp.32 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 340 26 ]
+    %tmp.33 = "+";
+    lputv %ec.2 %tmp.33;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_24_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_341_9_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 341 11 ]
+    %tmp.34 = "@";
+    lputv %ec.2 %tmp.34;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_341_9_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_340_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 342 4 ]
+    %tmp.35 = self;
+    %tmp.36 = getv function %tmp.35 :setchar;
+    %tmp.38 = lgetv %s;
+    %tmp.39 = 0;
+    %tmp.40 = agetv %tmp.38 %tmp.39;
+    %tmp.42 = lgetv %s;
+    %tmp.43 = 1;
+    %tmp.44 = agetv %tmp.42 %tmp.43;
+    %tmp.46 = lgetv %sc.1;
+    invoke %tmp.35 %tmp.36(%tmp.40, %tmp.44, %tmp.46);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 343 4 ]
+    %tmp.47 = self;
+    %tmp.48 = getv function %tmp.47 :setchar;
+    %tmp.50 = lgetv %e;
+    %tmp.51 = 0;
+    %tmp.52 = agetv %tmp.50 %tmp.51;
+    %tmp.54 = lgetv %e;
+    %tmp.55 = 1;
+    %tmp.56 = agetv %tmp.54 %tmp.55;
+    %tmp.58 = lgetv %ec.2;
+    invoke %tmp.47 %tmp.48(%tmp.52, %tmp.56, %tmp.58);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 344 4 ]
+    %tmp.60 = lgetv %e;
+    putv self :loc %tmp.60;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_335_25_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 346; ]
+function movebox(s, e) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_346_22_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 347 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_346_22_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_346_22_stop" ]
+    %sc.1 = local;
+    %tmp.1 = self;
+    %tmp.2 = getv function %tmp.1 :getchar;
+    %tmp.4 = lgetv %s;
+    %tmp.5 = 0;
+    %tmp.6 = agetv %tmp.4 %tmp.5;
+    %tmp.8 = lgetv %s;
+    %tmp.9 = 1;
+    %tmp.10 = agetv %tmp.8 %tmp.9;
+    %tmp.11 = invoke %tmp.1 %tmp.2(%tmp.6, %tmp.10);
+    lputv %sc.1 %tmp.11;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 348 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_346_22_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_346_22_stop" ]
+    %ec.2 = local;
+    %tmp.12 = self;
+    %tmp.13 = getv function %tmp.12 :getchar;
+    %tmp.15 = lgetv %e;
+    %tmp.16 = 0;
+    %tmp.17 = agetv %tmp.15 %tmp.16;
+    %tmp.19 = lgetv %e;
+    %tmp.20 = 1;
+    %tmp.21 = agetv %tmp.19 %tmp.20;
+    %tmp.22 = invoke %tmp.12 %tmp.13(%tmp.17, %tmp.21);
+    lputv %ec.2 %tmp.22;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 349 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_4_if_stmt:
+    %tmp.23 = lgetv %sc.1;
+    %tmp.24 = getv function %tmp.23 :equals;
+    %tmp.25 = "*";
+    %tmp.26 = invoke %tmp.23 %tmp.24(%tmp.25);
+    bf %tmp.26 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 349 26 ]
+    %tmp.27 = ".";
+    lputv %sc.1 %tmp.27;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_24_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_350_9_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 350 11 ]
+    %tmp.28 = " ";
+    lputv %sc.1 %tmp.28;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_350_9_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_349_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 351 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_4_if_stmt:
+    %tmp.29 = lgetv %ec.2;
+    %tmp.30 = getv function %tmp.29 :equals;
+    %tmp.31 = ".";
+    %tmp.32 = invoke %tmp.29 %tmp.30(%tmp.31);
+    bf %tmp.32 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 351 26 ]
+    %tmp.33 = "*";
+    lputv %ec.2 %tmp.33;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_24_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_352_9_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 352 11 ]
+    %tmp.34 = "$";
+    lputv %ec.2 %tmp.34;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_352_9_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_351_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 353 4 ]
+    %tmp.35 = self;
+    %tmp.36 = getv function %tmp.35 :setchar;
+    %tmp.38 = lgetv %s;
+    %tmp.39 = 0;
+    %tmp.40 = agetv %tmp.38 %tmp.39;
+    %tmp.42 = lgetv %s;
+    %tmp.43 = 1;
+    %tmp.44 = agetv %tmp.42 %tmp.43;
+    %tmp.46 = lgetv %sc.1;
+    invoke %tmp.35 %tmp.36(%tmp.40, %tmp.44, %tmp.46);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 354 4 ]
+    %tmp.47 = self;
+    %tmp.48 = getv function %tmp.47 :setchar;
+    %tmp.50 = lgetv %e;
+    %tmp.51 = 0;
+    %tmp.52 = agetv %tmp.50 %tmp.51;
+    %tmp.54 = lgetv %e;
+    %tmp.55 = 1;
+    %tmp.56 = agetv %tmp.54 %tmp.55;
+    %tmp.58 = lgetv %ec.2;
+    invoke %tmp.47 %tmp.48(%tmp.52, %tmp.56, %tmp.58);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_346_22_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 357; ]
+function nextpuzz() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_357_20_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 358 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_4_if_stmt:
+    %tmp.2 = getv ? :thispuzz;
+    %tmp.4 = getv ? :allpuzzles;
+    %tmp.6 = getv ? :diff;
+    %tmp.7 = agetv %tmp.4 %tmp.6;
+    %tmp.8 = getv function %tmp.7 :size;
+    %tmp.9 = invoke %tmp.7 %tmp.8();
+    %tmp.10 = 1;
+    %tmp.11 = sub %tmp.9 %tmp.10;
+    %tmp.12 = eq %tmp.2 %tmp.11;
+    bf %tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_47_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 359 8 ]
+    %tmp.13 = false;
+    ret %tmp.13;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_47_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_360_11_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 361 8 ]
+    %tmp.16 = getv ? :thispuzz;
+    %tmp.17 = add %tmp.16 1;
+    putv self :thispuzz dup %tmp.17;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_360_11_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_358_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 363 4 ]
+    %tmp.18 = self;
+    %tmp.19 = getv function %tmp.18 :newgame;
+    invoke %tmp.18 %tmp.19();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 364 4 ]
+    %tmp.20 = true;
+    ret %tmp.20;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_357_20_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 367; ]
+function prevpuzz() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_367_20_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 368 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_4_if_stmt:
+    %tmp.2 = getv ? :thispuzz;
+    %tmp.3 = 0;
+    %tmp.4 = eq %tmp.2 %tmp.3;
+    bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_23_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 369 8 ]
+    %tmp.5 = false;
+    ret %tmp.5;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_23_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_370_11_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 371 8 ]
+    %tmp.8 = getv ? :thispuzz;
+    %tmp.9 = sub %tmp.8 1;
+    putv self :thispuzz dup %tmp.9;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_370_11_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_368_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 373 4 ]
+    %tmp.10 = self;
+    %tmp.11 = getv function %tmp.10 :newgame;
+    invoke %tmp.10 %tmp.11();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 374 4 ]
+    %tmp.12 = true;
+    ret %tmp.12;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_367_20_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 377; ]
+function addhist() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_377_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 378 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_4_if_stmt:
+    %tmp.2 = getv ? :lasthist;
+    %tmp.4 = getv ? :gamehist;
+    %tmp.5 = getv function %tmp.4 :size;
+    %tmp.6 = invoke %tmp.4 %tmp.5();
+    %tmp.7 = 1;
+    %tmp.8 = sub %tmp.6 %tmp.7;
+    %tmp.9 = lt %tmp.2 %tmp.8;
+    bf %tmp.9 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_38_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 379 8 ]
+    %tmp.11 = getv ? :gamehist;
+    %tmp.12 = getv function %tmp.11 :slice;
+    %tmp.13 = 0;
+    %tmp.15 = getv ? :lasthist;
+    %tmp.16 = invoke %tmp.11 %tmp.12(%tmp.13, %tmp.15);
+    putv self :gamehist %tmp.16;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_38_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_378_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 381 4 ]
+    %tmp.18 = getv ? :gamehist;
+    %tmp.19 = getv function %tmp.18 :add;
+    %tmp.21 = getv ? :puzzle;
+    invoke %tmp.18 %tmp.19(%tmp.21);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 382 4 ]
+    %tmp.23 = getv ? :gamehist;
+    %tmp.24 = getv function %tmp.23 :size;
+    %tmp.25 = invoke %tmp.23 %tmp.24();
+    %tmp.26 = 1;
+    %tmp.27 = sub %tmp.25 %tmp.26;
+    putv self :lasthist %tmp.27;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_377_19_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 385; ]
+function undoit() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_385_18_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 386 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_4_if_stmt:
+    %tmp.2 = getv ? :lasthist;
+    %tmp.3 = 0;
+    %tmp.4 = lte %tmp.2 %tmp.3;
+    bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_23_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 386 25 ]
+    %tmp.5 = false;
+    ret %tmp.5;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_23_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_386_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 387 4 ]
+    %tmp.8 = getv ? :lasthist;
+    %tmp.9 = sub %tmp.8 1;
+    putv self :lasthist dup %tmp.9;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 388 4 ]
+    %tmp.11 = getv ? :gamehist;
+    %tmp.13 = getv ? :lasthist;
+    %tmp.14 = agetv %tmp.11 %tmp.13;
+    putv self :puzzle %tmp.14;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 389 4 ]
+    %tmp.15 = self;
+    %tmp.16 = getv function %tmp.15 :getloc;
+    invoke %tmp.15 %tmp.16();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 390 4 ]
+    %tmp.17 = self;
+    %tmp.18 = getv function %tmp.17 :savegame;
+    invoke %tmp.17 %tmp.18();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 391 4 ]
+    %tmp.19 = true;
+    ret %tmp.19;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_385_18_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 394; ]
+function redoit() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_394_18_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 395 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_4_if_stmt:
+    %tmp.2 = getv ? :lasthist;
+    %tmp.4 = getv ? :gamehist;
+    %tmp.5 = getv function %tmp.4 :size;
+    %tmp.6 = invoke %tmp.4 %tmp.5();
+    %tmp.7 = 1;
+    %tmp.8 = sub %tmp.6 %tmp.7;
+    %tmp.9 = gte %tmp.2 %tmp.8;
+    bf %tmp.9 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_39_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 395 41 ]
+    %tmp.10 = false;
+    ret %tmp.10;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_39_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_395_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 396 4 ]
+    %tmp.13 = getv ? :lasthist;
+    %tmp.14 = add %tmp.13 1;
+    putv self :lasthist dup %tmp.14;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 397 4 ]
+    %tmp.16 = getv ? :gamehist;
+    %tmp.18 = getv ? :lasthist;
+    %tmp.19 = agetv %tmp.16 %tmp.18;
+    putv self :puzzle %tmp.19;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 398 4 ]
+    %tmp.20 = self;
+    %tmp.21 = getv function %tmp.20 :getloc;
+    invoke %tmp.20 %tmp.21();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 399 4 ]
+    %tmp.22 = self;
+    %tmp.23 = getv function %tmp.22 :savegame;
+    invoke %tmp.22 %tmp.23();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 400 4 ]
+    %tmp.24 = true;
+    ret %tmp.24;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_394_18_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 403; ]
+function newgame() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_403_19_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 404 4 ]
+    %tmp.1 = newa 0;
+    putv self :gamehist %tmp.1;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 405 4 ]
+    %tmp.2 = 0;
+    putv self :lasthist %tmp.2;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 406 4 ]
+    %tmp.3 = self;
+    %tmp.4 = getv function %tmp.3 :getpuzzle;
+    %tmp.6 = getv ? :diff;
+    %tmp.8 = getv ? :thispuzz;
+    invoke %tmp.3 %tmp.4(%tmp.6, %tmp.8);
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 407 4 ]
+    %tmp.9 = false;
+    putv self :undo %tmp.9;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 408 4 ]
+    %tmp.10 = self;
+    %tmp.11 = getv function %tmp.10 :savegame;
+    invoke %tmp.10 %tmp.11();
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_403_19_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 411; ]
+function savegame() as Void {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_411_28_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 412 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_4_if_stmt:
+    %tmp.2 = getv ? :state;
+    %tmp.3 = 1;
+    %tmp.4 = eq %tmp.2 %tmp.3;
+    bf %tmp.4 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_20_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 413 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_8_if_stmt:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_12_begin:
+    %tmp.6 = getv ? :puzzle;
+    %tmp.7 = getv function %tmp.6 :find;
+    %tmp.8 = ".";
+    %tmp.9 = invoke %tmp.6 %tmp.7(%tmp.8);
+    %tmp.10 = null;
+    %tmp.11 = eq %tmp.9 %tmp.10;
+    %tmp.12 = dup %tmp.11;
+    bf %tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_41_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_41_true:
+    %tmp.14 = getv ? :puzzle;
+    %tmp.15 = getv function %tmp.14 :find;
+    %tmp.16 = "+";
+    %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+    %tmp.18 = null;
+    %tmp.19 = eq %tmp.17 %tmp.18;
+    %tmp.20 = and %tmp.11 %tmp.19;
+    push %tmp.20;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_41_end:
+    %tmp.21 = phi [%tmp.12 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_12_begin] [%tmp.20 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_41_true] [%tmp.21 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_41_end];
+    bf %tmp.21 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_67_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 414 12 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_12_if_stmt:
+    %tmp.23 = getv ? :diff;
+    %tmp.24 = 3;
+    %tmp.25 = lt %tmp.23 %tmp.24;
+    bf %tmp.25 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_12_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_26_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 415 16 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_16_if_stmt:
+    %tmp.27 = getv ? :solved;
+    %tmp.29 = getv ? :diff;
+    %tmp.30 = agetv %tmp.27 %tmp.29;
+    %tmp.32 = getv ? :thispuzz;
+    %tmp.33 = agetv %tmp.30 %tmp.32;
+    %tmp.34 = null;
+    %tmp.35 = ne %tmp.33 %tmp.34;
+    bf %tmp.35 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_16_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_16_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_52_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 416 20 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_416_20_if_stmt:
+    %tmp.37 = getv ? :solved;
+    %tmp.39 = getv ? :diff;
+    %tmp.40 = agetv %tmp.37 %tmp.39;
+    %tmp.42 = getv ? :thispuzz;
+    %tmp.43 = agetv %tmp.40 %tmp.42;
+    %tmp.45 = getv ? :lasthist;
+    %tmp.46 = gt %tmp.43 %tmp.45;
+    bf %tmp.46 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_416_20_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_416_20_if_true:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_416_20_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_416_20_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_52_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_16_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_415_16_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 420 16 ]
+    %tmp.47 = getv self :solved;
+    %tmp.49 = getv ? :diff;
+    %tmp.50 = agetv %tmp.47 %tmp.49;
+    %tmp.52 = getv ? :lasthist;
+    %tmp.54 = getv ? :thispuzz;
+    aputv %tmp.50 %tmp.54 %tmp.52;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_26_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_12_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_414_12_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 422 12 ]
+    %tmp.55 = 2;
+    putv self :state %tmp.55;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_67_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_413_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_20_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_412_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 426 4 ]
+    %tmp.56 = newd 10;
+    %tmp.57 = "ver";
+    %tmp.58 = 1;
+    %tmp.59 = dup %tmp.56;
+    %tmp.60 = aputv %tmp.59 %tmp.57 %tmp.58;
+    %tmp.61 = "state";
+    %tmp.63 = getv ? :state;
+    %tmp.64 = dup %tmp.60;
+    %tmp.65 = aputv %tmp.64 %tmp.61 %tmp.63;
+    %tmp.66 = "solved";
+    %tmp.68 = getv ? :solved;
+    %tmp.69 = dup %tmp.65;
+    %tmp.70 = aputv %tmp.69 %tmp.66 %tmp.68;
+    %tmp.71 = "undo";
+    %tmp.73 = getv ? :undo;
+    %tmp.74 = dup %tmp.70;
+    %tmp.75 = aputv %tmp.74 %tmp.71 %tmp.73;
+    %tmp.76 = "rows";
+    %tmp.78 = getv ? :rows;
+    %tmp.79 = dup %tmp.75;
+    %tmp.80 = aputv %tmp.79 %tmp.76 %tmp.78;
+    %tmp.81 = "cols";
+    %tmp.83 = getv ? :cols;
+    %tmp.84 = dup %tmp.80;
+    %tmp.85 = aputv %tmp.84 %tmp.81 %tmp.83;
+    %tmp.86 = "gamehist";
+    %tmp.88 = getv ? :gamehist;
+    %tmp.89 = dup %tmp.85;
+    %tmp.90 = aputv %tmp.89 %tmp.86 %tmp.88;
+    %tmp.91 = "lasthist";
+    %tmp.93 = getv ? :lasthist;
+    %tmp.94 = dup %tmp.90;
+    %tmp.95 = aputv %tmp.94 %tmp.91 %tmp.93;
+    %tmp.96 = "thispuzz";
+    %tmp.98 = getv ? :thispuzz;
+    %tmp.99 = dup %tmp.95;
+    %tmp.100 = aputv %tmp.99 %tmp.96 %tmp.98;
+    %tmp.101 = "diff";
+    %tmp.103 = getv ? :diff;
+    %tmp.104 = dup %tmp.100;
+    %tmp.105 = aputv %tmp.104 %tmp.101 %tmp.103;
+    putv self :game %tmp.105;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 438 4 ]
+    %tmp.106 = getm $.Toybox.Application.Storage;
+    %tmp.107 = getv function %tmp.106 :setValue;
+    %tmp.108 = "game";
+    %tmp.110 = getv ? :game;
+    invoke %tmp.106 %tmp.107(%tmp.108, %tmp.110);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_411_28_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 441; ]
+function loadgame() {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_441_20_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 442 4 ]
+    %tmp.1 = getm $.Toybox.Application.Storage;
+    %tmp.2 = getv function %tmp.1 :getValue;
+    %tmp.3 = "game";
+    %tmp.4 = invoke %tmp.1 %tmp.2(%tmp.3);
+    putv self :game %tmp.4;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 444 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_4_if_stmt:
+    %tmp.6 = getv ? :game;
+    %tmp.7 = null;
+    %tmp.8 = eq %tmp.6 %tmp.7;
+    bf %tmp.8 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_22_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 445 8 ]
+    %tmp.9 = 0;
+    putv self :state %tmp.9;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 446 8 ]
+    %tmp.10 = 0;
+    putv self :diff %tmp.10;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 447 8 ]
+    %tmp.11 = 0;
+    putv self :thispuzz %tmp.11;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 448 8 ]
+    %tmp.12 = self;
+    %tmp.13 = getv function %tmp.12 :newgame;
+    invoke %tmp.12 %tmp.13();
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_22_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_444_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 450 4 ]
+    %tmp.15 = getv ? :game;
+    %tmp.16 = getv function %tmp.15 :get;
+    %tmp.17 = "state";
+    %tmp.18 = invoke %tmp.15 %tmp.16(%tmp.17);
+    putv self :state %tmp.18;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 451 4 ]
+    %tmp.20 = getv ? :game;
+    %tmp.21 = getv function %tmp.20 :get;
+    %tmp.22 = "solved";
+    %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+    putv self :solved %tmp.23;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 452 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_4_if_stmt:
+    %tmp.25 = getv ? :solved;
+    %tmp.26 = null;
+    %tmp.27 = eq %tmp.25 %tmp.26;
+    bf %tmp.27 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_24_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 453 8 ]
+    %tmp.29 = 0;
+    %tmp.28 = newa %tmp.29;
+    putv self :solved %tmp.28;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 454 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_end" ]
+    %i.1 = local;
+    %tmp.30 = 0;
+    lputv %i.1 %tmp.30;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_test:
+    %tmp.32 = lgetv %i.1;
+    %tmp.34 = getv ? :allpuzzles;
+    %tmp.35 = getv function %tmp.34 :size;
+    %tmp.36 = invoke %tmp.34 %tmp.35();
+    %tmp.37 = lt %tmp.32 %tmp.36;
+    bf %tmp.37 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_46_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 455 12 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_46_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_46_stop" ]
+    %x.2 = local;
+    %tmp.39 = 0;
+    %tmp.38 = newa %tmp.39;
+    lputv %x.2 %tmp.38;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 456 12 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_end" ]
+    %j.3 = local;
+    %tmp.40 = 0;
+    lputv %j.3 %tmp.40;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_test:
+    %tmp.42 = lgetv %j.3;
+    %tmp.44 = getv ? :allpuzzles;
+    %tmp.46 = lgetv %i.1;
+    %tmp.47 = agetv %tmp.44 %tmp.46;
+    %tmp.48 = getv function %tmp.47 :size;
+    %tmp.49 = invoke %tmp.47 %tmp.48();
+    %tmp.50 = lt %tmp.42 %tmp.49;
+    bf %tmp.50 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_53_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 457 16 ]
+    %tmp.51 = lgetv %x.2;
+    %tmp.52 = getv function %tmp.51 :add;
+    %tmp.53 = null;
+    invoke %tmp.51 %tmp.52(%tmp.53);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_53_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 456 ]
+    %tmp.56 = lgetv %j.3;
+    %tmp.57 = add %tmp.56 1;
+    lputv %j.3 %tmp.57;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_456_12_for_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 459 12 ]
+    %tmp.59 = getv ? :solved;
+    %tmp.60 = getv function %tmp.59 :add;
+    %tmp.62 = lgetv %x.2;
+    invoke %tmp.59 %tmp.60(%tmp.62);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_46_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 454 ]
+    %tmp.65 = lgetv %i.1;
+    %tmp.66 = add %tmp.65 1;
+    lputv %i.1 %tmp.66;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_454_8_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_24_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_452_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 462 4 ]
+    %tmp.68 = getv ? :game;
+    %tmp.69 = getv function %tmp.68 :get;
+    %tmp.70 = "undo";
+    %tmp.71 = invoke %tmp.68 %tmp.69(%tmp.70);
+    putv self :undo %tmp.71;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 463 4 ]
+    %tmp.73 = getv ? :game;
+    %tmp.74 = getv function %tmp.73 :get;
+    %tmp.75 = "rows";
+    %tmp.76 = invoke %tmp.73 %tmp.74(%tmp.75);
+    putv self :rows %tmp.76;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 464 4 ]
+    %tmp.78 = getv ? :game;
+    %tmp.79 = getv function %tmp.78 :get;
+    %tmp.80 = "cols";
+    %tmp.81 = invoke %tmp.78 %tmp.79(%tmp.80);
+    putv self :cols %tmp.81;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 465 4 ]
+    %tmp.83 = getv ? :game;
+    %tmp.84 = getv function %tmp.83 :get;
+    %tmp.85 = "gamehist";
+    %tmp.86 = invoke %tmp.83 %tmp.84(%tmp.85);
+    putv self :gamehist %tmp.86;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 466 4 ]
+    %tmp.88 = getv ? :game;
+    %tmp.89 = getv function %tmp.88 :get;
+    %tmp.90 = "lasthist";
+    %tmp.91 = invoke %tmp.88 %tmp.89(%tmp.90);
+    putv self :lasthist %tmp.91;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 467 4 ]
+    %tmp.93 = getv ? :game;
+    %tmp.94 = getv function %tmp.93 :get;
+    %tmp.95 = "diff";
+    %tmp.96 = invoke %tmp.93 %tmp.94(%tmp.95);
+    putv self :diff %tmp.96;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 468 4 ]
+    %tmp.98 = getv ? :game;
+    %tmp.99 = getv function %tmp.98 :get;
+    %tmp.100 = "thispuzz";
+    %tmp.101 = invoke %tmp.98 %tmp.99(%tmp.100);
+    putv self :thispuzz %tmp.101;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 469 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_4_if_stmt:
+    %tmp.103 = getv ? :gamehist;
+    %tmp.104 = getv function %tmp.103 :size;
+    %tmp.105 = invoke %tmp.103 %tmp.104();
+    %tmp.106 = 0;
+    %tmp.107 = eq %tmp.105 %tmp.106;
+    bf %tmp.107 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_30_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 470 8 ]
+    %tmp.108 = "";
+    putv self :puzzle %tmp.108;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 471 8 ]
+    %tmp.109 = 10;
+    putv self :rows %tmp.109;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 472 8 ]
+    %tmp.110 = 10;
+    putv self :cols %tmp.110;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 473 8 ]
+    %tmp.111 = newa 2;
+    %tmp.112 = 0;
+    %tmp.113 = dup %tmp.111;
+    %tmp.114 = aputv %tmp.113 0 %tmp.112;
+    %tmp.115 = 0;
+    %tmp.116 = dup %tmp.114;
+    %tmp.117 = aputv %tmp.116 1 %tmp.115;
+    putv self :loc %tmp.117;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_30_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_4_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_474_11_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 475 8 ]
+    %tmp.118 = self;
+    %tmp.119 = getv function %tmp.118 :deepcopy;
+    %tmp.121 = getv ? :gamehist;
+    %tmp.123 = getv ? :lasthist;
+    %tmp.124 = agetv %tmp.121 %tmp.123;
+    %tmp.125 = invoke %tmp.118 %tmp.119(%tmp.124);
+    putv self :puzzle %tmp.125;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 476 8 ]
+    %tmp.126 = self;
+    %tmp.127 = getv function %tmp.126 :getloc;
+    invoke %tmp.126 %tmp.127();
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_474_11_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_469_4_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_441_20_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 480; ]
+function deepcopy(input) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_481_0_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 482 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_481_0_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_481_0_stop" ]
+    %result.1 = local;
+    %tmp.1 = null;
+    lputv %result.1 %tmp.1;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 484 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_484_4_if_stmt:
+    %tmp.3 = lgetv %input;
+    %tmp.4 = null;
+    %tmp.5 = eq %tmp.3 %tmp.4;
+    bf %tmp.5 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_484_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_484_4_if_true:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_484_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_484_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 487 4 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_4_if_stmt:
+    %tmp.7 = lgetv %input;
+    %tmp.8 = getm $.Toybox.Lang;
+    %tmp.9 = getv %tmp.8 :Array;
+    %tmp.10 = isa %tmp.7 %tmp.9;
+    bf %tmp.10 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_4_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_4_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_37_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 488 8 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_8_if_stmt:
+    %tmp.11 = lgetv %input;
+    %tmp.12 = as %tmp.11 { (Lang.Array) };
+    %tmp.13 = getv function %tmp.12 :size;
+    %tmp.14 = invoke %tmp.12 %tmp.13();
+    %tmp.15 = 0;
+    %tmp.16 = eq %tmp.14 %tmp.15;
+    bf %tmp.16 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_8_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_8_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_31_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 488 33 ]
+    %tmp.17 = newa 0;
+    lputv %result.1 %tmp.17;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_31_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_8_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_8_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_489_13_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 490 12 ]
+    %tmp.19 = lgetv %input;
+    %tmp.20 = as %tmp.19 { (Lang.Array) };
+    %tmp.21 = getv function %tmp.20 :size;
+    %tmp.22 = invoke %tmp.20 %tmp.21();
+    %tmp.18 = newa %tmp.22;
+    lputv %result.1 %tmp.18;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 491 12 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_end" ]
+    %i.2 = local;
+    %tmp.23 = 0;
+    lputv %i.2 %tmp.23;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_test:
+    %tmp.25 = lgetv %i.2;
+    %tmp.26 = lgetv %result.1;
+    %tmp.27 = getv function %tmp.26 :size;
+    %tmp.28 = invoke %tmp.26 %tmp.27();
+    %tmp.29 = lt %tmp.25 %tmp.28;
+    bf %tmp.29 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_52_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 492 16 ]
+    %tmp.30 = lgetv %result.1;
+    %tmp.31 = self;
+    %tmp.32 = getv function %tmp.31 :deepcopy;
+    %tmp.34 = lgetv %input;
+    %tmp.35 = as %tmp.34 { (Lang.Array) };
+    %tmp.37 = lgetv %i.2;
+    %tmp.38 = agetv %tmp.35 %tmp.37;
+    %tmp.39 = invoke %tmp.31 %tmp.32(%tmp.38);
+    %tmp.41 = lgetv %i.2;
+    aputv %tmp.30 %tmp.41 %tmp.39;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_52_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 491 ]
+    %tmp.44 = lgetv %i.2;
+    %tmp.45 = add %tmp.44 1;
+    lputv %i.2 %tmp.45;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_491_12_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_489_13_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_488_8_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_37_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_4_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_4_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 496 9 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_9_if_stmt:
+    %tmp.47 = lgetv %input;
+    %tmp.48 = as %tmp.47 { (!Lang.Array) };
+    %tmp.49 = getm $.Toybox.Lang;
+    %tmp.50 = getv %tmp.49 :Dictionary;
+    %tmp.51 = isa %tmp.48 %tmp.50;
+    bf %tmp.51 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_9_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_9_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_47_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 497 8 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_47_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_47_stop" ]
+    %keys.3 = local;
+    %tmp.52 = lgetv %input;
+    %tmp.53 = as %tmp.52 { (Lang.Dictionary) && (!Lang.Array) };
+    %tmp.54 = getv function %tmp.53 :keys;
+    %tmp.55 = invoke %tmp.53 %tmp.54();
+    lputv %keys.3 %tmp.55;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 498 8 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_47_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_47_stop" ]
+    %vals.4 = local;
+    %tmp.56 = lgetv %input;
+    %tmp.57 = as %tmp.56 { (Lang.Dictionary) && (!Lang.Array) };
+    %tmp.58 = getv function %tmp.57 :values;
+    %tmp.59 = invoke %tmp.57 %tmp.58();
+    lputv %vals.4 %tmp.59;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 500 8 ]
+    %tmp.60 = newd 0;
+    lputv %result.1 %tmp.60;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 501 8 ]
+    for @C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_test @C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_incr @C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_init:
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_begin" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_end" ]
+    %i.5 = local;
+    %tmp.61 = 0;
+    lputv %i.5 %tmp.61;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_test:
+    %tmp.63 = lgetv %i.5;
+    %tmp.64 = lgetv %keys.3;
+    %tmp.65 = getv function %tmp.64 :size;
+    %tmp.66 = invoke %tmp.64 %tmp.65();
+    %tmp.67 = lt %tmp.63 %tmp.66;
+    bf %tmp.67 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_begin:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_46_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 502 12 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_46_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_46_stop" ]
+    %key_copy.6 = local;
+    %tmp.68 = self;
+    %tmp.69 = getv function %tmp.68 :deepcopy;
+    %tmp.71 = lgetv %keys.3;
+    %tmp.73 = lgetv %i.5;
+    %tmp.74 = agetv %tmp.71 %tmp.73;
+    %tmp.75 = invoke %tmp.68 %tmp.69(%tmp.74);
+    lputv %key_copy.6 %tmp.75;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 503 12 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_46_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_46_stop" ]
+    %val_copy.7 = local;
+    %tmp.76 = self;
+    %tmp.77 = getv function %tmp.76 :deepcopy;
+    %tmp.79 = lgetv %vals.4;
+    %tmp.81 = lgetv %i.5;
+    %tmp.82 = agetv %tmp.79 %tmp.81;
+    %tmp.83 = invoke %tmp.76 %tmp.77(%tmp.82);
+    lputv %val_copy.7 %tmp.83;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 504 12 ]
+    %tmp.84 = lgetv %result.1;
+    %tmp.85 = getv function %tmp.84 :put;
+    %tmp.87 = lgetv %key_copy.6;
+    %tmp.89 = lgetv %val_copy.7;
+    invoke %tmp.84 %tmp.85(%tmp.87, %tmp.89);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_46_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_incr:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 501 ]
+    %tmp.92 = lgetv %i.5;
+    %tmp.93 = add %tmp.92 1;
+    lputv %i.5 %tmp.93;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_test;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_501_8_for_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_47_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_9_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_9_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 507 9 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_9_if_stmt:
+    %tmp.95 = lgetv %input;
+    %tmp.96 = as %tmp.95 { (!Lang.Dictionary) && (!Lang.Array) };
+    %tmp.97 = getm $.Toybox.Lang;
+    %tmp.98 = getv %tmp.97 :String;
+    %tmp.99 = isa %tmp.96 %tmp.98;
+    bf %tmp.99 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_9_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_9_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_43_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 508 8 ]
+    %tmp.100 = lgetv %input;
+    %tmp.101 = as %tmp.100 { (Lang.String) && (!Lang.Dictionary) && (!Lang.Array) };
+    %tmp.102 = getv function %tmp.101 :substring;
+    %tmp.103 = 0;
+    %tmp.104 = lgetv %input;
+    %tmp.105 = as %tmp.104 { (Lang.String) && (!Lang.Dictionary) && (!Lang.Array) };
+    %tmp.106 = getv function %tmp.105 :length;
+    %tmp.107 = invoke %tmp.105 %tmp.106();
+    %tmp.108 = invoke %tmp.101 %tmp.102(%tmp.103, %tmp.107);
+    ret %tmp.108;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_43_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_9_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_9_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 513 9 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_9_if_stmt:
+    %tmp.110 = lgetv %input;
+    %tmp.111 = as %tmp.110 { (!Lang.Dictionary) && (!Lang.Array) && (!Lang.String) };
+    %tmp.112 = getm $.Toybox.Lang;
+    %tmp.113 = getv %tmp.112 :Long;
+    %tmp.114 = isa %tmp.111 %tmp.113;
+    bf %tmp.114 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_9_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_9_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_41_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 514 8 ]
+    %tmp.115 = 1;
+    %tmp.117 = lgetv %input;
+    %tmp.118 = as %tmp.117 { (!Lang.Dictionary) && (!Lang.Array) && (!Lang.String) && (Lang.Long) };
+    %tmp.119 = mul %tmp.115 %tmp.118;
+    ret %tmp.119;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_41_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_9_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_9_if_false:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 517 9 ]
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_9_if_stmt:
+    %tmp.121 = lgetv %input;
+    %tmp.122 = as %tmp.121 { (!Lang.Dictionary) && (!Lang.Array) && (!Lang.String) && (!Lang.Long) };
+    %tmp.123 = getm $.Toybox.Lang;
+    %tmp.124 = getv %tmp.123 :Double;
+    %tmp.125 = isa %tmp.122 %tmp.124;
+    bf %tmp.125 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_9_if_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_9_if_true:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_43_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 518 8 ]
+    %tmp.126 = 1.0;
+    %tmp.128 = lgetv %input;
+    %tmp.129 = as %tmp.128 { (!Lang.Dictionary) && (Lang.Double) && (!Lang.Array) && (!Lang.String) && (!Lang.Long) };
+    %tmp.130 = mul %tmp.126 %tmp.129;
+    ret %tmp.130;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_43_stop:
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_9_if_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_9_if_false:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_520_9_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 522 8 ]
+    %tmp.132 = lgetv %input;
+    %tmp.133 = as %tmp.132 { (!Lang.Dictionary) && (!Lang.Array) && (!Lang.String) && (!Lang.Double) && (!Lang.Long) };
+    lputv %result.1 %tmp.133;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_520_9_stop:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_517_9_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_513_9_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_507_9_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_496_9_if_end:
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_487_4_if_end:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 525 4 ]
+    %tmp.135 = lgetv %result.1;
+    ret %tmp.135;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_481_0_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 528; ]
+function p(s) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_528_14_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 529 4 ]
+    %tmp.1 = getm $.Toybox.System;
+    %tmp.2 = getv function %tmp.1 :println;
+    %tmp.4 = lgetv %s;
+    invoke %tmp.1 %tmp.2(%tmp.4);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_528_14_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 532; ]
+function fetchpuzzles(callBack) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_532_32_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 533 4 ]
+    [ "C_Garmin_Projects_Sokoban_source_SokobanView_mc_532_32_start" "C_Garmin_Projects_Sokoban_source_SokobanView_mc_532_32_stop" ]
+    %options.1 = local;
+    %tmp.1 = newd 3;
+    %tmp.3 = const :method;
+    %tmp.4 = getm $.Toybox.Communications;
+    %tmp.5 = getv %tmp.4 :HTTP_REQUEST_METHOD_GET;
+    %tmp.6 = dup %tmp.1;
+    %tmp.7 = aputv %tmp.6 %tmp.3 %tmp.5;
+    %tmp.9 = const :headers;
+    %tmp.10 = newd 1;
+    %tmp.11 = "Content-Type";
+    %tmp.12 = getm $.Toybox.Communications;
+    %tmp.13 = getv %tmp.12 :REQUEST_CONTENT_TYPE_URL_ENCODED;
+    %tmp.14 = dup %tmp.10;
+    %tmp.15 = aputv %tmp.14 %tmp.11 %tmp.13;
+    %tmp.16 = dup %tmp.7;
+    %tmp.17 = aputv %tmp.16 %tmp.9 %tmp.15;
+    %tmp.19 = const :responseType;
+    %tmp.20 = getm $.Toybox.Communications;
+    %tmp.21 = getv %tmp.20 :HTTP_RESPONSE_CONTENT_TYPE_JSON;
+    %tmp.22 = dup %tmp.17;
+    %tmp.23 = aputv %tmp.22 %tmp.19 %tmp.21;
+    lputv %options.1 %tmp.23;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 538 4 ]
+    %tmp.24 = getm $.Toybox.Communications;
+    %tmp.25 = getv function %tmp.24 :makeWebRequest;
+    %tmp.26 = "https://script.google.com/macros/s/AKfycbxra-8SlQZjDNN_deGUn3oS1oNzcsWxhRSYpJTSeV8PdERbvgtMoGKMh5VuThFhhE6qSQ/exec";
+    %tmp.27 = null;
+    %tmp.29 = lgetv %options.1;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_begin:
+    %tmp.31 = lgetv %callBack;
+    %tmp.32 = null;
+    %tmp.33 = eq %tmp.31 %tmp.32;
+    bf %tmp.33 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_false;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_true:
+    %tmp.36 = getm $.Toybox.Lang;
+    %tmp.37 = getv function ? %tmp.36 :Method;
+    %tmp.38 = getm $;
+    %tmp.40 = const :onReceivePuzzle;
+    %tmp.34 = newc %tmp.37 (%tmp.38, %tmp.40);
+    push %tmp.34;
+    goto @C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_end;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_false:
+    %tmp.42 = lgetv %callBack;
+    %tmp.43 = as %tmp.42 { (!Null) };
+    push %tmp.43;
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_end:
+    %tmp.44 = phi [%tmp.33 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_begin] [%tmp.34 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_true] [%tmp.43 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_false] [%tmp.44 @C_Garmin_Projects_Sokoban_source_SokobanView_mc_538_168_end];
+    invoke %tmp.24 %tmp.25(%tmp.26, %tmp.27, %tmp.29, %tmp.44);
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_532_32_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 541; ]
+function onReceivePuzzle(responseCode, data) {
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_541_45_start:
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 542 4 ]
+    %tmp.1 = getv self :allpuzzles;
+    %tmp.2 = lgetv %data;
+    %tmp.3 = getv function %tmp.2 :get;
+    %tmp.4 = "data";
+    %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+    %tmp.6 = 3;
+    aputv %tmp.1 %tmp.6 %tmp.5;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 543 4 ]
+    %tmp.7 = 3;
+    putv self :diff %tmp.7;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 544 4 ]
+    %tmp.8 = 0;
+    putv self :thispuzz %tmp.8;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 545 4 ]
+    %tmp.9 = self;
+    %tmp.10 = getv function %tmp.9 :newgame;
+    invoke %tmp.9 %tmp.10();
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 546 4 ]
+    %tmp.11 = getm $.Toybox.WatchUi;
+    %tmp.12 = getv function %tmp.11 :requestUpdate;
+    invoke %tmp.11 %tmp.12();
+C_Garmin_Projects_Sokoban_source_SokobanView_mc_541_45_stop:
+}
+[ @file = "C:\Garmin\Projects\Sokoban\source\SokobanView.mc"; @line = 1; ]
+<init> {
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 9 4 ]
+    %tmp.13 = getm $.Toybox.System;
+    %tmp.14 = getv function %tmp.13 :getDeviceSettings;
+    %tmp.15 = invoke %tmp.13 %tmp.14();
+    putv self :dS %tmp.15;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 10 4 ]
+    %tmp.17 = getv ? :dS;
+    %tmp.18 = getv %tmp.17 :screenWidth;
+    putv self :sW %tmp.18;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 11 4 ]
+    %tmp.20 = getv ? :dS;
+    %tmp.21 = getv %tmp.20 :screenHeight;
+    putv self :sH %tmp.21;
+[ "C:\Garmin\Projects\Sokoban\source\SokobanView.mc" 18 4 ]
+    %tmp.22 = getm $.Toybox.Graphics;
+    %tmp.23 = getv %tmp.22 :TEXT_JUSTIFY_CENTER;
+    %tmp.24 = getm $.Toybox.Graphics;
+    %tmp.25 = getv %tmp.24 :TEXT_JUSTIFY_VCENTER;
+    %tmp.26 = bitor %tmp.23 %tmp.25;
+    putv self :center %tmp.26;
+}
